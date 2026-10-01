@@ -1,0 +1,95 @@
+[
+  {
+    "id": "s02-opportunities",
+    "label": "Choose a pilot",
+    "brief": "Explain why research synthesis is the strongest first AI pilot.",
+    "decision": "Distinct symbols separate the task, data and review requirements.",
+    "recorded_decision": "Use file search for frequent evidence work, database for a bounded source corpus, and user star for the named expert reviewer. The chart and tables remain the evidence.",
+    "icons": [
+      {
+        "entity": "reason-icon-file",
+        "label": "Frequent, comparable tasks",
+        "file": "file-search-line.svg",
+        "reason": "File search represents the repeated evidence work."
+      },
+      {
+        "entity": "reason-icon-corpus",
+        "label": "A bounded source corpus",
+        "file": "database-2-line.svg",
+        "reason": "A database identifies the bounded collection of sources."
+      },
+      {
+        "entity": "reason-icon-reviewer",
+        "label": "A named expert reviewer",
+        "file": "user-star-line.svg",
+        "reason": "A person with a star identifies the expert reviewer."
+      }
+    ]
+  },
+  {
+    "id": "s03-operating-model",
+    "label": "Explain a workflow",
+    "brief": "Show how approved sources become a reviewed, client-ready output.",
+    "decision": "Consistent line icons identify the stages without competing with the process arrows.",
+    "recorded_decision": "Use one coherent icon family across the source, draft, review, and release stages.",
+    "icons": [
+      {
+        "entity": "stage-icon-sources",
+        "label": "Approved sources",
+        "file": "file-search-line.svg",
+        "reason": "File search marks the approved source material."
+      },
+      {
+        "entity": "stage-icon-draft",
+        "label": "Grounded draft",
+        "file": "draft-line.svg",
+        "reason": "A draft document identifies the writing stage."
+      },
+      {
+        "entity": "stage-icon-review",
+        "label": "Expert review",
+        "file": "shield-check-line.svg",
+        "reason": "A checked shield marks the review step."
+      },
+      {
+        "entity": "stage-icon-output",
+        "label": "Client-ready output",
+        "file": "send-plane-2-line.svg",
+        "reason": "A paper plane identifies the released output."
+      }
+    ]
+  },
+  {
+    "id": "s04-delivery-roadmap",
+    "label": "Mark decision gates",
+    "brief": "Show when the pilot can advance and what evidence each decision needs.",
+    "decision": "A flag repeats at every gate. The labels carry the different release conditions.",
+    "recorded_decision": "Use a route symbol for the workstream path and a repeated flag symbol for gate markers.",
+    "icons": [
+      {
+        "entity": "gate-icon-g1",
+        "label": "G1 · Week 2",
+        "file": "flag-line.svg",
+        "reason": "The first gate requires the corpus and access to be signed off."
+      },
+      {
+        "entity": "gate-icon-g2",
+        "label": "G2 · Week 4",
+        "file": "flag-line.svg",
+        "reason": "The second gate requires an approved test pack."
+      },
+      {
+        "entity": "gate-icon-g3",
+        "label": "G3 · Week 8",
+        "file": "flag-line.svg",
+        "reason": "The third gate requires ten reviewed tasks."
+      },
+      {
+        "entity": "gate-icon-g4",
+        "label": "G4 · Week 12",
+        "file": "flag-line.svg",
+        "reason": "The final gate requires the practice lead and CFO to decide."
+      }
+    ]
+  }
+]

@@ -1,0 +1,312 @@
+{
+  "schema_version": 1,
+  "slide_id": "s05-close",
+  "page_number": 5,
+  "size": {
+    "width": 12192000,
+    "height": 6858000,
+    "unit": "emu"
+  },
+  "source": {
+    "pptx": {
+      "path": "deliverables/presentation.pptx",
+      "sha256": "e80088145ff10d4662e1fbcced9d384ddc5bc54764381f06d0d55d7efb40ad41"
+    },
+    "render": {
+      "path": "assets/s05-close-render.png",
+      "sha256": "89bbfd3ec2b2521d78afdd3135964a8f7bda878f4de261fb8f547436dff1acf4"
+    }
+  },
+  "objects": [
+    {
+      "id": "p5-object-1",
+      "native_id": "2",
+      "name": "paper-field",
+      "label": "Paper field",
+      "kind": "shape",
+      "polygon": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "stack": 0
+    },
+    {
+      "id": "p5-object-2",
+      "native_id": "3",
+      "name": "signature-collage",
+      "label": "Signature collage",
+      "kind": "image",
+      "polygon": [
+        [
+          0.650625,
+          0.34
+        ],
+        [
+          0.9025,
+          0.34
+        ],
+        [
+          0.9025,
+          0.851111111
+        ],
+        [
+          0.650625,
+          0.851111111
+        ]
+      ],
+      "stack": 1
+    },
+    {
+      "id": "p5-object-3",
+      "native_id": "4",
+      "name": "title-first",
+      "label": "The point of",
+      "kind": "text",
+      "polygon": [
+        [
+          0.083125,
+          0.093333333
+        ],
+        [
+          0.62125,
+          0.093333333
+        ],
+        [
+          0.62125,
+          0.306666667
+        ],
+        [
+          0.083125,
+          0.306666667
+        ]
+      ],
+      "stack": 2,
+      "text": "The point of",
+      "typography": [
+        {
+          "family": "Georgia",
+          "size_pt": 86.0,
+          "color": "#242321"
+        }
+      ]
+    },
+    {
+      "id": "p5-object-4",
+      "native_id": "5",
+      "name": "title-second",
+      "label": "view is still",
+      "kind": "text",
+      "polygon": [
+        [
+          0.083125,
+          0.275555556
+        ],
+        [
+          0.62125,
+          0.275555556
+        ],
+        [
+          0.62125,
+          0.488888889
+        ],
+        [
+          0.083125,
+          0.488888889
+        ]
+      ],
+      "stack": 3,
+      "text": "view is still",
+      "typography": [
+        {
+          "family": "Georgia",
+          "size_pt": 86.0,
+          "color": "#242321"
+        }
+      ]
+    },
+    {
+      "id": "p5-object-5",
+      "native_id": "6",
+      "name": "title-third",
+      "label": "yours.",
+      "kind": "text",
+      "polygon": [
+        [
+          0.083125,
+          0.432222222
+        ],
+        [
+          0.62125,
+          0.432222222
+        ],
+        [
+          0.62125,
+          0.657777778
+        ],
+        [
+          0.083125,
+          0.657777778
+        ]
+      ],
+      "stack": 4,
+      "text": "yours.",
+      "typography": [
+        {
+          "family": "Georgia",
+          "size_pt": 86.0,
+          "color": "#242321"
+        }
+      ]
+    },
+    {
+      "id": "p5-object-6",
+      "native_id": "7",
+      "name": "closing-1",
+      "label": "Let the system widen the field.",
+      "kind": "text",
+      "polygon": [
+        [
+          0.0875,
+          0.684444444
+        ],
+        [
+          0.61375,
+          0.684444444
+        ],
+        [
+          0.61375,
+          0.734444444
+        ],
+        [
+          0.0875,
+          0.734444444
+        ]
+      ],
+      "stack": 5,
+      "text": "Let the system widen the field.",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 13.5,
+          "color": "#242321"
+        }
+      ]
+    },
+    {
+      "id": "p5-object-7",
+      "native_id": "8",
+      "name": "closing-2",
+      "label": "Choose what deserves to remain.",
+      "kind": "text",
+      "polygon": [
+        [
+          0.0875,
+          0.723333333
+        ],
+        [
+          0.61375,
+          0.723333333
+        ],
+        [
+          0.61375,
+          0.773333333
+        ],
+        [
+          0.0875,
+          0.773333333
+        ]
+      ],
+      "stack": 6,
+      "text": "Choose what deserves to remain.",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 13.5,
+          "color": "#242321"
+        }
+      ]
+    },
+    {
+      "id": "p5-object-8",
+      "native_id": "9",
+      "name": "closing-3",
+      "label": "A second thinking system. A first-person responsibility.",
+      "kind": "text",
+      "polygon": [
+        [
+          0.0875,
+          0.763333333
+        ],
+        [
+          0.6225,
+          0.763333333
+        ],
+        [
+          0.6225,
+          0.813333333
+        ],
+        [
+          0.0875,
+          0.813333333
+        ]
+      ],
+      "stack": 7,
+      "text": "A second thinking system. A first-person responsibility.",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 13.5,
+          "color": "#242321"
+        }
+      ]
+    },
+    {
+      "id": "p5-object-9",
+      "native_id": "10",
+      "name": "folio",
+      "label": "FIELD NOTES / 05",
+      "kind": "text",
+      "polygon": [
+        [
+          0.05375,
+          0.922222222
+        ],
+        [
+          0.233125,
+          0.922222222
+        ],
+        [
+          0.233125,
+          0.962222222
+        ],
+        [
+          0.05375,
+          0.962222222
+        ]
+      ],
+      "stack": 8,
+      "text": "FIELD NOTES / 05",
+      "typography": [
+        {
+          "family": "Andale Mono",
+          "size_pt": 12.0,
+          "color": "#242321"
+        }
+      ]
+    }
+  ]
+}

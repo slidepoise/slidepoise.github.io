@@ -1,0 +1,1121 @@
+{
+  "schema_version": 1,
+  "slide_id": "s01-recommendation",
+  "page_number": 1,
+  "size": {
+    "width": 12192000,
+    "height": 6858000,
+    "unit": "emu"
+  },
+  "source": {
+    "pptx": {
+      "path": "deliverables/presentation.pptx",
+      "sha256": "13497442c7d6afb9b6d1cf83fa8606604f7ef07aaec2ab92ae5bc589f351c4cf"
+    },
+    "render": {
+      "path": "assets/s01-recommendation-render.png",
+      "sha256": "8951d297041159db989dc26bd9c05ba6d6601fdad915094b91d59558ef04483e"
+    }
+  },
+  "objects": [
+    {
+      "id": "p1-object-1",
+      "native_id": "2",
+      "name": "metric-divider-1",
+      "label": "Metric divider 1",
+      "kind": "shape",
+      "polygon": [
+        [
+          0.334375,
+          0.253703704
+        ],
+        [
+          0.334895833,
+          0.253703704
+        ],
+        [
+          0.334895833,
+          0.383333333
+        ],
+        [
+          0.334375,
+          0.383333333
+        ]
+      ],
+      "stack": 0
+    },
+    {
+      "id": "p1-object-2",
+      "native_id": "3",
+      "name": "metric-divider-2",
+      "label": "Metric divider 2",
+      "kind": "shape",
+      "polygon": [
+        [
+          0.683854167,
+          0.253703704
+        ],
+        [
+          0.684375,
+          0.253703704
+        ],
+        [
+          0.684375,
+          0.383333333
+        ],
+        [
+          0.683854167,
+          0.383333333
+        ]
+      ],
+      "stack": 1
+    },
+    {
+      "id": "p1-object-3",
+      "native_id": "4",
+      "name": "decision-band",
+      "label": "Decision band",
+      "kind": "shape",
+      "polygon": [
+        [
+          0.023958333,
+          0.832407407
+        ],
+        [
+          0.976041667,
+          0.832407407
+        ],
+        [
+          0.976041667,
+          0.918518519
+        ],
+        [
+          0.023958333,
+          0.918518519
+        ]
+      ],
+      "stack": 2
+    },
+    {
+      "id": "p1-object-4",
+      "native_id": "5",
+      "name": "decision-accent",
+      "label": "Decision accent",
+      "kind": "shape",
+      "polygon": [
+        [
+          0.023958333,
+          0.832407407
+        ],
+        [
+          0.028125,
+          0.832407407
+        ],
+        [
+          0.028125,
+          0.918518519
+        ],
+        [
+          0.023958333,
+          0.918518519
+        ]
+      ],
+      "stack": 3
+    },
+    {
+      "id": "p1-object-5",
+      "native_id": "6",
+      "name": "scale-gate-table",
+      "label": "Scale gate table",
+      "kind": "table",
+      "polygon": [
+        [
+          0.552083333,
+          0.474074074
+        ],
+        [
+          0.979166667,
+          0.474074074
+        ],
+        [
+          0.979166667,
+          0.783333333
+        ],
+        [
+          0.552083333,
+          0.783333333
+        ]
+      ],
+      "stack": 4,
+      "rows": [
+        [
+          "Measure",
+          "Minimum to scale"
+        ],
+        [
+          "Cycle-time reduction",
+          "25%"
+        ],
+        [
+          "Sampled cited claims verified",
+          "95%"
+        ],
+        [
+          "Critical data exceptions",
+          "0"
+        ],
+        [
+          "Weekly-active pilot users",
+          "70% · at least 11 of 15"
+        ]
+      ]
+    },
+    {
+      "id": "p1-object-6",
+      "native_id": "7",
+      "name": "headline",
+      "label": "Prove the research pilot before scaling AI",
+      "kind": "text",
+      "polygon": [
+        [
+          0.023958333,
+          0.077777778
+        ],
+        [
+          0.976041667,
+          0.077777778
+        ],
+        [
+          0.976041667,
+          0.148148148
+        ],
+        [
+          0.023958333,
+          0.148148148
+        ]
+      ],
+      "stack": 5,
+      "text": "Prove the research pilot before scaling AI",
+      "typography": [
+        {
+          "family": "Georgia",
+          "size_pt": 32.0,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "id": "p1-object-7",
+      "native_id": "8",
+      "name": "subtitle",
+      "label": "One practice. 15 consultants. 20 paired research tasks. A 12-week,…",
+      "kind": "text",
+      "polygon": [
+        [
+          0.024479167,
+          0.152777778
+        ],
+        [
+          0.975,
+          0.152777778
+        ],
+        [
+          0.975,
+          0.197222222
+        ],
+        [
+          0.024479167,
+          0.197222222
+        ]
+      ],
+      "stack": 6,
+      "text": "One practice. 15 consultants. 20 paired research tasks. A 12-week, $25k pilot.",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 16.0,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "id": "p1-object-8",
+      "native_id": "9",
+      "name": "baseline",
+      "label": "10,800 h",
+      "kind": "text",
+      "polygon": [
+        [
+          0.024479167,
+          0.236111111
+        ],
+        [
+          0.284895833,
+          0.236111111
+        ],
+        [
+          0.284895833,
+          0.323148148
+        ],
+        [
+          0.024479167,
+          0.323148148
+        ]
+      ],
+      "stack": 7,
+      "text": "10,800 h",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 40.0,
+          "color": "#FD5108",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p1-object-9",
+      "native_id": "10",
+      "name": "baseline-label",
+      "label": "Annual research baseline",
+      "kind": "text",
+      "polygon": [
+        [
+          0.024479167,
+          0.32037037
+        ],
+        [
+          0.284895833,
+          0.32037037
+        ],
+        [
+          0.284895833,
+          0.355555556
+        ],
+        [
+          0.024479167,
+          0.355555556
+        ]
+      ],
+      "stack": 8,
+      "text": "Annual research baseline",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 14.0,
+          "color": "#000000",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p1-object-10",
+      "native_id": "11",
+      "name": "baseline-formula",
+      "label": "900 engagements × 12 h",
+      "kind": "text",
+      "polygon": [
+        [
+          0.024479167,
+          0.361111111
+        ],
+        [
+          0.284895833,
+          0.361111111
+        ],
+        [
+          0.284895833,
+          0.4
+        ],
+        [
+          0.024479167,
+          0.4
+        ]
+      ],
+      "stack": 9,
+      "text": "900 engagements × 12 h",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 13.0,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "id": "p1-object-11",
+      "native_id": "12",
+      "name": "capacity",
+      "label": "1,944 h",
+      "kind": "text",
+      "polygon": [
+        [
+          0.376041667,
+          0.236111111
+        ],
+        [
+          0.636458333,
+          0.236111111
+        ],
+        [
+          0.636458333,
+          0.323148148
+        ],
+        [
+          0.376041667,
+          0.323148148
+        ]
+      ],
+      "stack": 10,
+      "text": "1,944 h",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 40.0,
+          "color": "#FD5108",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p1-object-12",
+      "native_id": "13",
+      "name": "capacity-label",
+      "label": "Potential annual capacity",
+      "kind": "text",
+      "polygon": [
+        [
+          0.376041667,
+          0.32037037
+        ],
+        [
+          0.636458333,
+          0.32037037
+        ],
+        [
+          0.636458333,
+          0.355555556
+        ],
+        [
+          0.376041667,
+          0.355555556
+        ]
+      ],
+      "stack": 11,
+      "text": "Potential annual capacity",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 14.0,
+          "color": "#000000",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p1-object-13",
+      "native_id": "14",
+      "name": "capacity-formula",
+      "label": "60% adoption × 30% time reduction",
+      "kind": "text",
+      "polygon": [
+        [
+          0.376041667,
+          0.361111111
+        ],
+        [
+          0.636458333,
+          0.361111111
+        ],
+        [
+          0.636458333,
+          0.4
+        ],
+        [
+          0.376041667,
+          0.4
+        ]
+      ],
+      "stack": 12,
+      "text": "60% adoption × 30% time reduction",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 13.0,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "id": "p1-object-14",
+      "native_id": "15",
+      "name": "value",
+      "label": "$243k",
+      "kind": "text",
+      "polygon": [
+        [
+          0.733333333,
+          0.236111111
+        ],
+        [
+          0.99375,
+          0.236111111
+        ],
+        [
+          0.99375,
+          0.323148148
+        ],
+        [
+          0.733333333,
+          0.323148148
+        ]
+      ],
+      "stack": 13,
+      "text": "$243k",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 40.0,
+          "color": "#FD5108",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p1-object-15",
+      "native_id": "16",
+      "name": "value-label",
+      "label": "Annual capacity equivalent",
+      "kind": "text",
+      "polygon": [
+        [
+          0.733333333,
+          0.32037037
+        ],
+        [
+          0.99375,
+          0.32037037
+        ],
+        [
+          0.99375,
+          0.355555556
+        ],
+        [
+          0.733333333,
+          0.355555556
+        ]
+      ],
+      "stack": 14,
+      "text": "Annual capacity equivalent",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 14.0,
+          "color": "#000000",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p1-object-16",
+      "native_id": "17",
+      "name": "value-formula",
+      "label": "1,944 h × $125 per hour",
+      "kind": "text",
+      "polygon": [
+        [
+          0.733333333,
+          0.361111111
+        ],
+        [
+          0.99375,
+          0.361111111
+        ],
+        [
+          0.99375,
+          0.4
+        ],
+        [
+          0.733333333,
+          0.4
+        ]
+      ],
+      "stack": 15,
+      "text": "1,944 h × $125 per hour",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 13.0,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "id": "p1-object-17",
+      "native_id": "18",
+      "name": "argument-heading",
+      "label": "WHY THIS PILOT FIRST",
+      "kind": "text",
+      "polygon": [
+        [
+          0.024479167,
+          0.426851852
+        ],
+        [
+          0.4984375,
+          0.426851852
+        ],
+        [
+          0.4984375,
+          0.465740741
+        ],
+        [
+          0.024479167,
+          0.465740741
+        ]
+      ],
+      "stack": 16,
+      "text": "WHY THIS PILOT FIRST",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 14.0,
+          "color": "#000000",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p1-object-18",
+      "native_id": "19",
+      "name": "reason-number-01",
+      "label": "01",
+      "kind": "text",
+      "polygon": [
+        [
+          0.111458333,
+          0.481481481
+        ],
+        [
+          0.1453125,
+          0.481481481
+        ],
+        [
+          0.1453125,
+          0.518518519
+        ],
+        [
+          0.111458333,
+          0.518518519
+        ]
+      ],
+      "stack": 17,
+      "text": "01",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 15.0,
+          "color": "#000000",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p1-object-19",
+      "native_id": "20",
+      "name": "reason-title-01",
+      "label": "Focus a repeatable task",
+      "kind": "text",
+      "polygon": [
+        [
+          0.158854167,
+          0.483333333
+        ],
+        [
+          0.5234375,
+          0.483333333
+        ],
+        [
+          0.5234375,
+          0.518518519
+        ],
+        [
+          0.158854167,
+          0.518518519
+        ]
+      ],
+      "stack": 18,
+      "text": "Focus a repeatable task",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 14.0,
+          "color": "#000000",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p1-object-20",
+      "native_id": "21",
+      "name": "reason-detail-01",
+      "label": "Approved sources, frequent use and comparable inputs.",
+      "kind": "text",
+      "polygon": [
+        [
+          0.158854167,
+          0.522222222
+        ],
+        [
+          0.5390625,
+          0.522222222
+        ],
+        [
+          0.5390625,
+          0.582407407
+        ],
+        [
+          0.158854167,
+          0.582407407
+        ]
+      ],
+      "stack": 19,
+      "text": "Approved sources, frequent use and comparable inputs.",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 13.0,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "id": "p1-object-21",
+      "native_id": "22",
+      "name": "reason-number-02",
+      "label": "02",
+      "kind": "text",
+      "polygon": [
+        [
+          0.111458333,
+          0.596296296
+        ],
+        [
+          0.1453125,
+          0.596296296
+        ],
+        [
+          0.1453125,
+          0.633333333
+        ],
+        [
+          0.111458333,
+          0.633333333
+        ]
+      ],
+      "stack": 20,
+      "text": "02",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 15.0,
+          "color": "#000000",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p1-object-22",
+      "native_id": "23",
+      "name": "reason-title-02",
+      "label": "Preserve expert review",
+      "kind": "text",
+      "polygon": [
+        [
+          0.158854167,
+          0.598148148
+        ],
+        [
+          0.5234375,
+          0.598148148
+        ],
+        [
+          0.5234375,
+          0.633333333
+        ],
+        [
+          0.158854167,
+          0.633333333
+        ]
+      ],
+      "stack": 21,
+      "text": "Preserve expert review",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 14.0,
+          "color": "#000000",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p1-object-23",
+      "native_id": "24",
+      "name": "reason-detail-02",
+      "label": "Verify every client claim before release.",
+      "kind": "text",
+      "polygon": [
+        [
+          0.158854167,
+          0.637037037
+        ],
+        [
+          0.5390625,
+          0.637037037
+        ],
+        [
+          0.5390625,
+          0.697222222
+        ],
+        [
+          0.158854167,
+          0.697222222
+        ]
+      ],
+      "stack": 22,
+      "text": "Verify every client claim before release.",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 13.0,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "id": "p1-object-24",
+      "native_id": "25",
+      "name": "reason-number-03",
+      "label": "03",
+      "kind": "text",
+      "polygon": [
+        [
+          0.111458333,
+          0.707407407
+        ],
+        [
+          0.1453125,
+          0.707407407
+        ],
+        [
+          0.1453125,
+          0.744444444
+        ],
+        [
+          0.111458333,
+          0.744444444
+        ]
+      ],
+      "stack": 23,
+      "text": "03",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 15.0,
+          "color": "#000000",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p1-object-25",
+      "native_id": "26",
+      "name": "reason-title-03",
+      "label": "Fund against evidence",
+      "kind": "text",
+      "polygon": [
+        [
+          0.158854167,
+          0.709259259
+        ],
+        [
+          0.5234375,
+          0.709259259
+        ],
+        [
+          0.5234375,
+          0.744444444
+        ],
+        [
+          0.158854167,
+          0.744444444
+        ]
+      ],
+      "stack": 24,
+      "text": "Fund against evidence",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 14.0,
+          "color": "#000000",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p1-object-26",
+      "native_id": "27",
+      "name": "reason-detail-03",
+      "label": "Practice lead and CFO release $60k only after the week-12…",
+      "kind": "text",
+      "polygon": [
+        [
+          0.158854167,
+          0.748148148
+        ],
+        [
+          0.5390625,
+          0.748148148
+        ],
+        [
+          0.5390625,
+          0.808333333
+        ],
+        [
+          0.158854167,
+          0.808333333
+        ]
+      ],
+      "stack": 25,
+      "text": "Practice lead and CFO release $60k\nonly after the week-12 gate.",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 13.0,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "id": "p1-object-27",
+      "native_id": "28",
+      "name": "gate-heading",
+      "label": "WEEK-12 SCALE GATE",
+      "kind": "text",
+      "polygon": [
+        [
+          0.552083333,
+          0.426851852
+        ],
+        [
+          0.979166667,
+          0.426851852
+        ],
+        [
+          0.979166667,
+          0.465740741
+        ],
+        [
+          0.552083333,
+          0.465740741
+        ]
+      ],
+      "stack": 26,
+      "text": "WEEK-12 SCALE GATE",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 14.0,
+          "color": "#000000",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p1-object-28",
+      "native_id": "29",
+      "name": "decision-label",
+      "label": "DECISION REQUESTED",
+      "kind": "text",
+      "polygon": [
+        [
+          0.041666667,
+          0.849074074
+        ],
+        [
+          0.265625,
+          0.849074074
+        ],
+        [
+          0.265625,
+          0.89537037
+        ],
+        [
+          0.041666667,
+          0.89537037
+        ]
+      ],
+      "stack": 27,
+      "text": "DECISION REQUESTED",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 14.0,
+          "color": "#FD5108",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p1-object-29",
+      "native_id": "30",
+      "name": "decision-message",
+      "label": "Approve $25k and name a practice sponsor.",
+      "kind": "text",
+      "polygon": [
+        [
+          0.270833333,
+          0.849074074
+        ],
+        [
+          0.957291667,
+          0.849074074
+        ],
+        [
+          0.957291667,
+          0.89537037
+        ],
+        [
+          0.270833333,
+          0.89537037
+        ]
+      ],
+      "stack": 28,
+      "text": "Approve $25k and name a practice sponsor.",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 14.0,
+          "color": "#000000",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p1-object-30",
+      "native_id": "31",
+      "name": "reason-icon-01",
+      "label": "Reason icon 01",
+      "kind": "image",
+      "polygon": [
+        [
+          0.040625,
+          0.478703704
+        ],
+        [
+          0.085416667,
+          0.478703704
+        ],
+        [
+          0.085416667,
+          0.558333333
+        ],
+        [
+          0.040625,
+          0.558333333
+        ]
+      ],
+      "stack": 29
+    },
+    {
+      "id": "p1-object-31",
+      "native_id": "32",
+      "name": "reason-icon-02",
+      "label": "Reason icon 02",
+      "kind": "image",
+      "polygon": [
+        [
+          0.040625,
+          0.593518519
+        ],
+        [
+          0.085416667,
+          0.593518519
+        ],
+        [
+          0.085416667,
+          0.673148148
+        ],
+        [
+          0.040625,
+          0.673148148
+        ]
+      ],
+      "stack": 30
+    },
+    {
+      "id": "p1-object-32",
+      "native_id": "33",
+      "name": "reason-icon-03",
+      "label": "Reason icon 03",
+      "kind": "image",
+      "polygon": [
+        [
+          0.040625,
+          0.70462963
+        ],
+        [
+          0.085416667,
+          0.70462963
+        ],
+        [
+          0.085416667,
+          0.784259259
+        ],
+        [
+          0.040625,
+          0.784259259
+        ]
+      ],
+      "stack": 31
+    },
+    {
+      "id": "p1-object-33",
+      "native_id": "34",
+      "name": "Slide Number Placeholder 0",
+      "label": "1",
+      "kind": "text",
+      "polygon": [
+        [
+          0.891666667,
+          0.952777778
+        ],
+        [
+          0.975,
+          0.952777778
+        ],
+        [
+          0.975,
+          0.99537037
+        ],
+        [
+          0.891666667,
+          0.99537037
+        ]
+      ],
+      "stack": 32,
+      "text": "1",
+      "typography": [
+        {
+          "bold": false
+        },
+        {
+          "family": "Arial",
+          "size_pt": 9.0,
+          "color": "#666666"
+        }
+      ]
+    }
+  ]
+}

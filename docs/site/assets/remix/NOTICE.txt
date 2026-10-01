@@ -1,0 +1,5 @@
+Icons by Remix Icon, version 4.9.0.
+https://remixicon.com
+Licensed under the Remix Icon License v1.0.
+https://github.com/Remix-Design/RemixIcon/blob/v4.9.0/License
+Original SVG files are reproduced without modification.

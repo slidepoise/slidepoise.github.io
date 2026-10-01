@@ -1,0 +1,1711 @@
+{
+  "schema_version": "1.0.0",
+  "slide_id": "s02-opportunities",
+  "dimensions_px": [
+    1920,
+    1080
+  ],
+  "background": "#FFFFFF",
+  "design_config_id": null,
+  "objects": [
+    {
+      "id": "formula-strip",
+      "kind": "shape",
+      "shape": "rectangle",
+      "bbox_px": [
+        760,
+        496,
+        1110,
+        60
+      ],
+      "style": {
+        "fill": "#F5F7F8",
+        "stroke": "none",
+        "stroke_width_px": 0,
+        "style_authority": "agent_visual_observation"
+      },
+      "allow_text_crossing": false,
+      "structural_boundary": false,
+      "z": 1.0
+    },
+    {
+      "id": "decision-band",
+      "kind": "shape",
+      "shape": "rectangle",
+      "bbox_px": [
+        46,
+        899,
+        1828,
+        93
+      ],
+      "style": {
+        "fill": "#FFF5ED",
+        "stroke": "none",
+        "stroke_width_px": 0,
+        "style_authority": "agent_visual_observation"
+      },
+      "allow_text_crossing": false,
+      "structural_boundary": false,
+      "z": 1.0
+    },
+    {
+      "id": "decision-accent",
+      "kind": "shape",
+      "shape": "rectangle",
+      "bbox_px": [
+        46,
+        899,
+        8,
+        93
+      ],
+      "style": {
+        "fill": "#FD5108",
+        "stroke": "none",
+        "stroke_width_px": 0,
+        "style_authority": "agent_visual_observation"
+      },
+      "allow_text_crossing": false,
+      "structural_boundary": false,
+      "z": 1.0
+    },
+    {
+      "id": "annual-capacity-chart",
+      "kind": "chart",
+      "bbox_px": [
+        37,
+        293,
+        670,
+        322
+      ],
+      "structure": {
+        "type": "column",
+        "categories": [
+          "Research\nsynthesis",
+          "Proposal\ndrafting",
+          "Knowledge\nretrieval"
+        ],
+        "series": [
+          {
+            "name": "Illustrative annual capacity hours",
+            "values": [
+              1944,
+              1440,
+              1080
+            ]
+          }
+        ],
+        "colors": [
+          "#FD5108",
+          "#FF955F",
+          "#FFC099"
+        ],
+        "show_legend": false,
+        "show_values": true,
+        "show_category_axis": true,
+        "show_value_axis": true,
+        "show_value_gridlines": true,
+        "value_axis_minimum": 0,
+        "value_axis_maximum": 2500,
+        "gap_width_pct": 55,
+        "data_label_position": "outEnd",
+        "data_label_format_code": "#,##0",
+        "data_font_family": "Arial",
+        "data_font_size_px": 28,
+        "data_label_color": "#000000",
+        "data_label_wrap": false,
+        "data_label_colors": [
+          "FD5108",
+          "000000",
+          "000000"
+        ],
+        "data_font_bold": true,
+        "value_axis_format_code": "#,##0",
+        "title_font_family": "Georgia",
+        "gridline_color": "#DFE3E6"
+      },
+      "style": {
+        "stroke": "none"
+      },
+      "component_id": null,
+      "component_reference": null,
+      "z": 4.0
+    },
+    {
+      "id": "value-model",
+      "kind": "table",
+      "bbox_px": [
+        760,
+        266,
+        1110,
+        230
+      ],
+      "structure": {
+        "rows": [
+          [
+            {
+              "text": "Workflow",
+              "options": {
+                "fill": {
+                  "color": "000000"
+                },
+                "color": "FFFFFF",
+                "bold": true,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "Baseline h",
+              "options": {
+                "fill": {
+                  "color": "000000"
+                },
+                "color": "FFFFFF",
+                "bold": true,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "Adoption",
+              "options": {
+                "fill": {
+                  "color": "000000"
+                },
+                "color": "FFFFFF",
+                "bold": true,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "Time saved",
+              "options": {
+                "fill": {
+                  "color": "000000"
+                },
+                "color": "FFFFFF",
+                "bold": true,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            }
+          ],
+          [
+            {
+              "text": "Research",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": true,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "12",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "60%",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "30%",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            }
+          ],
+          [
+            {
+              "text": "Proposal",
+              "options": {
+                "fill": {
+                  "color": "F5F7F8"
+                },
+                "color": "000000",
+                "bold": true,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "8",
+              "options": {
+                "fill": {
+                  "color": "F5F7F8"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "50%",
+              "options": {
+                "fill": {
+                  "color": "F5F7F8"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "40%",
+              "options": {
+                "fill": {
+                  "color": "F5F7F8"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            }
+          ],
+          [
+            {
+              "text": "Retrieval",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": true,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "5",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "60%",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "40%",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            }
+          ]
+        ],
+        "column_widths_px": [
+          285,
+          270,
+          270,
+          285
+        ],
+        "row_heights_px": [
+          52,
+          59,
+          59,
+          60
+        ]
+      },
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 24,
+        "cell_margin_px": 8,
+        "color": "#000000",
+        "fill": "#FFFFFF",
+        "stroke": "#C6C9CD",
+        "stroke_width_px": 1,
+        "vertical_alignment": "middle"
+      },
+      "component_id": null,
+      "component_reference": null,
+      "z": 5.0
+    },
+    {
+      "id": "pilot-sequencing",
+      "kind": "table",
+      "bbox_px": [
+        760,
+        604,
+        1110,
+        254
+      ],
+      "structure": {
+        "rows": [
+          [
+            {
+              "text": "Workflow",
+              "options": {
+                "fill": {
+                  "color": "000000"
+                },
+                "color": "FFFFFF",
+                "bold": true,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "Control readiness",
+              "options": {
+                "fill": {
+                  "color": "000000"
+                },
+                "color": "FFFFFF",
+                "bold": true,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "Owner",
+              "options": {
+                "fill": {
+                  "color": "000000"
+                },
+                "color": "FFFFFF",
+                "bold": true,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "Sequence",
+              "options": {
+                "fill": {
+                  "color": "000000"
+                },
+                "color": "FFFFFF",
+                "bold": true,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            }
+          ],
+          [
+            {
+              "text": "Research synthesis",
+              "options": {
+                "fill": {
+                  "color": "FFF5ED"
+                },
+                "color": "000000",
+                "bold": true,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "Approved corpus\nExplicit review",
+              "options": {
+                "fill": {
+                  "color": "FFF5ED"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "Practice lead",
+              "options": {
+                "fill": {
+                  "color": "FFF5ED"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "START",
+              "options": {
+                "fill": {
+                  "color": "FFF5ED"
+                },
+                "color": "FD5108",
+                "bold": true,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            }
+          ],
+          [
+            {
+              "text": "Proposal drafting",
+              "options": {
+                "fill": {
+                  "color": "F5F7F8"
+                },
+                "color": "000000",
+                "bold": true,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "Claims and commitments\nneed controls",
+              "options": {
+                "fill": {
+                  "color": "F5F7F8"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "BD lead",
+              "options": {
+                "fill": {
+                  "color": "F5F7F8"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "NEXT",
+              "options": {
+                "fill": {
+                  "color": "F5F7F8"
+                },
+                "color": "FD5108",
+                "bold": true,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            }
+          ],
+          [
+            {
+              "text": "Knowledge retrieval",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": true,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "Permissions need\ncleanup",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "Knowledge lead",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "LATER",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "FD5108",
+                "bold": true,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            }
+          ]
+        ],
+        "column_widths_px": [
+          290,
+          360,
+          250,
+          210
+        ],
+        "row_heights_px": [
+          50,
+          68,
+          68,
+          68
+        ]
+      },
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 24,
+        "cell_margin_px": 8,
+        "color": "#000000",
+        "fill": "#FFFFFF",
+        "stroke": "#C6C9CD",
+        "stroke_width_px": 1,
+        "vertical_alignment": "middle"
+      },
+      "component_id": null,
+      "component_reference": null,
+      "z": 5.0
+    },
+    {
+      "id": "headline",
+      "kind": "textbox",
+      "bbox_px": [
+        46,
+        84,
+        1828,
+        76
+      ],
+      "text": "Start where value and control readiness meet",
+      "style": {
+        "font_family": "Georgia",
+        "font_size_px": 64.0,
+        "font_size_pt": 32.0,
+        "font_weight": "regular",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "Start where value and control readiness meet"
+      ],
+      "bullet_style": null,
+      "semantic_role": "slide_title",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "subtitle",
+      "kind": "textbox",
+      "bbox_px": [
+        47,
+        165,
+        1825,
+        48
+      ],
+      "text": "Capacity creates the opportunity. Control readiness sets the sequence.",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 32.0,
+        "font_size_pt": 16.0,
+        "font_weight": "regular",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "Capacity creates the opportunity. Control readiness sets the sequence."
+      ],
+      "bullet_style": null,
+      "semantic_role": "subtitle",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "capacity-heading",
+      "kind": "textbox",
+      "bbox_px": [
+        37,
+        222,
+        680,
+        38
+      ],
+      "text": "ANNUAL CAPACITY POTENTIAL",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 28.0,
+        "font_size_pt": 14.0,
+        "font_weight": "bold",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "ANNUAL CAPACITY POTENTIAL"
+      ],
+      "bullet_style": null,
+      "semantic_role": "heading_large",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "chart-unit",
+      "kind": "textbox",
+      "bbox_px": [
+        37,
+        258,
+        300,
+        28
+      ],
+      "text": "Illustrative hours",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 22.0,
+        "font_size_pt": 11.0,
+        "font_weight": "regular",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "Illustrative hours"
+      ],
+      "bullet_style": null,
+      "semantic_role": "body",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "value-model-heading",
+      "kind": "textbox",
+      "bbox_px": [
+        760,
+        222,
+        1110,
+        38
+      ],
+      "text": "WORKFLOW VALUE MODEL",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 28.0,
+        "font_size_pt": 14.0,
+        "font_weight": "bold",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "WORKFLOW VALUE MODEL"
+      ],
+      "bullet_style": null,
+      "semantic_role": "heading_large",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "capacity-formula",
+      "kind": "textbox",
+      "bbox_px": [
+        790,
+        504,
+        1050,
+        44
+      ],
+      "text": "Annual hours = 900 engagements × baseline h × adoption × time saved",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 24.0,
+        "font_size_pt": 12.0,
+        "font_weight": "bold",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "center",
+        "vertical_alignment": "middle",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "Annual hours = 900 engagements × baseline h × adoption × time saved"
+      ],
+      "bullet_style": null,
+      "semantic_role": "body",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "reason-heading",
+      "kind": "textbox",
+      "bbox_px": [
+        37,
+        640,
+        700,
+        38
+      ],
+      "text": "WHY RESEARCH WINS FIRST",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 28.0,
+        "font_size_pt": 14.0,
+        "font_weight": "bold",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "WHY RESEARCH WINS FIRST"
+      ],
+      "bullet_style": null,
+      "semantic_role": "heading_large",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "reason-file",
+      "kind": "textbox",
+      "bbox_px": [
+        160,
+        679,
+        552,
+        42
+      ],
+      "text": "Frequent, comparable tasks",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 28.0,
+        "font_size_pt": 14.0,
+        "font_weight": "regular",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "Frequent, comparable tasks"
+      ],
+      "bullet_style": null,
+      "semantic_role": "body",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "reason-corpus",
+      "kind": "textbox",
+      "bbox_px": [
+        160,
+        757,
+        552,
+        42
+      ],
+      "text": "A bounded source corpus",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 28.0,
+        "font_size_pt": 14.0,
+        "font_weight": "regular",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "A bounded source corpus"
+      ],
+      "bullet_style": null,
+      "semantic_role": "body",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "reason-reviewer",
+      "kind": "textbox",
+      "bbox_px": [
+        160,
+        835,
+        552,
+        42
+      ],
+      "text": "A named expert reviewer",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 28.0,
+        "font_size_pt": 14.0,
+        "font_weight": "regular",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "A named expert reviewer"
+      ],
+      "bullet_style": null,
+      "semantic_role": "body",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "sequencing-heading",
+      "kind": "textbox",
+      "bbox_px": [
+        760,
+        560,
+        1110,
+        38
+      ],
+      "text": "PILOT SEQUENCING TEST",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 28.0,
+        "font_size_pt": 14.0,
+        "font_weight": "bold",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "PILOT SEQUENCING TEST"
+      ],
+      "bullet_style": null,
+      "semantic_role": "heading_large",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "overlap-note",
+      "kind": "textbox",
+      "bbox_px": [
+        760,
+        864,
+        1100,
+        28
+      ],
+      "text": "Check task overlap before adding workflow benefits.",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 22.0,
+        "font_size_pt": 11.0,
+        "font_weight": "regular",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "Check task overlap before adding workflow benefits."
+      ],
+      "bullet_style": null,
+      "semantic_role": "body",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "decision-label",
+      "kind": "textbox",
+      "bbox_px": [
+        80,
+        917,
+        430,
+        50
+      ],
+      "text": "PILOT BOUNDARY",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 28.0,
+        "font_size_pt": 14.0,
+        "font_weight": "bold",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#FD5108",
+        "alignment": "left",
+        "vertical_alignment": "middle",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "PILOT BOUNDARY"
+      ],
+      "bullet_style": null,
+      "semantic_role": "call_to_action",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "decision-message",
+      "kind": "textbox",
+      "bbox_px": [
+        520,
+        917,
+        1318,
+        50
+      ],
+      "text": "Start with approved-source research synthesis.",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 28.0,
+        "font_size_pt": 14.0,
+        "font_weight": "bold",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "middle",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "Start with approved-source research synthesis."
+      ],
+      "bullet_style": null,
+      "semantic_role": "call_to_action",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "reason-icon-file",
+      "kind": "image",
+      "bbox_px": [
+        56,
+        673,
+        57,
+        57
+      ],
+      "source_path": "/Users/henry/Codes/AI_slide_drafting/examples/consulting-ai-transformation/run/work/icon-cache/file-search/remix-file-search-line.svg",
+      "recolor": "#000000",
+      "recolor_gradient": null,
+      "recolor_mode": "fill_all",
+      "icon_treatment_group": "deck-supporting-icons",
+      "icon_treatment": "black_proxy",
+      "selected_asset_id": "remix-file-search-line",
+      "fit": "contain",
+      "preserve_aspect_ratio": true,
+      "semantic_role": "supporting_visual",
+      "z": 30.0
+    },
+    {
+      "id": "reason-icon-corpus",
+      "kind": "image",
+      "bbox_px": [
+        56,
+        751,
+        57,
+        57
+      ],
+      "source_path": "/Users/henry/Codes/AI_slide_drafting/examples/consulting-ai-transformation/run/work/icon-cache/database-2/remix-database-2-line.svg",
+      "recolor": "#000000",
+      "recolor_gradient": null,
+      "recolor_mode": "fill_all",
+      "icon_treatment_group": "deck-supporting-icons",
+      "icon_treatment": "black_proxy",
+      "selected_asset_id": "remix-database-2-line",
+      "fit": "contain",
+      "preserve_aspect_ratio": true,
+      "semantic_role": "supporting_visual",
+      "z": 30.0
+    },
+    {
+      "id": "reason-icon-reviewer",
+      "kind": "image",
+      "bbox_px": [
+        56,
+        829,
+        57,
+        57
+      ],
+      "source_path": "/Users/henry/Codes/AI_slide_drafting/examples/consulting-ai-transformation/run/work/icon-cache/user-star/remix-user-star-line.svg",
+      "recolor": "#000000",
+      "recolor_gradient": null,
+      "recolor_mode": "fill_all",
+      "icon_treatment_group": "deck-supporting-icons",
+      "icon_treatment": "black_proxy",
+      "selected_asset_id": "remix-user-star-line",
+      "fit": "contain",
+      "preserve_aspect_ratio": true,
+      "semantic_role": "supporting_visual",
+      "z": 30.0
+    }
+  ],
+  "frame": {
+    "header": {
+      "enabled": true,
+      "height_px": 64,
+      "implementation": "slide_master_inherited_content",
+      "left_text": "NORTHSTAR ADVISORY",
+      "right_text": "AI TRANSFORMATION",
+      "font_family": "Arial",
+      "font_size_px": 20,
+      "font_weight": "regular",
+      "text_color": "#666666",
+      "secondary_text_color": "#666666",
+      "rule_color": "#DFE3E6",
+      "rule_width_px": 1,
+      "accent_color": "#FD5108",
+      "accent_rule_width_px": 0,
+      "outer_padding_px": 48
+    },
+    "footer": {
+      "enabled": true,
+      "height_px": 56,
+      "implementation": "slide_master_inherited_content",
+      "left_text": "ILLUSTRATIVE PLANNING ASSUMPTIONS",
+      "center_text": "Capacity value is not a cash saving.",
+      "font_family": "Arial",
+      "font_size_px": 18,
+      "font_weight": "regular",
+      "left_font_weight": "regular",
+      "text_color": "#666666",
+      "secondary_text_color": "#666666",
+      "rule_color": "#DFE3E6",
+      "rule_width_px": 1,
+      "outer_padding_px": 48,
+      "slide_number": {
+        "enabled": true,
+        "implementation": "native_slide_number_field_on_master",
+        "format": "{slide_number}"
+      }
+    },
+    "generation_region": {
+      "derive_from_frame_heights": true
+    },
+    "slide_number": 1
+  },
+  "sources": [
+    "Generated target visual: /Users/henry/Codes/AI_slide_drafting/examples/consulting-ai-transformation/run/slides/s02-opportunities/work/accepted-slide.png",
+    "Canonical asset remix-file-search-line: /Users/henry/Codes/AI_slide_drafting/examples/consulting-ai-transformation/run/work/icon-cache/file-search/remix-file-search-line.svg",
+    "Canonical asset remix-database-2-line: /Users/henry/Codes/AI_slide_drafting/examples/consulting-ai-transformation/run/work/icon-cache/database-2/remix-database-2-line.svg",
+    "Canonical asset remix-user-star-line: /Users/henry/Codes/AI_slide_drafting/examples/consulting-ai-transformation/run/work/icon-cache/user-star/remix-user-star-line.svg"
+  ],
+  "speaker_notes": [
+    "This is an illustrative planning model for fictional Northstar Advisory. Annual capacity assumes 900 engagements. Research uses 900 x 12 baseline hours x 60% adoption x 30% time saved = 1,944 hours. The same formula produces 1,440 proposal hours and 1,080 retrieval hours from the displayed assumptions.",
+    "The three workflow estimates may overlap and cannot be added without checking task boundaries. Capacity released is not a cash saving. Control readiness determines the proposed sequence, and expert review remains required before any client release."
+  ],
+  "compiler_report": {
+    "measured_entity_count": 23,
+    "emitted_object_count": 23,
+    "evidence_objects_emitted": 0,
+    "measurement": {
+      "engine": "OpenCV",
+      "opencv": "5.0.0"
+    },
+    "connector_graph_count": 0,
+    "canonical_asset_count": 3,
+    "text_fitting": {
+      "source": "constructor_text_fit_evidence",
+      "fitted_textbox_count": 14,
+      "quantization_step_pt": 0.5,
+      "all_textboxes_fit_within_allocations": true,
+      "peer_typography_preserved": true,
+      "text_groups": [
+        {
+          "typography_group": "claim-title",
+          "semantic_role": "slide_title",
+          "text_style_role": "slide_title",
+          "member_ids": [
+            "headline"
+          ],
+          "shared_font_size_pt": 32.0,
+          "shared_font_size_px": 64.0,
+          "agent_target_font_size_px": 64.0,
+          "explicit_peer_group": false,
+          "technical_floor_pt": 0.5,
+          "agent_target_ceiling_pt": 32.0,
+          "agent_target_unquantized_pt": 32.0,
+          "quantization_reduction_pt": 0,
+          "reduced_from_agent_target": false,
+          "reduced_for_fit": false,
+          "members_not_fitting_target": [],
+          "font_measurement_sources": {
+            "headline": "/System/Library/Fonts/Supplemental/Georgia.ttf"
+          },
+          "profile_adjustments": {},
+          "overflow_evidence": "no_overflow_detected_by_text_measurement"
+        },
+        {
+          "typography_group": "subtitle",
+          "semantic_role": "subtitle",
+          "text_style_role": "subtitle",
+          "member_ids": [
+            "subtitle"
+          ],
+          "shared_font_size_pt": 16.0,
+          "shared_font_size_px": 32.0,
+          "agent_target_font_size_px": 32.0,
+          "explicit_peer_group": false,
+          "technical_floor_pt": 0.5,
+          "agent_target_ceiling_pt": 16.0,
+          "agent_target_unquantized_pt": 16.0,
+          "quantization_reduction_pt": 0,
+          "reduced_from_agent_target": false,
+          "reduced_for_fit": false,
+          "members_not_fitting_target": [],
+          "font_measurement_sources": {
+            "subtitle": "/System/Library/Fonts/Supplemental/Arial.ttf"
+          },
+          "profile_adjustments": {},
+          "overflow_evidence": "no_overflow_detected_by_text_measurement"
+        },
+        {
+          "typography_group": "section",
+          "semantic_role": "heading_large",
+          "text_style_role": "heading_large",
+          "member_ids": [
+            "capacity-heading",
+            "value-model-heading",
+            "reason-heading",
+            "sequencing-heading"
+          ],
+          "shared_font_size_pt": 14.0,
+          "shared_font_size_px": 28.0,
+          "agent_target_font_size_px": 28.0,
+          "explicit_peer_group": true,
+          "technical_floor_pt": 0.5,
+          "agent_target_ceiling_pt": 14.0,
+          "agent_target_unquantized_pt": 14.0,
+          "quantization_reduction_pt": 0,
+          "reduced_from_agent_target": false,
+          "reduced_for_fit": false,
+          "members_not_fitting_target": [],
+          "font_measurement_sources": {
+            "capacity-heading": "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+            "value-model-heading": "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+            "reason-heading": "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+            "sequencing-heading": "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
+          },
+          "profile_adjustments": {},
+          "overflow_evidence": "no_overflow_detected_by_text_measurement"
+        },
+        {
+          "typography_group": "label",
+          "semantic_role": "body",
+          "text_style_role": "body",
+          "member_ids": [
+            "chart-unit"
+          ],
+          "shared_font_size_pt": 11.0,
+          "shared_font_size_px": 22.0,
+          "agent_target_font_size_px": 22.0,
+          "explicit_peer_group": false,
+          "technical_floor_pt": 0.5,
+          "agent_target_ceiling_pt": 11.0,
+          "agent_target_unquantized_pt": 11.0,
+          "quantization_reduction_pt": 0,
+          "reduced_from_agent_target": false,
+          "reduced_for_fit": false,
+          "members_not_fitting_target": [],
+          "font_measurement_sources": {
+            "chart-unit": "/System/Library/Fonts/Supplemental/Arial.ttf"
+          },
+          "profile_adjustments": {},
+          "overflow_evidence": "no_overflow_detected_by_text_measurement"
+        },
+        {
+          "typography_group": "formula",
+          "semantic_role": "body",
+          "text_style_role": "body",
+          "member_ids": [
+            "capacity-formula"
+          ],
+          "shared_font_size_pt": 12.0,
+          "shared_font_size_px": 24.0,
+          "agent_target_font_size_px": 24.0,
+          "explicit_peer_group": false,
+          "technical_floor_pt": 0.5,
+          "agent_target_ceiling_pt": 12.0,
+          "agent_target_unquantized_pt": 12.0,
+          "quantization_reduction_pt": 0,
+          "reduced_from_agent_target": false,
+          "reduced_for_fit": false,
+          "members_not_fitting_target": [],
+          "font_measurement_sources": {
+            "capacity-formula": "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
+          },
+          "profile_adjustments": {},
+          "overflow_evidence": "no_overflow_detected_by_text_measurement"
+        },
+        {
+          "typography_group": "reason",
+          "semantic_role": "body",
+          "text_style_role": "body",
+          "member_ids": [
+            "reason-file",
+            "reason-corpus",
+            "reason-reviewer"
+          ],
+          "shared_font_size_pt": 14.0,
+          "shared_font_size_px": 28.0,
+          "agent_target_font_size_px": 28.0,
+          "explicit_peer_group": true,
+          "technical_floor_pt": 0.5,
+          "agent_target_ceiling_pt": 14.0,
+          "agent_target_unquantized_pt": 14.0,
+          "quantization_reduction_pt": 0,
+          "reduced_from_agent_target": false,
+          "reduced_for_fit": false,
+          "members_not_fitting_target": [],
+          "font_measurement_sources": {
+            "reason-file": "/System/Library/Fonts/Supplemental/Arial.ttf",
+            "reason-corpus": "/System/Library/Fonts/Supplemental/Arial.ttf",
+            "reason-reviewer": "/System/Library/Fonts/Supplemental/Arial.ttf"
+          },
+          "profile_adjustments": {},
+          "overflow_evidence": "no_overflow_detected_by_text_measurement"
+        },
+        {
+          "typography_group": "note",
+          "semantic_role": "body",
+          "text_style_role": "body",
+          "member_ids": [
+            "overlap-note"
+          ],
+          "shared_font_size_pt": 11.0,
+          "shared_font_size_px": 22.0,
+          "agent_target_font_size_px": 22.0,
+          "explicit_peer_group": false,
+          "technical_floor_pt": 0.5,
+          "agent_target_ceiling_pt": 11.0,
+          "agent_target_unquantized_pt": 11.0,
+          "quantization_reduction_pt": 0,
+          "reduced_from_agent_target": false,
+          "reduced_for_fit": false,
+          "members_not_fitting_target": [],
+          "font_measurement_sources": {
+            "overlap-note": "/System/Library/Fonts/Supplemental/Arial.ttf"
+          },
+          "profile_adjustments": {},
+          "overflow_evidence": "no_overflow_detected_by_text_measurement"
+        },
+        {
+          "typography_group": "decision",
+          "semantic_role": "call_to_action",
+          "text_style_role": "call_to_action",
+          "member_ids": [
+            "decision-label",
+            "decision-message"
+          ],
+          "shared_font_size_pt": 14.0,
+          "shared_font_size_px": 28.0,
+          "agent_target_font_size_px": 28.0,
+          "explicit_peer_group": true,
+          "technical_floor_pt": 0.5,
+          "agent_target_ceiling_pt": 14.0,
+          "agent_target_unquantized_pt": 14.0,
+          "quantization_reduction_pt": 0,
+          "reduced_from_agent_target": false,
+          "reduced_for_fit": false,
+          "members_not_fitting_target": [],
+          "font_measurement_sources": {
+            "decision-label": "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+            "decision-message": "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
+          },
+          "profile_adjustments": {},
+          "overflow_evidence": "no_overflow_detected_by_text_measurement"
+        }
+      ]
+    },
+    "local_geometry_normalization": {
+      "enabled": true,
+      "mode": "agent_authored_only",
+      "adjustment_count": 0,
+      "adjustments": [],
+      "policy": "Exact host-reviewed corrections only. No automatic alignment or programmatic magnitude verdict."
+    },
+    "text_bbox_override_count": 0,
+    "contract_conformance": {
+      "evidence_type": "objective_constructor_contract_consumption",
+      "coordinate_transform": {
+        "scale_xy": [
+          1.0,
+          1.0
+        ],
+        "offset_y_px": 64
+      },
+      "required_counts": {
+        "text_entities": 14,
+        "canonical_assets": 3,
+        "icon_slot_surfaces": 0,
+        "connector_graphs": 0
+      },
+      "emitted_counts": {
+        "text_entities": 14,
+        "canonical_assets": 3,
+        "icon_slot_surfaces": 0,
+        "connector_graphs": 0
+      },
+      "blocking_facts": {},
+      "agent_interpretation_required": true,
+      "note": "No quality or reconstruction verdict is produced. Visual reasoning remains external."
+    },
+    "input_bindings": {
+      "measured_scene_sha256": "1935040957a6d30a38c37870fe6bfb43c64285e1ffccbad70b314313a3575f31",
+      "reconstruction_contract_sha256": "bb18c686adef83771dcd7ce03e2aed47a8be64472bf773f9a75d27a50db87ad6",
+      "resolved_design_sha256": "ee255d93bab18eea1c3d44524732402c57d708a2a01e8270dec54f3fa8c2c88f"
+    }
+  }
+}

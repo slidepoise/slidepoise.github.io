@@ -1,0 +1,55 @@
+{
+  "reviewer": "host_agent_visual_reasoning",
+  "reviewed_on": "2026-09-08",
+  "stage": "assembled_release_deck",
+  "decision": "accepted",
+  "material_issues": [],
+  "reviewed_artifacts": [
+    {
+      "path": "../deliverables/presentation.pptx",
+      "sha256": "13497442c7d6afb9b6d1cf83fa8606604f7ef07aaec2ab92ae5bc589f351c4cf"
+    },
+    {
+      "path": "../preview/contact-sheet.png",
+      "sha256": "034f1319380f55bf967cfc8c4d148a1f9f72b4f52f056872762751c991eb5b92"
+    },
+    {
+      "path": "../preview/rendered-text-evidence.json",
+      "sha256": "60dd12e887709664001dca858ba7c63cc36a5ce65e7659a67bac1a313b21819c"
+    },
+    {
+      "path": "../preview/slide-001.png",
+      "sha256": "8951d297041159db989dc26bd9c05ba6d6601fdad915094b91d59558ef04483e"
+    },
+    {
+      "path": "../preview/slide-002.png",
+      "sha256": "e2db6ea3f7c6b91db29cc85ff113cb05daad1cc4a4e2b9bb8da652dab05a4823"
+    },
+    {
+      "path": "../preview/slide-003.png",
+      "sha256": "71fd8241b80f0b6434328e4453bec7ce5a3bad52e20d5067cdd15219fa2d8661"
+    },
+    {
+      "path": "../preview/slide-004.png",
+      "sha256": "b07eb57728452e7b9b49865f2c5611d6389083db11978aab8ecf60ce9c458b4b"
+    },
+    {
+      "path": "../preview/slide-005.png",
+      "sha256": "680f89b070f101ead97e20972736db753ae93590aa5e2ce548c0bd039ff3d7b8"
+    },
+    {
+      "path": "cross-slide-calibration-review.json",
+      "sha256": "75cbec47ccf1d205d677c5c9c546b4276d7d9d2170d5796220bab5c1b71ef137"
+    }
+  ],
+  "observations": [
+    "I compared all five consulting pages together. Claim titles, subtitles, orange decision labels, pale decision bands and inherited frames have consistent treatments.",
+    "The capacity figures, native tables and chart preserve the intended hierarchy. The narrower sensitivity table uses its own smaller type role. The two return paths and final-gate boundary are now explicit.",
+    "All earlier material and important visual findings were repaired. Local native wrapping and the left-aligned roadmap headers remain documented page differences."
+  ],
+  "editability_limits": [
+    "Workbook-linked chart values update native chart labels. Separate scenario cells and formula text do not recalculate automatically.",
+    "Regeneration resolves named connector owners. Manual Office edits do not automatically reattach the drawn paths.",
+    "The recorded macOS LibreOffice and installed fonts define this review environment. Other fonts and readers can change wrapping."
+  ]
+}

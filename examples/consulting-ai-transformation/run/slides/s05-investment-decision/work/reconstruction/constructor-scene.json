@@ -1,0 +1,2330 @@
+{
+  "schema_version": "1.0.0",
+  "slide_id": "s05-investment-decision",
+  "dimensions_px": [
+    1920,
+    1080
+  ],
+  "background": "#FFFFFF",
+  "design_config_id": null,
+  "objects": [
+    {
+      "id": "introduction-rule",
+      "kind": "shape",
+      "shape": "rectangle",
+      "bbox_px": [
+        46,
+        222,
+        1828,
+        2
+      ],
+      "style": {
+        "fill": "#91969D",
+        "stroke": "none",
+        "stroke_width_px": 0,
+        "style_authority": "agent_visual_observation"
+      },
+      "allow_text_crossing": false,
+      "structural_boundary": false,
+      "z": 1.0
+    },
+    {
+      "id": "capacity-panel",
+      "kind": "shape",
+      "shape": "rectangle",
+      "bbox_px": [
+        46,
+        303,
+        545,
+        320
+      ],
+      "style": {
+        "fill": "#FFF5ED",
+        "stroke": "none",
+        "stroke_width_px": 0,
+        "style_authority": "agent_visual_observation"
+      },
+      "allow_text_crossing": false,
+      "structural_boundary": false,
+      "z": 1.0
+    },
+    {
+      "id": "capacity-divider",
+      "kind": "shape",
+      "shape": "rectangle",
+      "bbox_px": [
+        65,
+        510,
+        490,
+        1
+      ],
+      "style": {
+        "fill": "#C1C4C7",
+        "stroke": "none",
+        "stroke_width_px": 0,
+        "style_authority": "agent_visual_observation"
+      },
+      "allow_text_crossing": false,
+      "structural_boundary": false,
+      "z": 1.0
+    },
+    {
+      "id": "criterion-panel-go",
+      "kind": "shape",
+      "shape": "rectangle",
+      "bbox_px": [
+        46,
+        694,
+        596,
+        150
+      ],
+      "style": {
+        "fill": "#F5F7F8",
+        "stroke": "none",
+        "stroke_width_px": 0,
+        "style_authority": "agent_visual_observation"
+      },
+      "allow_text_crossing": false,
+      "structural_boundary": false,
+      "z": 1.0
+    },
+    {
+      "id": "criterion-panel-hold",
+      "kind": "shape",
+      "shape": "rectangle",
+      "bbox_px": [
+        655,
+        694,
+        596,
+        150
+      ],
+      "style": {
+        "fill": "#F5F7F8",
+        "stroke": "none",
+        "stroke_width_px": 0,
+        "style_authority": "agent_visual_observation"
+      },
+      "allow_text_crossing": false,
+      "structural_boundary": false,
+      "z": 1.0
+    },
+    {
+      "id": "criterion-panel-stop",
+      "kind": "shape",
+      "shape": "rectangle",
+      "bbox_px": [
+        1264,
+        694,
+        596,
+        150
+      ],
+      "style": {
+        "fill": "#F5F7F8",
+        "stroke": "none",
+        "stroke_width_px": 0,
+        "style_authority": "agent_visual_observation"
+      },
+      "allow_text_crossing": false,
+      "structural_boundary": false,
+      "z": 1.0
+    },
+    {
+      "id": "decision-band",
+      "kind": "shape",
+      "shape": "rectangle",
+      "bbox_px": [
+        46,
+        899,
+        1828,
+        93
+      ],
+      "style": {
+        "fill": "#FFF5ED",
+        "stroke": "none",
+        "stroke_width_px": 0,
+        "style_authority": "agent_visual_observation"
+      },
+      "allow_text_crossing": false,
+      "structural_boundary": false,
+      "z": 1.0
+    },
+    {
+      "id": "decision-accent",
+      "kind": "shape",
+      "shape": "rectangle",
+      "bbox_px": [
+        46,
+        899,
+        8,
+        93
+      ],
+      "style": {
+        "fill": "#FD5108",
+        "stroke": "none",
+        "stroke_width_px": 0,
+        "style_authority": "agent_visual_observation"
+      },
+      "allow_text_crossing": false,
+      "structural_boundary": false,
+      "z": 1.0
+    },
+    {
+      "id": "investment-table",
+      "kind": "table",
+      "bbox_px": [
+        620,
+        303,
+        485,
+        272
+      ],
+      "structure": {
+        "rows": [
+          [
+            {
+              "text": "Cost item",
+              "options": {
+                "fill": {
+                  "color": "000000"
+                },
+                "color": "FFFFFF",
+                "bold": true,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "Amount",
+              "options": {
+                "fill": {
+                  "color": "000000"
+                },
+                "color": "FFFFFF",
+                "bold": true,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            }
+          ],
+          [
+            {
+              "text": "Implementation",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "$85k",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            }
+          ],
+          [
+            {
+              "text": "Pilot included",
+              "options": {
+                "fill": {
+                  "color": "F5F7F8"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "$25k",
+              "options": {
+                "fill": {
+                  "color": "F5F7F8"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            }
+          ],
+          [
+            {
+              "text": "Annual operations",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "$30k",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            }
+          ],
+          [
+            {
+              "text": "First-year total",
+              "options": {
+                "fill": {
+                  "color": "FFF5ED"
+                },
+                "color": "000000",
+                "bold": true,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            },
+            {
+              "text": "$115k",
+              "options": {
+                "fill": {
+                  "color": "FFF5ED"
+                },
+                "color": "000000",
+                "bold": true,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                12.0,
+                5.0,
+                12.0
+              ]
+            }
+          ]
+        ],
+        "column_widths_px": [
+          285,
+          200
+        ],
+        "row_heights_px": [
+          52,
+          55,
+          55,
+          55,
+          55
+        ]
+      },
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 24,
+        "cell_margin_px": 8,
+        "color": "#000000",
+        "fill": "#FFFFFF",
+        "stroke": "#C6C9CD",
+        "stroke_width_px": 1,
+        "vertical_alignment": "middle"
+      },
+      "component_id": null,
+      "component_reference": null,
+      "z": 5.0
+    },
+    {
+      "id": "sensitivity-table",
+      "kind": "table",
+      "bbox_px": [
+        1135,
+        303,
+        738,
+        320
+      ],
+      "structure": {
+        "rows": [
+          [
+            {
+              "text": "Scenario",
+              "options": {
+                "fill": {
+                  "color": "000000"
+                },
+                "color": "FFFFFF",
+                "bold": true,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "Adoption",
+              "options": {
+                "fill": {
+                  "color": "000000"
+                },
+                "color": "FFFFFF",
+                "bold": true,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "Time\nsaved",
+              "options": {
+                "fill": {
+                  "color": "000000"
+                },
+                "color": "FFFFFF",
+                "bold": true,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "Annual h",
+              "options": {
+                "fill": {
+                  "color": "000000"
+                },
+                "color": "FFFFFF",
+                "bold": true,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "Annual\ncapacity",
+              "options": {
+                "fill": {
+                  "color": "000000"
+                },
+                "color": "FFFFFF",
+                "bold": true,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "First-year\nvalue",
+              "options": {
+                "fill": {
+                  "color": "000000"
+                },
+                "color": "FFFFFF",
+                "bold": true,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "Net vs\n$115k",
+              "options": {
+                "fill": {
+                  "color": "000000"
+                },
+                "color": "FFFFFF",
+                "bold": true,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            }
+          ],
+          [
+            {
+              "text": "Downside",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": true,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "40%",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "20%",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "864",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "$108k",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "$54k",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "−$61k",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "FD5108",
+                "bold": true,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            }
+          ],
+          [
+            {
+              "text": "Base",
+              "options": {
+                "fill": {
+                  "color": "FFF5ED"
+                },
+                "color": "000000",
+                "bold": true,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "60%",
+              "options": {
+                "fill": {
+                  "color": "FFF5ED"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "30%",
+              "options": {
+                "fill": {
+                  "color": "FFF5ED"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "1,944",
+              "options": {
+                "fill": {
+                  "color": "FFF5ED"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "$243k",
+              "options": {
+                "fill": {
+                  "color": "FFF5ED"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "$121.5k",
+              "options": {
+                "fill": {
+                  "color": "FFF5ED"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "+$6.5k",
+              "options": {
+                "fill": {
+                  "color": "FFF5ED"
+                },
+                "color": "FD5108",
+                "bold": true,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            }
+          ],
+          [
+            {
+              "text": "Upside",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": true,
+                "align": "left"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "75%",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "40%",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "3,240",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "$405k",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "$202.5k",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "000000",
+                "bold": false,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            },
+            {
+              "text": "+$87.5k",
+              "options": {
+                "fill": {
+                  "color": "FFFFFF"
+                },
+                "color": "FD5108",
+                "bold": true,
+                "align": "center"
+              },
+              "margin_px": [
+                5.0,
+                7.0,
+                5.0,
+                7.0
+              ]
+            }
+          ]
+        ],
+        "column_widths_px": [
+          124,
+          112,
+          98,
+          92,
+          105,
+          108,
+          99
+        ],
+        "row_heights_px": [
+          88,
+          77,
+          77,
+          78
+        ]
+      },
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 20,
+        "cell_margin_px": 8,
+        "color": "#000000",
+        "fill": "#FFFFFF",
+        "stroke": "#C6C9CD",
+        "stroke_width_px": 1,
+        "vertical_alignment": "middle"
+      },
+      "component_id": null,
+      "component_reference": null,
+      "z": 5.0
+    },
+    {
+      "id": "headline",
+      "kind": "textbox",
+      "bbox_px": [
+        46,
+        84,
+        1828,
+        76
+      ],
+      "text": "Release the next investment against evidence",
+      "style": {
+        "font_family": "Georgia",
+        "font_size_px": 64.0,
+        "font_size_pt": 32.0,
+        "font_weight": "regular",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "Release the next investment against evidence"
+      ],
+      "bullet_style": null,
+      "semantic_role": "slide_title",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "subtitle",
+      "kind": "textbox",
+      "bbox_px": [
+        47,
+        165,
+        1825,
+        48
+      ],
+      "text": "Use the full first-year cost, a realistic ramp and explicit go/no-go tests.",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 32.0,
+        "font_size_pt": 16.0,
+        "font_weight": "regular",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "Use the full first-year cost, a realistic ramp and explicit go/no-go tests."
+      ],
+      "bullet_style": null,
+      "semantic_role": "subtitle",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "capacity-heading",
+      "kind": "textbox",
+      "bbox_px": [
+        46,
+        259,
+        545,
+        38
+      ],
+      "text": "BASE-CASE CAPACITY MODEL",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 28.0,
+        "font_size_pt": 14.0,
+        "font_weight": "bold",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "BASE-CASE CAPACITY MODEL"
+      ],
+      "bullet_style": null,
+      "semantic_role": "heading_large",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "capacity-equation",
+      "kind": "textbox",
+      "bbox_px": [
+        64,
+        322,
+        505,
+        115
+      ],
+      "text": "900 × 12 h × 60% × 30%\n= 1,944 h",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 43.0,
+        "font_size_pt": 21.5,
+        "font_weight": "bold",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#FD5108",
+        "alignment": "center",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "900 × 12 h × 60% × 30%",
+        "= 1,944 h"
+      ],
+      "bullet_style": null,
+      "semantic_role": "large_data_number",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "capacity-value",
+      "kind": "textbox",
+      "bbox_px": [
+        65,
+        534,
+        270,
+        44
+      ],
+      "text": "1,944 h × $125/h =",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 28.0,
+        "font_size_pt": 14.0,
+        "font_weight": "regular",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "1,944 h × $125/h ="
+      ],
+      "bullet_style": null,
+      "semantic_role": "body",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "capacity-value-number",
+      "kind": "textbox",
+      "bbox_px": [
+        330,
+        520,
+        220,
+        60
+      ],
+      "text": "$243k",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 53.0,
+        "font_size_pt": 26.5,
+        "font_weight": "bold",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#FD5108",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "$243k"
+      ],
+      "bullet_style": null,
+      "semantic_role": "large_data_number",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "capacity-caption",
+      "kind": "textbox",
+      "bbox_px": [
+        65,
+        584,
+        470,
+        34
+      ],
+      "text": "annual capacity equivalent",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 26.0,
+        "font_size_pt": 13.0,
+        "font_weight": "regular",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "annual capacity equivalent"
+      ],
+      "bullet_style": null,
+      "semantic_role": "body",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "investment-heading",
+      "kind": "textbox",
+      "bbox_px": [
+        620,
+        259,
+        485,
+        38
+      ],
+      "text": "INVESTMENT",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 28.0,
+        "font_size_pt": 14.0,
+        "font_weight": "bold",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "INVESTMENT"
+      ],
+      "bullet_style": null,
+      "semantic_role": "heading_large",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "investment-note",
+      "kind": "textbox",
+      "bbox_px": [
+        620,
+        584,
+        485,
+        36
+      ],
+      "text": "Remaining implementation after the pilot $60k.",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 22.0,
+        "font_size_pt": 11.0,
+        "font_weight": "regular",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "Remaining implementation after the pilot $60k."
+      ],
+      "bullet_style": null,
+      "semantic_role": "body",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "sensitivity-heading",
+      "kind": "textbox",
+      "bbox_px": [
+        1135,
+        259,
+        738,
+        38
+      ],
+      "text": "FIRST-YEAR SENSITIVITY · 50% RAMP",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 28.0,
+        "font_size_pt": 14.0,
+        "font_weight": "bold",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "FIRST-YEAR SENSITIVITY · 50% RAMP"
+      ],
+      "bullet_style": null,
+      "semantic_role": "heading_large",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "criteria-heading",
+      "kind": "textbox",
+      "bbox_px": [
+        46,
+        654,
+        900,
+        36
+      ],
+      "text": "DECISION CRITERIA",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 28.0,
+        "font_size_pt": 14.0,
+        "font_weight": "bold",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "DECISION CRITERIA"
+      ],
+      "bullet_style": null,
+      "semantic_role": "heading_large",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "criterion-label-go",
+      "kind": "textbox",
+      "bbox_px": [
+        216,
+        716,
+        180,
+        40
+      ],
+      "text": "GO",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 28.0,
+        "font_size_pt": 14.0,
+        "font_weight": "bold",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#FD5108",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "GO"
+      ],
+      "bullet_style": null,
+      "semantic_role": "heading_large",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "criterion-body-go",
+      "kind": "textbox",
+      "bbox_px": [
+        216,
+        762,
+        390,
+        65
+      ],
+      "text": "All four gates hold.\nPractice lead owns rollout.",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 24.0,
+        "font_size_pt": 12.0,
+        "font_weight": "regular",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.15,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "All four gates hold.",
+        "Practice lead owns rollout."
+      ],
+      "bullet_style": null,
+      "semantic_role": "body",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "criterion-label-hold",
+      "kind": "textbox",
+      "bbox_px": [
+        825,
+        716,
+        180,
+        40
+      ],
+      "text": "HOLD",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 28.0,
+        "font_size_pt": 14.0,
+        "font_weight": "bold",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#FD5108",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "HOLD"
+      ],
+      "bullet_style": null,
+      "semantic_role": "heading_large",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "criterion-body-hold",
+      "kind": "textbox",
+      "bbox_px": [
+        825,
+        762,
+        390,
+        65
+      ],
+      "text": "Evidence or usage is weak.\nExtend within an agreed cap.",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 24.0,
+        "font_size_pt": 12.0,
+        "font_weight": "regular",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.15,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "Evidence or usage is weak.",
+        "Extend within an agreed cap."
+      ],
+      "bullet_style": null,
+      "semantic_role": "body",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "criterion-label-stop",
+      "kind": "textbox",
+      "bbox_px": [
+        1434,
+        716,
+        180,
+        40
+      ],
+      "text": "STOP",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 28.0,
+        "font_size_pt": 14.0,
+        "font_weight": "bold",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#FD5108",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "STOP"
+      ],
+      "bullet_style": null,
+      "semantic_role": "heading_large",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "criterion-body-stop",
+      "kind": "textbox",
+      "bbox_px": [
+        1434,
+        762,
+        390,
+        65
+      ],
+      "text": "A critical data control fails.\nSuspend use and close the issue.",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 24.0,
+        "font_size_pt": 12.0,
+        "font_weight": "regular",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.15,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "A critical data control fails.",
+        "Suspend use and close the issue."
+      ],
+      "bullet_style": null,
+      "semantic_role": "body",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "decision-label",
+      "kind": "textbox",
+      "bbox_px": [
+        80,
+        917,
+        430,
+        50
+      ],
+      "text": "APPROVE $25k NOW",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 28.0,
+        "font_size_pt": 14.0,
+        "font_weight": "bold",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#FD5108",
+        "alignment": "left",
+        "vertical_alignment": "middle",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "APPROVE $25k NOW"
+      ],
+      "bullet_style": null,
+      "semantic_role": "call_to_action",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "decision-message",
+      "kind": "textbox",
+      "bbox_px": [
+        520,
+        917,
+        1318,
+        50
+      ],
+      "text": "Release the remaining $60k only after the week-12 gate.",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 28.0,
+        "font_size_pt": 14.0,
+        "font_weight": "bold",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "left",
+        "vertical_alignment": "middle",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "Release the remaining $60k only after the week-12 gate."
+      ],
+      "bullet_style": null,
+      "semantic_role": "call_to_action",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "factor-engagements",
+      "kind": "textbox",
+      "bbox_px": [
+        64,
+        439,
+        120,
+        68
+      ],
+      "text": "Engagements",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 18.0,
+        "font_size_pt": 9.0,
+        "font_weight": "regular",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "center",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "Engagements"
+      ],
+      "bullet_style": null,
+      "semantic_role": "body",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "factor-research",
+      "kind": "textbox",
+      "bbox_px": [
+        202,
+        439,
+        114,
+        68
+      ],
+      "text": "Research\ntime",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 18.0,
+        "font_size_pt": 9.0,
+        "font_weight": "regular",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "center",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "Research",
+        "time"
+      ],
+      "bullet_style": null,
+      "semantic_role": "body",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "factor-adoption",
+      "kind": "textbox",
+      "bbox_px": [
+        337,
+        439,
+        110,
+        68
+      ],
+      "text": "Adoption",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 18.0,
+        "font_size_pt": 9.0,
+        "font_weight": "regular",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "center",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "Adoption"
+      ],
+      "bullet_style": null,
+      "semantic_role": "body",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "factor-saved",
+      "kind": "textbox",
+      "bbox_px": [
+        462,
+        439,
+        115,
+        68
+      ],
+      "text": "Time saved",
+      "style": {
+        "font_family": "Arial",
+        "font_size_px": 18.0,
+        "font_size_pt": 9.0,
+        "font_weight": "regular",
+        "italic": false,
+        "char_spacing_px": 0.0,
+        "color": "#000000",
+        "alignment": "center",
+        "vertical_alignment": "top",
+        "margins_px": [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        "line_spacing_multiple": 1.0,
+        "paragraph_spacing_px": 0,
+        "autofit": "none",
+        "outer_geometry_is_fixed": true
+      },
+      "paragraphs": [
+        "Time saved"
+      ],
+      "bullet_style": null,
+      "semantic_role": "body",
+      "parent_id": null,
+      "allow_boundary_crossing": false,
+      "z": 20.0
+    },
+    {
+      "id": "criterion-icon-go",
+      "kind": "image",
+      "bbox_px": [
+        81,
+        715,
+        118,
+        118
+      ],
+      "source_path": "/Users/henry/Codes/AI_slide_drafting/examples/consulting-ai-transformation/run/work/icon-cache/play-circle/remix-play-circle-line.svg",
+      "recolor": "#000000",
+      "recolor_gradient": null,
+      "recolor_mode": "fill_all",
+      "icon_treatment_group": "decision-criteria-icons",
+      "icon_treatment": "black_proxy",
+      "selected_asset_id": "remix-play-circle-line",
+      "fit": "contain",
+      "preserve_aspect_ratio": true,
+      "semantic_role": "supporting_visual",
+      "z": 30.0
+    },
+    {
+      "id": "criterion-icon-hold",
+      "kind": "image",
+      "bbox_px": [
+        690,
+        715,
+        118,
+        118
+      ],
+      "source_path": "/Users/henry/Codes/AI_slide_drafting/examples/consulting-ai-transformation/run/work/icon-cache/pause-circle/remix-pause-circle-line.svg",
+      "recolor": "#000000",
+      "recolor_gradient": null,
+      "recolor_mode": "fill_all",
+      "icon_treatment_group": "decision-criteria-icons",
+      "icon_treatment": "black_proxy",
+      "selected_asset_id": "remix-pause-circle-line",
+      "fit": "contain",
+      "preserve_aspect_ratio": true,
+      "semantic_role": "supporting_visual",
+      "z": 30.0
+    },
+    {
+      "id": "criterion-icon-stop",
+      "kind": "image",
+      "bbox_px": [
+        1299,
+        715,
+        118,
+        118
+      ],
+      "source_path": "/Users/henry/Codes/AI_slide_drafting/examples/consulting-ai-transformation/run/work/icon-cache/stop-circle/remix-stop-circle-line.svg",
+      "recolor": "#000000",
+      "recolor_gradient": null,
+      "recolor_mode": "fill_all",
+      "icon_treatment_group": "decision-criteria-icons",
+      "icon_treatment": "black_proxy",
+      "selected_asset_id": "remix-stop-circle-line",
+      "fit": "contain",
+      "preserve_aspect_ratio": true,
+      "semantic_role": "supporting_visual",
+      "z": 30.0
+    }
+  ],
+  "frame": {
+    "header": {
+      "enabled": true,
+      "height_px": 64,
+      "implementation": "slide_master_inherited_content",
+      "left_text": "NORTHSTAR ADVISORY",
+      "right_text": "AI TRANSFORMATION",
+      "font_family": "Arial",
+      "font_size_px": 20,
+      "font_weight": "regular",
+      "text_color": "#666666",
+      "secondary_text_color": "#666666",
+      "rule_color": "#DFE3E6",
+      "rule_width_px": 1,
+      "accent_color": "#FD5108",
+      "accent_rule_width_px": 0,
+      "outer_padding_px": 48
+    },
+    "footer": {
+      "enabled": true,
+      "height_px": 56,
+      "implementation": "slide_master_inherited_content",
+      "left_text": "ILLUSTRATIVE PLANNING ASSUMPTIONS",
+      "center_text": "Capacity value is not a cash saving.",
+      "font_family": "Arial",
+      "font_size_px": 18,
+      "font_weight": "regular",
+      "left_font_weight": "regular",
+      "text_color": "#666666",
+      "secondary_text_color": "#666666",
+      "rule_color": "#DFE3E6",
+      "rule_width_px": 1,
+      "outer_padding_px": 48,
+      "slide_number": {
+        "enabled": true,
+        "implementation": "native_slide_number_field_on_master",
+        "format": "{slide_number}"
+      }
+    },
+    "generation_region": {
+      "derive_from_frame_heights": true
+    },
+    "slide_number": 1
+  },
+  "sources": [
+    "Generated target visual: /Users/henry/Codes/AI_slide_drafting/examples/consulting-ai-transformation/run/slides/s05-investment-decision/work/accepted-slide.png",
+    "Canonical asset remix-play-circle-line: /Users/henry/Codes/AI_slide_drafting/examples/consulting-ai-transformation/run/work/icon-cache/play-circle/remix-play-circle-line.svg",
+    "Canonical asset remix-pause-circle-line: /Users/henry/Codes/AI_slide_drafting/examples/consulting-ai-transformation/run/work/icon-cache/pause-circle/remix-pause-circle-line.svg",
+    "Canonical asset remix-stop-circle-line: /Users/henry/Codes/AI_slide_drafting/examples/consulting-ai-transformation/run/work/icon-cache/stop-circle/remix-stop-circle-line.svg"
+  ],
+  "compiler_report": {
+    "measured_entity_count": 36,
+    "emitted_object_count": 36,
+    "evidence_objects_emitted": 0,
+    "measurement": {
+      "engine": "OpenCV",
+      "opencv": "5.0.0"
+    },
+    "connector_graph_count": 0,
+    "canonical_asset_count": 3,
+    "text_fitting": {
+      "source": "constructor_text_fit_evidence",
+      "fitted_textbox_count": 23,
+      "quantization_step_pt": 0.5,
+      "all_textboxes_fit_within_allocations": true,
+      "peer_typography_preserved": true,
+      "text_groups": [
+        {
+          "typography_group": "claim-title",
+          "semantic_role": "slide_title",
+          "text_style_role": "slide_title",
+          "member_ids": [
+            "headline"
+          ],
+          "shared_font_size_pt": 32.0,
+          "shared_font_size_px": 64.0,
+          "agent_target_font_size_px": 64.0,
+          "explicit_peer_group": false,
+          "technical_floor_pt": 0.5,
+          "agent_target_ceiling_pt": 32.0,
+          "agent_target_unquantized_pt": 32.0,
+          "quantization_reduction_pt": 0,
+          "reduced_from_agent_target": false,
+          "reduced_for_fit": false,
+          "members_not_fitting_target": [],
+          "font_measurement_sources": {
+            "headline": "/System/Library/Fonts/Supplemental/Georgia.ttf"
+          },
+          "profile_adjustments": {},
+          "overflow_evidence": "no_overflow_detected_by_text_measurement"
+        },
+        {
+          "typography_group": "subtitle",
+          "semantic_role": "subtitle",
+          "text_style_role": "subtitle",
+          "member_ids": [
+            "subtitle"
+          ],
+          "shared_font_size_pt": 16.0,
+          "shared_font_size_px": 32.0,
+          "agent_target_font_size_px": 32.0,
+          "explicit_peer_group": false,
+          "technical_floor_pt": 0.5,
+          "agent_target_ceiling_pt": 16.0,
+          "agent_target_unquantized_pt": 16.0,
+          "quantization_reduction_pt": 0,
+          "reduced_from_agent_target": false,
+          "reduced_for_fit": false,
+          "members_not_fitting_target": [],
+          "font_measurement_sources": {
+            "subtitle": "/System/Library/Fonts/Supplemental/Arial.ttf"
+          },
+          "profile_adjustments": {},
+          "overflow_evidence": "no_overflow_detected_by_text_measurement"
+        },
+        {
+          "typography_group": "section",
+          "semantic_role": "heading_large",
+          "text_style_role": "heading_large",
+          "member_ids": [
+            "capacity-heading",
+            "investment-heading",
+            "sensitivity-heading",
+            "criteria-heading"
+          ],
+          "shared_font_size_pt": 14.0,
+          "shared_font_size_px": 28.0,
+          "agent_target_font_size_px": 28.0,
+          "explicit_peer_group": true,
+          "technical_floor_pt": 0.5,
+          "agent_target_ceiling_pt": 14.0,
+          "agent_target_unquantized_pt": 14.0,
+          "quantization_reduction_pt": 0,
+          "reduced_from_agent_target": false,
+          "reduced_for_fit": false,
+          "members_not_fitting_target": [],
+          "font_measurement_sources": {
+            "capacity-heading": "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+            "investment-heading": "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+            "sensitivity-heading": "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+            "criteria-heading": "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
+          },
+          "profile_adjustments": {},
+          "overflow_evidence": "no_overflow_detected_by_text_measurement"
+        },
+        {
+          "typography_group": "equation",
+          "semantic_role": "large_data_number",
+          "text_style_role": "large_data_number",
+          "member_ids": [
+            "capacity-equation"
+          ],
+          "shared_font_size_pt": 21.5,
+          "shared_font_size_px": 43.0,
+          "agent_target_font_size_px": 43.0,
+          "explicit_peer_group": false,
+          "technical_floor_pt": 0.5,
+          "agent_target_ceiling_pt": 21.5,
+          "agent_target_unquantized_pt": 21.5,
+          "quantization_reduction_pt": 0,
+          "reduced_from_agent_target": false,
+          "reduced_for_fit": false,
+          "members_not_fitting_target": [],
+          "font_measurement_sources": {
+            "capacity-equation": "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
+          },
+          "profile_adjustments": {},
+          "overflow_evidence": "no_overflow_detected_by_text_measurement"
+        },
+        {
+          "typography_group": "calculation",
+          "semantic_role": "body",
+          "text_style_role": "body",
+          "member_ids": [
+            "capacity-value"
+          ],
+          "shared_font_size_pt": 14.0,
+          "shared_font_size_px": 28.0,
+          "agent_target_font_size_px": 28.0,
+          "explicit_peer_group": false,
+          "technical_floor_pt": 0.5,
+          "agent_target_ceiling_pt": 14.0,
+          "agent_target_unquantized_pt": 14.0,
+          "quantization_reduction_pt": 0,
+          "reduced_from_agent_target": false,
+          "reduced_for_fit": false,
+          "members_not_fitting_target": [],
+          "font_measurement_sources": {
+            "capacity-value": "/System/Library/Fonts/Supplemental/Arial.ttf"
+          },
+          "profile_adjustments": {},
+          "overflow_evidence": "no_overflow_detected_by_text_measurement"
+        },
+        {
+          "typography_group": "display-data",
+          "semantic_role": "large_data_number",
+          "text_style_role": "large_data_number",
+          "member_ids": [
+            "capacity-value-number"
+          ],
+          "shared_font_size_pt": 26.5,
+          "shared_font_size_px": 53.0,
+          "agent_target_font_size_px": 54.0,
+          "explicit_peer_group": false,
+          "technical_floor_pt": 0.5,
+          "agent_target_ceiling_pt": 27.0,
+          "agent_target_unquantized_pt": 27.0,
+          "quantization_reduction_pt": 0,
+          "reduced_from_agent_target": true,
+          "reduced_for_fit": true,
+          "members_not_fitting_target": [
+            "capacity-value-number"
+          ],
+          "font_measurement_sources": {
+            "capacity-value-number": "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
+          },
+          "profile_adjustments": {},
+          "overflow_evidence": "no_overflow_detected_by_text_measurement"
+        },
+        {
+          "typography_group": "caption",
+          "semantic_role": "body",
+          "text_style_role": "body",
+          "member_ids": [
+            "capacity-caption"
+          ],
+          "shared_font_size_pt": 13.0,
+          "shared_font_size_px": 26.0,
+          "agent_target_font_size_px": 26.0,
+          "explicit_peer_group": false,
+          "technical_floor_pt": 0.5,
+          "agent_target_ceiling_pt": 13.0,
+          "agent_target_unquantized_pt": 13.0,
+          "quantization_reduction_pt": 0,
+          "reduced_from_agent_target": false,
+          "reduced_for_fit": false,
+          "members_not_fitting_target": [],
+          "font_measurement_sources": {
+            "capacity-caption": "/System/Library/Fonts/Supplemental/Arial.ttf"
+          },
+          "profile_adjustments": {},
+          "overflow_evidence": "no_overflow_detected_by_text_measurement"
+        },
+        {
+          "typography_group": "note",
+          "semantic_role": "body",
+          "text_style_role": "body",
+          "member_ids": [
+            "investment-note"
+          ],
+          "shared_font_size_pt": 11.0,
+          "shared_font_size_px": 22.0,
+          "agent_target_font_size_px": 22.0,
+          "explicit_peer_group": false,
+          "technical_floor_pt": 0.5,
+          "agent_target_ceiling_pt": 11.0,
+          "agent_target_unquantized_pt": 11.0,
+          "quantization_reduction_pt": 0,
+          "reduced_from_agent_target": false,
+          "reduced_for_fit": false,
+          "members_not_fitting_target": [],
+          "font_measurement_sources": {
+            "investment-note": "/System/Library/Fonts/Supplemental/Arial.ttf"
+          },
+          "profile_adjustments": {},
+          "overflow_evidence": "no_overflow_detected_by_text_measurement"
+        },
+        {
+          "typography_group": "criteria-labels",
+          "semantic_role": "heading_large",
+          "text_style_role": "heading_large",
+          "member_ids": [
+            "criterion-label-go",
+            "criterion-label-hold",
+            "criterion-label-stop"
+          ],
+          "shared_font_size_pt": 14.0,
+          "shared_font_size_px": 28.0,
+          "agent_target_font_size_px": 28.0,
+          "explicit_peer_group": true,
+          "technical_floor_pt": 0.5,
+          "agent_target_ceiling_pt": 14.0,
+          "agent_target_unquantized_pt": 14.0,
+          "quantization_reduction_pt": 0,
+          "reduced_from_agent_target": false,
+          "reduced_for_fit": false,
+          "members_not_fitting_target": [],
+          "font_measurement_sources": {
+            "criterion-label-go": "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+            "criterion-label-hold": "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+            "criterion-label-stop": "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
+          },
+          "profile_adjustments": {},
+          "overflow_evidence": "no_overflow_detected_by_text_measurement"
+        },
+        {
+          "typography_group": "criteria-body",
+          "semantic_role": "body",
+          "text_style_role": "body",
+          "member_ids": [
+            "criterion-body-go",
+            "criterion-body-hold",
+            "criterion-body-stop"
+          ],
+          "shared_font_size_pt": 12.0,
+          "shared_font_size_px": 24.0,
+          "agent_target_font_size_px": 26.0,
+          "explicit_peer_group": true,
+          "technical_floor_pt": 0.5,
+          "agent_target_ceiling_pt": 13.0,
+          "agent_target_unquantized_pt": 13.0,
+          "quantization_reduction_pt": 0,
+          "reduced_from_agent_target": true,
+          "reduced_for_fit": true,
+          "members_not_fitting_target": [
+            "criterion-body-go",
+            "criterion-body-hold",
+            "criterion-body-stop"
+          ],
+          "font_measurement_sources": {
+            "criterion-body-go": "/System/Library/Fonts/Supplemental/Arial.ttf",
+            "criterion-body-hold": "/System/Library/Fonts/Supplemental/Arial.ttf",
+            "criterion-body-stop": "/System/Library/Fonts/Supplemental/Arial.ttf"
+          },
+          "profile_adjustments": {},
+          "overflow_evidence": "no_overflow_detected_by_text_measurement"
+        },
+        {
+          "typography_group": "decision",
+          "semantic_role": "call_to_action",
+          "text_style_role": "call_to_action",
+          "member_ids": [
+            "decision-label",
+            "decision-message"
+          ],
+          "shared_font_size_pt": 14.0,
+          "shared_font_size_px": 28.0,
+          "agent_target_font_size_px": 28.0,
+          "explicit_peer_group": true,
+          "technical_floor_pt": 0.5,
+          "agent_target_ceiling_pt": 14.0,
+          "agent_target_unquantized_pt": 14.0,
+          "quantization_reduction_pt": 0,
+          "reduced_from_agent_target": false,
+          "reduced_for_fit": false,
+          "members_not_fitting_target": [],
+          "font_measurement_sources": {
+            "decision-label": "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+            "decision-message": "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
+          },
+          "profile_adjustments": {},
+          "overflow_evidence": "no_overflow_detected_by_text_measurement"
+        },
+        {
+          "typography_group": "labels",
+          "semantic_role": "body",
+          "text_style_role": "body",
+          "member_ids": [
+            "factor-engagements",
+            "factor-research",
+            "factor-adoption",
+            "factor-saved"
+          ],
+          "shared_font_size_pt": 9.0,
+          "shared_font_size_px": 18.0,
+          "agent_target_font_size_px": 20.0,
+          "explicit_peer_group": true,
+          "technical_floor_pt": 0.5,
+          "agent_target_ceiling_pt": 10.0,
+          "agent_target_unquantized_pt": 10.0,
+          "quantization_reduction_pt": 0,
+          "reduced_from_agent_target": true,
+          "reduced_for_fit": true,
+          "members_not_fitting_target": [
+            "factor-engagements"
+          ],
+          "font_measurement_sources": {
+            "factor-engagements": "/System/Library/Fonts/Supplemental/Arial.ttf",
+            "factor-research": "/System/Library/Fonts/Supplemental/Arial.ttf",
+            "factor-adoption": "/System/Library/Fonts/Supplemental/Arial.ttf",
+            "factor-saved": "/System/Library/Fonts/Supplemental/Arial.ttf"
+          },
+          "profile_adjustments": {},
+          "overflow_evidence": "no_overflow_detected_by_text_measurement"
+        }
+      ]
+    },
+    "local_geometry_normalization": {
+      "enabled": true,
+      "mode": "agent_authored_only",
+      "adjustment_count": 0,
+      "adjustments": [],
+      "policy": "Exact host-reviewed corrections only. No automatic alignment or programmatic magnitude verdict."
+    },
+    "text_bbox_override_count": 0,
+    "contract_conformance": {
+      "evidence_type": "objective_constructor_contract_consumption",
+      "coordinate_transform": {
+        "scale_xy": [
+          1.0,
+          1.0
+        ],
+        "offset_y_px": 64
+      },
+      "required_counts": {
+        "text_entities": 23,
+        "canonical_assets": 3,
+        "icon_slot_surfaces": 0,
+        "connector_graphs": 0
+      },
+      "emitted_counts": {
+        "text_entities": 23,
+        "canonical_assets": 3,
+        "icon_slot_surfaces": 0,
+        "connector_graphs": 0
+      },
+      "blocking_facts": {},
+      "agent_interpretation_required": true,
+      "note": "No quality or reconstruction verdict is produced. Visual reasoning remains external."
+    },
+    "input_bindings": {
+      "measured_scene_sha256": "d4b15b600f44fd927caa3890960380a22283c0c2d9e79534495cf15538e72879",
+      "reconstruction_contract_sha256": "bd97af658de76d2f7a50d96c0d782da208caf1436d601fbaa11a211c638d8bb1",
+      "resolved_design_sha256": "ee255d93bab18eea1c3d44524732402c57d708a2a01e8270dec54f3fa8c2c88f"
+    }
+  }
+}

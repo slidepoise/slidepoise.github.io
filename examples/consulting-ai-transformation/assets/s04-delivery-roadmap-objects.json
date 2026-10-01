@@ -1,0 +1,1132 @@
+{
+  "schema_version": 1,
+  "slide_id": "s04-delivery-roadmap",
+  "page_number": 4,
+  "size": {
+    "width": 12192000,
+    "height": 6858000,
+    "unit": "emu"
+  },
+  "source": {
+    "pptx": {
+      "path": "deliverables/presentation.pptx",
+      "sha256": "13497442c7d6afb9b6d1cf83fa8606604f7ef07aaec2ab92ae5bc589f351c4cf"
+    },
+    "render": {
+      "path": "assets/s04-delivery-roadmap-render.png",
+      "sha256": "b07eb57728452e7b9b49865f2c5611d6389083db11978aab8ecf60ce9c458b4b"
+    }
+  },
+  "objects": [
+    {
+      "id": "p4-object-1",
+      "native_id": "2",
+      "name": "dependency-divider",
+      "label": "Dependency divider",
+      "kind": "shape",
+      "polygon": [
+        [
+          0.690104167,
+          0.62962963
+        ],
+        [
+          0.690625,
+          0.62962963
+        ],
+        [
+          0.690625,
+          0.803703704
+        ],
+        [
+          0.690104167,
+          0.803703704
+        ]
+      ],
+      "stack": 0
+    },
+    {
+      "id": "p4-object-2",
+      "native_id": "3",
+      "name": "dependency-line",
+      "label": "Dependency line",
+      "kind": "shape",
+      "polygon": [
+        [
+          0.729166667,
+          0.684259259
+        ],
+        [
+          0.73125,
+          0.684259259
+        ],
+        [
+          0.73125,
+          0.776851852
+        ],
+        [
+          0.729166667,
+          0.776851852
+        ]
+      ],
+      "stack": 1
+    },
+    {
+      "id": "p4-object-3",
+      "native_id": "4",
+      "name": "decision-band",
+      "label": "Decision band",
+      "kind": "shape",
+      "polygon": [
+        [
+          0.023958333,
+          0.832407407
+        ],
+        [
+          0.976041667,
+          0.832407407
+        ],
+        [
+          0.976041667,
+          0.918518519
+        ],
+        [
+          0.023958333,
+          0.918518519
+        ]
+      ],
+      "stack": 2
+    },
+    {
+      "id": "p4-object-4",
+      "native_id": "5",
+      "name": "decision-accent",
+      "label": "Decision accent",
+      "kind": "shape",
+      "polygon": [
+        [
+          0.023958333,
+          0.832407407
+        ],
+        [
+          0.028125,
+          0.832407407
+        ],
+        [
+          0.028125,
+          0.918518519
+        ],
+        [
+          0.023958333,
+          0.918518519
+        ]
+      ],
+      "stack": 3
+    },
+    {
+      "id": "p4-object-5",
+      "native_id": "6",
+      "name": "dependency-node-1",
+      "label": "Dependency node 1",
+      "kind": "shape",
+      "polygon": [
+        [
+          0.724479167,
+          0.675925926
+        ],
+        [
+          0.7359375,
+          0.675925926
+        ],
+        [
+          0.7359375,
+          0.696296296
+        ],
+        [
+          0.724479167,
+          0.696296296
+        ]
+      ],
+      "stack": 4
+    },
+    {
+      "id": "p4-object-6",
+      "native_id": "7",
+      "name": "dependency-node-2",
+      "label": "Dependency node 2",
+      "kind": "shape",
+      "polygon": [
+        [
+          0.724479167,
+          0.722222222
+        ],
+        [
+          0.7359375,
+          0.722222222
+        ],
+        [
+          0.7359375,
+          0.742592593
+        ],
+        [
+          0.724479167,
+          0.742592593
+        ]
+      ],
+      "stack": 5
+    },
+    {
+      "id": "p4-object-7",
+      "native_id": "8",
+      "name": "dependency-node-3",
+      "label": "Dependency node 3",
+      "kind": "shape",
+      "polygon": [
+        [
+          0.724479167,
+          0.768518519
+        ],
+        [
+          0.7359375,
+          0.768518519
+        ],
+        [
+          0.7359375,
+          0.788888889
+        ],
+        [
+          0.724479167,
+          0.788888889
+        ]
+      ],
+      "stack": 6
+    },
+    {
+      "id": "p4-object-8",
+      "native_id": "9",
+      "name": "roadmap-matrix",
+      "label": "Roadmap matrix",
+      "kind": "table",
+      "polygon": [
+        [
+          0.022395833,
+          0.212962963
+        ],
+        [
+          0.975520833,
+          0.212962963
+        ],
+        [
+          0.975520833,
+          0.612962963
+        ],
+        [
+          0.022395833,
+          0.612962963
+        ]
+      ],
+      "stack": 7,
+      "rows": [
+        [
+          "WORKSTREAM / OWNER",
+          "WEEKS 1–2\nApprove & baseline",
+          "WEEKS 3–4\nBuild & test",
+          "WEEKS 5–8\nPilot & learn",
+          "WEEKS 9–12\nProve & decide"
+        ],
+        [
+          "Data & access\nSource steward",
+          "Approved corpus\nAccess register",
+          "Source refresh\nNamed stewards",
+          "Weekly access and\nfreshness checks",
+          "Audit closeout\nRelease inventory"
+        ],
+        [
+          "Workflow & product\nProduct lead",
+          "Task mapping\nBaseline time logs",
+          "Grounded draft\nVisible citations",
+          "15-user pilot\nDefect fixes",
+          "Release candidate\nRunbook"
+        ],
+        [
+          "Quality & controls\nExpert reviewer",
+          "Risk boundaries\nReview criteria",
+          "Test pack\nRejection reasons",
+          "10 reviewed tasks\nError triage",
+          "20 completed tasks\nGate evidence"
+        ],
+        [
+          "Adoption & value\nPractice lead",
+          "Sponsor & users\nAgree tracking",
+          "Training & support\nMeasurement plan",
+          "Weekly usage\nFeedback sessions",
+          "Benefit case\nScale recommendation"
+        ]
+      ]
+    },
+    {
+      "id": "p4-object-9",
+      "native_id": "10",
+      "name": "SC_CONNECTOR__gate-flow-1__0",
+      "label": "Gate flow 1 0",
+      "kind": "connector",
+      "polygon": [
+        [
+          0.127083333,
+          0.7
+        ],
+        [
+          0.263541667,
+          0.7
+        ],
+        [
+          0.263541667,
+          0.7
+        ],
+        [
+          0.127083333,
+          0.7
+        ]
+      ],
+      "stack": 8,
+      "line": [
+        [
+          0.127083333,
+          0.7
+        ],
+        [
+          0.263541667,
+          0.7
+        ]
+      ],
+      "arrows": {
+        "headEnd": {
+          "type": "none"
+        },
+        "tailEnd": {
+          "type": "triangle",
+          "w": "lg",
+          "len": "lg"
+        }
+      }
+    },
+    {
+      "id": "p4-object-10",
+      "native_id": "11",
+      "name": "SC_CONNECTOR__gate-flow-2__0",
+      "label": "Gate flow 2 0",
+      "kind": "connector",
+      "polygon": [
+        [
+          0.288541667,
+          0.7
+        ],
+        [
+          0.425,
+          0.7
+        ],
+        [
+          0.425,
+          0.7
+        ],
+        [
+          0.288541667,
+          0.7
+        ]
+      ],
+      "stack": 9,
+      "line": [
+        [
+          0.288541667,
+          0.7
+        ],
+        [
+          0.425,
+          0.7
+        ]
+      ],
+      "arrows": {
+        "headEnd": {
+          "type": "none"
+        },
+        "tailEnd": {
+          "type": "triangle",
+          "w": "lg",
+          "len": "lg"
+        }
+      }
+    },
+    {
+      "id": "p4-object-11",
+      "native_id": "12",
+      "name": "SC_CONNECTOR__gate-flow-3__0",
+      "label": "Gate flow 3 0",
+      "kind": "connector",
+      "polygon": [
+        [
+          0.45,
+          0.7
+        ],
+        [
+          0.586458333,
+          0.7
+        ],
+        [
+          0.586458333,
+          0.7
+        ],
+        [
+          0.45,
+          0.7
+        ]
+      ],
+      "stack": 10,
+      "line": [
+        [
+          0.45,
+          0.7
+        ],
+        [
+          0.586458333,
+          0.7
+        ]
+      ],
+      "arrows": {
+        "headEnd": {
+          "type": "none"
+        },
+        "tailEnd": {
+          "type": "triangle",
+          "w": "lg",
+          "len": "lg"
+        }
+      }
+    },
+    {
+      "id": "p4-object-12",
+      "native_id": "13",
+      "name": "headline",
+      "label": "Run the pilot through four evidence gates",
+      "kind": "text",
+      "polygon": [
+        [
+          0.023958333,
+          0.077777778
+        ],
+        [
+          0.976041667,
+          0.077777778
+        ],
+        [
+          0.976041667,
+          0.148148148
+        ],
+        [
+          0.023958333,
+          0.148148148
+        ]
+      ],
+      "stack": 11,
+      "text": "Run the pilot through four evidence gates",
+      "typography": [
+        {
+          "family": "Georgia",
+          "size_pt": 32.0,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "id": "p4-object-13",
+      "native_id": "14",
+      "name": "subtitle",
+      "label": "Owners run the workstreams. Evidence gates release the next phase.",
+      "kind": "text",
+      "polygon": [
+        [
+          0.024479167,
+          0.152777778
+        ],
+        [
+          0.975,
+          0.152777778
+        ],
+        [
+          0.975,
+          0.197222222
+        ],
+        [
+          0.024479167,
+          0.197222222
+        ]
+      ],
+      "stack": 12,
+      "text": "Owners run the workstreams. Evidence gates release the next phase.",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 16.0,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "id": "p4-object-14",
+      "native_id": "15",
+      "name": "gates-heading",
+      "label": "EVIDENCE GATES",
+      "kind": "text",
+      "polygon": [
+        [
+          0.022395833,
+          0.630555556
+        ],
+        [
+          0.491145833,
+          0.630555556
+        ],
+        [
+          0.491145833,
+          0.663888889
+        ],
+        [
+          0.022395833,
+          0.663888889
+        ]
+      ],
+      "stack": 13,
+      "text": "EVIDENCE GATES",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 14.0,
+          "color": "#000000",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p4-object-15",
+      "native_id": "16",
+      "name": "gate-label-g1",
+      "label": "G1 · Week 2",
+      "kind": "text",
+      "polygon": [
+        [
+          0.046875,
+          0.734259259
+        ],
+        [
+          0.182291667,
+          0.734259259
+        ],
+        [
+          0.182291667,
+          0.763888889
+        ],
+        [
+          0.046875,
+          0.763888889
+        ]
+      ],
+      "stack": 14,
+      "text": "G1 · Week 2",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 13.0,
+          "color": "#FD5108",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p4-object-16",
+      "native_id": "17",
+      "name": "gate-detail-g1",
+      "label": "Corpus + access signed",
+      "kind": "text",
+      "polygon": [
+        [
+          0.033854167,
+          0.765740741
+        ],
+        [
+          0.1953125,
+          0.765740741
+        ],
+        [
+          0.1953125,
+          0.815740741
+        ],
+        [
+          0.033854167,
+          0.815740741
+        ]
+      ],
+      "stack": 15,
+      "text": "Corpus + access signed",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 11.5,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "id": "p4-object-17",
+      "native_id": "18",
+      "name": "gate-label-g2",
+      "label": "G2 · Week 4",
+      "kind": "text",
+      "polygon": [
+        [
+          0.208333333,
+          0.734259259
+        ],
+        [
+          0.34375,
+          0.734259259
+        ],
+        [
+          0.34375,
+          0.763888889
+        ],
+        [
+          0.208333333,
+          0.763888889
+        ]
+      ],
+      "stack": 16,
+      "text": "G2 · Week 4",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 13.0,
+          "color": "#FD5108",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p4-object-18",
+      "native_id": "19",
+      "name": "gate-detail-g2",
+      "label": "Test pack approved",
+      "kind": "text",
+      "polygon": [
+        [
+          0.1953125,
+          0.765740741
+        ],
+        [
+          0.356770833,
+          0.765740741
+        ],
+        [
+          0.356770833,
+          0.815740741
+        ],
+        [
+          0.1953125,
+          0.815740741
+        ]
+      ],
+      "stack": 17,
+      "text": "Test pack approved",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 11.5,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "id": "p4-object-19",
+      "native_id": "20",
+      "name": "gate-label-g3",
+      "label": "G3 · Week 8",
+      "kind": "text",
+      "polygon": [
+        [
+          0.369791667,
+          0.734259259
+        ],
+        [
+          0.505208333,
+          0.734259259
+        ],
+        [
+          0.505208333,
+          0.763888889
+        ],
+        [
+          0.369791667,
+          0.763888889
+        ]
+      ],
+      "stack": 18,
+      "text": "G3 · Week 8",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 13.0,
+          "color": "#FD5108",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p4-object-20",
+      "native_id": "21",
+      "name": "gate-detail-g3",
+      "label": "10 tasks reviewed",
+      "kind": "text",
+      "polygon": [
+        [
+          0.356770833,
+          0.765740741
+        ],
+        [
+          0.518229167,
+          0.765740741
+        ],
+        [
+          0.518229167,
+          0.815740741
+        ],
+        [
+          0.356770833,
+          0.815740741
+        ]
+      ],
+      "stack": 19,
+      "text": "10 tasks reviewed",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 11.5,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "id": "p4-object-21",
+      "native_id": "22",
+      "name": "gate-label-g4",
+      "label": "G4 · Week 12",
+      "kind": "text",
+      "polygon": [
+        [
+          0.53125,
+          0.734259259
+        ],
+        [
+          0.666666667,
+          0.734259259
+        ],
+        [
+          0.666666667,
+          0.763888889
+        ],
+        [
+          0.53125,
+          0.763888889
+        ]
+      ],
+      "stack": 20,
+      "text": "G4 · Week 12",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 13.0,
+          "color": "#FD5108",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p4-object-22",
+      "native_id": "23",
+      "name": "gate-detail-g4",
+      "label": "Practice lead + CFO decide",
+      "kind": "text",
+      "polygon": [
+        [
+          0.518229167,
+          0.765740741
+        ],
+        [
+          0.6796875,
+          0.765740741
+        ],
+        [
+          0.6796875,
+          0.815740741
+        ],
+        [
+          0.518229167,
+          0.815740741
+        ]
+      ],
+      "stack": 21,
+      "text": "Practice lead + CFO\ndecide",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 11.5,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "id": "p4-object-23",
+      "native_id": "24",
+      "name": "dependencies-heading",
+      "label": "DEPENDENCIES",
+      "kind": "text",
+      "polygon": [
+        [
+          0.708333333,
+          0.630555556
+        ],
+        [
+          0.973958333,
+          0.630555556
+        ],
+        [
+          0.973958333,
+          0.663888889
+        ],
+        [
+          0.708333333,
+          0.663888889
+        ]
+      ],
+      "stack": 22,
+      "text": "DEPENDENCIES",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 14.0,
+          "color": "#000000",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p4-object-24",
+      "native_id": "25",
+      "name": "dependency-text-1",
+      "label": "Permissions before retrieval tests",
+      "kind": "text",
+      "polygon": [
+        [
+          0.755208333,
+          0.672222222
+        ],
+        [
+          0.96875,
+          0.672222222
+        ],
+        [
+          0.96875,
+          0.70462963
+        ],
+        [
+          0.755208333,
+          0.70462963
+        ]
+      ],
+      "stack": 23,
+      "text": "Permissions before retrieval tests",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 11.5,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "id": "p4-object-25",
+      "native_id": "26",
+      "name": "dependency-text-2",
+      "label": "Approved test pack before pilot",
+      "kind": "text",
+      "polygon": [
+        [
+          0.755208333,
+          0.718518519
+        ],
+        [
+          0.96875,
+          0.718518519
+        ],
+        [
+          0.96875,
+          0.750925926
+        ],
+        [
+          0.755208333,
+          0.750925926
+        ]
+      ],
+      "stack": 24,
+      "text": "Approved test pack before pilot",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 11.5,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "id": "p4-object-26",
+      "native_id": "27",
+      "name": "dependency-text-3",
+      "label": "Quality evidence before benefit case",
+      "kind": "text",
+      "polygon": [
+        [
+          0.755208333,
+          0.764814815
+        ],
+        [
+          0.96875,
+          0.764814815
+        ],
+        [
+          0.96875,
+          0.797222222
+        ],
+        [
+          0.755208333,
+          0.797222222
+        ]
+      ],
+      "stack": 25,
+      "text": "Quality evidence before benefit case",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 11.5,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "id": "p4-object-27",
+      "native_id": "28",
+      "name": "decision-label",
+      "label": "STOP RULE",
+      "kind": "text",
+      "polygon": [
+        [
+          0.041666667,
+          0.849074074
+        ],
+        [
+          0.265625,
+          0.849074074
+        ],
+        [
+          0.265625,
+          0.89537037
+        ],
+        [
+          0.041666667,
+          0.89537037
+        ]
+      ],
+      "stack": 26,
+      "text": "STOP RULE",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 14.0,
+          "color": "#FD5108",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p4-object-28",
+      "native_id": "29",
+      "name": "decision-message",
+      "label": "No expansion while critical data exceptions remain open.",
+      "kind": "text",
+      "polygon": [
+        [
+          0.270833333,
+          0.849074074
+        ],
+        [
+          0.957291667,
+          0.849074074
+        ],
+        [
+          0.957291667,
+          0.89537037
+        ],
+        [
+          0.270833333,
+          0.89537037
+        ]
+      ],
+      "stack": 27,
+      "text": "No expansion while critical data exceptions remain open.",
+      "typography": [
+        {
+          "family": "Arial",
+          "size_pt": 14.0,
+          "color": "#000000",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "id": "p4-object-29",
+      "native_id": "30",
+      "name": "gate-icon-g1",
+      "label": "Gate icon g1",
+      "kind": "image",
+      "polygon": [
+        [
+          0.103125,
+          0.67962963
+        ],
+        [
+          0.126041667,
+          0.67962963
+        ],
+        [
+          0.126041667,
+          0.72037037
+        ],
+        [
+          0.103125,
+          0.72037037
+        ]
+      ],
+      "stack": 28
+    },
+    {
+      "id": "p4-object-30",
+      "native_id": "31",
+      "name": "gate-icon-g2",
+      "label": "Gate icon g2",
+      "kind": "image",
+      "polygon": [
+        [
+          0.264583333,
+          0.67962963
+        ],
+        [
+          0.2875,
+          0.67962963
+        ],
+        [
+          0.2875,
+          0.72037037
+        ],
+        [
+          0.264583333,
+          0.72037037
+        ]
+      ],
+      "stack": 29
+    },
+    {
+      "id": "p4-object-31",
+      "native_id": "32",
+      "name": "gate-icon-g3",
+      "label": "Gate icon g3",
+      "kind": "image",
+      "polygon": [
+        [
+          0.426041667,
+          0.67962963
+        ],
+        [
+          0.448958333,
+          0.67962963
+        ],
+        [
+          0.448958333,
+          0.72037037
+        ],
+        [
+          0.426041667,
+          0.72037037
+        ]
+      ],
+      "stack": 30
+    },
+    {
+      "id": "p4-object-32",
+      "native_id": "33",
+      "name": "gate-icon-g4",
+      "label": "Gate icon g4",
+      "kind": "image",
+      "polygon": [
+        [
+          0.5875,
+          0.67962963
+        ],
+        [
+          0.610416667,
+          0.67962963
+        ],
+        [
+          0.610416667,
+          0.72037037
+        ],
+        [
+          0.5875,
+          0.72037037
+        ]
+      ],
+      "stack": 31
+    },
+    {
+      "id": "p4-object-33",
+      "native_id": "34",
+      "name": "Slide Number Placeholder 0",
+      "label": "4",
+      "kind": "text",
+      "polygon": [
+        [
+          0.891666667,
+          0.952777778
+        ],
+        [
+          0.975,
+          0.952777778
+        ],
+        [
+          0.975,
+          0.99537037
+        ],
+        [
+          0.891666667,
+          0.99537037
+        ]
+      ],
+      "stack": 32,
+      "text": "4",
+      "typography": [
+        {
+          "bold": false
+        },
+        {
+          "family": "Arial",
+          "size_pt": 9.0,
+          "color": "#666666"
+        }
+      ]
+    }
+  ]
+}
