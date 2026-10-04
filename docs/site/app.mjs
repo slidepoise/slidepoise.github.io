@@ -2,6 +2,7 @@ import { createChartInterpretation, createChartMeasurement } from './chart-expla
 import { createObjectInspector, validateObjectDocument } from './object-inspector.mjs';
 import { createReconstructionViewer } from './reconstruction-viewer.mjs?v=eab167d38cbda0d7';
 import { createPlanView, createSlideBrief } from './planning-viewer.mjs';
+import { watchVideoControls } from './video-controls.mjs';
 
 const showcaseCatalogURL = new URL('./showcases.json', import.meta.url);
 
@@ -964,7 +965,7 @@ for (const id of ['overview-enlarge']) {
 const overviewVideo = byId('overview-video');
 const overviewPlay = byId('overview-play');
 overviewPlay.addEventListener('click', async () => {
-  overviewVideo.src ||= '/assets/video/slidepoise/slidepoise.mp4?v=4facba99';
+  overviewVideo.src ||= '/assets/video/slidepoise/slidepoise.mp4?v=24179611';
   overviewVideo.controls = true;
   overviewVideo.removeAttribute('aria-hidden');
   overviewVideo.tabIndex = 0;
@@ -974,16 +975,7 @@ overviewPlay.addEventListener('click', async () => {
   try { await overviewVideo.play(); }
   catch (error) { if (error.name !== 'AbortError') byId('overview-video-error').hidden = false; }
 });
-overviewVideo.addEventListener('ended', () => {
-  const restoreFocus = document.activeElement === overviewVideo;
-  overviewVideo.controls = false;
-  overviewVideo.setAttribute('aria-hidden', 'true');
-  overviewVideo.tabIndex = -1;
-  overviewVideo.removeAttribute('src');
-  overviewVideo.load();
-  overviewPlay.hidden = false;
-  if (restoreFocus) overviewPlay.focus({ preventScroll: true });
-});
+watchVideoControls(overviewVideo);
 overviewVideo.addEventListener('error', () => { if (overviewVideo.hasAttribute('src')) byId('overview-video-error').hidden = false; });
 document.addEventListener('visibilitychange', () => { if (document.hidden) overviewVideo.pause(); });
 new IntersectionObserver(([entry]) => {
