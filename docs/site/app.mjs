@@ -2,7 +2,7 @@ import { createChartInterpretation, createChartMeasurement } from './chart-expla
 import { createObjectInspector, validateObjectDocument } from './object-inspector.mjs';
 import { createReconstructionViewer } from './reconstruction-viewer.mjs?v=eab167d38cbda0d7';
 import { createPlanView, createSlideBrief } from './planning-viewer.mjs';
-import { watchVideoControls } from './video-controls.mjs';
+import { watchVideoControls } from './video-controls.mjs?v=20261005-fade';
 
 const showcaseCatalogURL = new URL('./showcases.json', import.meta.url);
 

@@ -1,0 +1,16 @@
+/* Only ended promo videos override the browser's native control visibility. */
+video[data-ended-controls="visible"]::-webkit-media-controls-panel {
+  opacity: 1;
+  transition: none;
+}
+
+video[data-ended-controls="fading"]::-webkit-media-controls-panel {
+  opacity: 0;
+  transition: opacity 0.3s linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  video[data-ended-controls="fading"]::-webkit-media-controls-panel {
+    transition: none;
+  }
+}
