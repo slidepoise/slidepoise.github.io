@@ -910,10 +910,22 @@ body[data-input="keyboard"] .content-card, body[data-input="keyboard"] .content-
 .product-introduction .hero-actions { justify-content: flex-start; gap: 22px; }
 .product-introduction .overview { min-width: 0; max-width: none; width: auto; margin: 0; }
 .overview .overview-heading { display: block; margin: 16px 0 0; }
-.overview .overview-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.overview .overview-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .overview .overview-tabs button { min-width: 0; gap: 13px; padding: 0; text-align: left; }
 .overview .overview-tabs button::before { display: none; }
-.overview-thumbnail { position: relative; flex: 0 0 85px; }
+.overview-thumbnail { position: relative; flex: 0 1 85px; min-width: 0; }
+.overview-thumbnail.is-video { container-type: inline-size; aspect-ratio:1600/1180; background:#fffefb; display:grid; align-items:center; }
+.overview-thumbnail-play { position:absolute; left:50%; top:67%; transform:translate(-50%,-50%); width:clamp(12px,14cqw,20px); fill:none; stroke:#252b29; stroke-width:1; }
+.overview-thumbnail-play path { fill:#252b29; stroke:none; }
+#overview-artwork { position:relative; aspect-ratio:1600/1180; transition:aspect-ratio 280ms var(--ease-out); }
+#overview-artwork.is-video { aspect-ratio:16/9; }
+#overview-enlarge,#overview-film { position:absolute; inset:0; width:100%; height:100%; }
+#overview-film { container-type:inline-size; overflow:hidden; background:#fffefb; }
+#overview-video { display:block; width:100%; height:100%; object-fit:contain; }
+#overview-play { position:absolute; inset:0; display:block; width:100%; height:100%; border:0; padding:0; background:#fffefb; color:#252b29; cursor:pointer; }
+#overview-play:focus-visible { outline:2px solid #252b29; outline-offset:-4px; }
+#overview-enlarge[hidden],#overview-film[hidden],#overview-play[hidden],#overview-video-error[hidden] { display:none; }
+@media(prefers-reduced-motion:reduce) { #overview-artwork { transition:none; } }
 .overview-thumbnail img { display: block; width: 100%; height: auto; opacity: .88; transition: opacity 150ms ease; }
 .overview-thumbnail::after { content: ''; position: absolute; height: 2px; inset-inline: 0; bottom: -5px; background: var(--ink); opacity: 0; }
 .overview-tabs button[aria-selected="true"] img, .overview-tabs button[aria-selected="true"] .overview-thumbnail::after { opacity: 1; }
@@ -948,7 +960,7 @@ body[data-input="keyboard"] .content-card, body[data-input="keyboard"] .content-
 }
 .product-introduction .hero { padding-bottom: 0; }
 .overview figure {
-  width: min(100%, calc((100svh - var(--overview-header-height, 76px) - var(--overview-controls-height, 150px) - 48px) * 1600 / 1180));
+  width: min(100%, calc((100svh - var(--overview-header-height, 76px) - var(--overview-controls-height, 150px) - 48px) * var(--overview-ratio, 1.3559322)));
   margin-inline: auto;
 }
 

@@ -8,9 +8,10 @@
   <link rel="canonical" href="https://slidepoise.github.io/">
   <title>SlidePoise · Agentic Slide Generation</title>
   <link rel="icon" href="docs/site/mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="docs/site/styles.css?v=38626be6d03720fe">
+  <link rel="stylesheet" href="docs/site/styles.css?v=20261004-video">
+  <link rel="stylesheet" href="/assets/video/slidepoise/cover.css?v=20261004">
   <link rel="stylesheet" href="docs/site/object-inspector.css?v=8ab3ff0c5c351406">
-  <script type="module" src="docs/site/app.mjs?v=20260920-address"></script>
+  <script type="module" src="docs/site/app.mjs?v=20261004-video"></script>
   <script type="module" src="docs/site/asset-explorer.mjs?v=20260921-icon-path"></script>
 </head>
 <body id="top">
@@ -42,21 +43,34 @@
       </a>
     </section>
 
-    <section class="overview" aria-label="SlidePoise presentation examples">
+    <section id="overview" class="overview" aria-label="SlidePoise video and presentation examples" style="--overview-ratio:1.77777778">
       <figure>
-        <div id="overview-artwork" role="tabpanel" aria-labelledby="overview-editorial-tab">
-          <button id="overview-enlarge" class="overview-artwork" type="button" aria-label="Enlarge Editorial example" aria-haspopup="dialog">
+        <div id="overview-artwork" class="is-video" role="tabpanel" aria-labelledby="overview-video-tab">
+          <div id="overview-film">
+            <video id="overview-video" poster="/assets/video/slidepoise/poster.webp" preload="none" playsinline aria-label="SlidePoise introduction" aria-hidden="true" tabindex="-1"></video>
+            <button id="overview-play" class="slidepoise-cover-trigger" type="button" aria-label="Play the SlidePoise video, 2 minutes 5 seconds">
+              <span class="slidepoise-cover" aria-hidden="true">
+                <span class="slidepoise-cover-kicker">OPEN-SOURCE PRESENTATION SKILL</span>
+                <span class="slidepoise-cover-brand"><img src="/assets/video/slidepoise/mark.svg" width="112" height="112" alt="" draggable="false"><span class="slidepoise-cover-name">SlidePoise</span></span>
+                <span class="slidepoise-cover-slogan">Let the content shape the slide.</span>
+              </span>
+              <span class="slidepoise-play-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6Z"/></svg></span>
+              <span class="slidepoise-play-label" aria-hidden="true">Watch video<small>2 min 5 sec</small></span>
+            </button>
+          </div>
+          <button id="overview-enlarge" hidden class="overview-artwork" type="button" aria-label="Enlarge Editorial example" aria-haspopup="dialog">
             <img data-overview-image="consulting" src="/assets/img/projects/slidepoise-consulting.webp?v=20260911" srcset="/assets/img/projects/slidepoise-consulting-800.webp?v=20260911 800w, /assets/img/projects/slidepoise-consulting.webp?v=20260911 1600w" sizes="(max-width: 760px) 92vw, 1120px" width="1600" height="1180" alt="" aria-hidden="true" loading="lazy" decoding="async">
             <img class="is-active" data-overview-image="editorial" src="/assets/img/projects/slidepoise-editorial.webp?v=20260911" srcset="/assets/img/projects/slidepoise-editorial-800.webp?v=20260911 800w, /assets/img/projects/slidepoise-editorial.webp?v=20260911 1600w" sizes="(max-width: 760px) 92vw, 1120px" width="1600" height="1180" alt="Five editorial slides with an editable heading and a separate paper collage illustration" decoding="async">
           </button>
         </div>
       <div class="overview-heading">
-        <div class="overview-tabs" role="tablist" aria-label="Presentation examples">
-          <button id="overview-consulting-tab" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="overview-artwork" data-overview="consulting"><span class="overview-thumbnail"><img src="/assets/img/projects/slidepoise-consulting-800.webp?v=20260911" width="800" height="590" alt="" loading="lazy" decoding="async"></span><span class="overview-tab-label"><small aria-hidden="true">01</small>Consulting example</span></button>
-          <button id="overview-editorial-tab" type="button" role="tab" aria-selected="true" aria-controls="overview-artwork" data-overview="editorial"><span class="overview-thumbnail"><img src="/assets/img/projects/slidepoise-editorial-800.webp?v=20260911" width="800" height="590" alt="" loading="lazy" decoding="async"></span><span class="overview-tab-label"><small aria-hidden="true">02</small>Editorial example</span></button>
+        <div class="overview-tabs" role="tablist" aria-label="Video and presentation examples">
+          <button id="overview-video-tab" type="button" role="tab" aria-selected="true" aria-controls="overview-artwork" data-overview="video"><span class="overview-thumbnail is-video"><img src="/assets/video/slidepoise/poster.webp" width="1920" height="1080" alt=""><svg class="overview-thumbnail-play" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5"/><path d="m10 7 7 5-7 5Z"/></svg></span><span class="overview-tab-label"><small aria-hidden="true">01</small>Meet SlidePoise</span></button>
+          <button id="overview-consulting-tab" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="overview-artwork" data-overview="consulting"><span class="overview-thumbnail"><img src="/assets/img/projects/slidepoise-consulting-800.webp?v=20260911" width="800" height="590" alt="" loading="lazy" decoding="async"></span><span class="overview-tab-label"><small aria-hidden="true">02</small>Consulting example</span></button>
+          <button id="overview-editorial-tab" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="overview-artwork" data-overview="editorial"><span class="overview-thumbnail"><img src="/assets/img/projects/slidepoise-editorial-800.webp?v=20260911" width="800" height="590" alt="" loading="lazy" decoding="async"></span><span class="overview-tab-label"><small aria-hidden="true">03</small>Editorial example</span></button>
         </div>
       </div>
-        <figcaption><span id="overview-caption">An editorial essay with editable text and photographic collage.</span><button id="overview-expand" type="button" aria-label="Enlarge Editorial example" aria-haspopup="dialog"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 3h5v5M17 3l-5.5 5.5M8 17H3v-5m0 5 5.5-5.5"/></svg></button></figcaption>
+        <figcaption><span id="overview-caption">See how SlidePoise creates editable presentations with an AI Agent.</span><span id="overview-video-error" role="status" hidden>The video could not play. <a href="/assets/video/slidepoise/slidepoise.mp4" target="_blank" rel="noopener">Open the video</a></span></figcaption>
       </figure>
     </section>
 

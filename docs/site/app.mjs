@@ -897,6 +897,11 @@ start();
 
 // Finished examples introduce the product before its technical walkthrough.
 const overviewExamples = {
+  video: {
+    label: 'SlidePoise video',
+    caption: 'See how SlidePoise creates editable presentations with an AI Agent.',
+    alt: '',
+  },
   consulting: {
     label: 'Consulting example',
     caption: 'An AI pilot recommendation with editable charts, tables and diagrams.',
@@ -909,10 +914,17 @@ const overviewExamples = {
   },
 };
 const requestedHero = new URLSearchParams(location.search).get('hero');
-let overviewActive = Object.hasOwn(overviewExamples, requestedHero) ? requestedHero : 'editorial';
+let overviewActive = Object.hasOwn(overviewExamples, requestedHero) ? requestedHero : 'video';
 function selectOverview(key, keyboard = false) {
   overviewActive = key;
   const example = overviewExamples[key];
+  const isVideo = key === 'video';
+  byId('overview-film').hidden = !isVideo;
+  byId('overview-enlarge').hidden = isVideo;
+  byId('overview-artwork').classList.toggle('is-video', isVideo);
+  document.querySelector('.overview').style.setProperty('--overview-ratio', isVideo ? 16 / 9 : 1600 / 1180);
+  if (!isVideo) byId('overview-video').pause();
+  byId('overview-video-error').hidden = true;
   document.querySelectorAll('[data-overview]').forEach(button => {
     const selected = button.dataset.overview === key;
     button.setAttribute('aria-selected', String(selected));
@@ -927,7 +939,7 @@ function selectOverview(key, keyboard = false) {
   byId('overview-artwork').setAttribute('aria-labelledby', `overview-${key}-tab`);
   byId('overview-enlarge').classList.toggle('is-keyboard-change', keyboard);
   byId('overview-caption').textContent = example.caption;
-  for (const id of ['overview-enlarge', 'overview-expand']) byId(id).setAttribute('aria-label', `Enlarge ${example.label}`);
+  byId('overview-enlarge').setAttribute('aria-label', `Enlarge ${example.label}`);
 }
 selectOverview(overviewActive);
 for (const button of document.querySelectorAll('[data-overview]')) {
@@ -935,17 +947,48 @@ for (const button of document.querySelectorAll('[data-overview]')) {
   button.addEventListener('keydown', event => {
     if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
     event.preventDefault();
-    const key = event.key === 'Home' ? 'consulting' : event.key === 'End' ? 'editorial' : overviewActive === 'consulting' ? 'editorial' : 'consulting';
+    const keys = Object.keys(overviewExamples);
+    const direction = event.key === 'ArrowRight' ? 1 : -1;
+    const key = event.key === 'Home' ? keys[0] : event.key === 'End' ? keys.at(-1) : keys[(keys.indexOf(overviewActive) + direction + keys.length) % keys.length];
     selectOverview(key, true);
     byId(`overview-${key}-tab`).focus();
   });
 }
-for (const id of ['overview-enlarge', 'overview-expand']) {
+for (const id of ['overview-enlarge']) {
   byId(id)?.addEventListener('click', event => {
     const example = overviewExamples[overviewActive];
     openArtifact({ title: example.label, description: example.caption, url: new URL(`/assets/img/projects/slidepoise-${overviewActive}.webp?v=20260911`, location.href).href, trigger: event.currentTarget });
   });
 }
+
+const overviewVideo = byId('overview-video');
+const overviewPlay = byId('overview-play');
+overviewPlay.addEventListener('click', async () => {
+  overviewVideo.src ||= '/assets/video/slidepoise/slidepoise.mp4';
+  overviewVideo.controls = true;
+  overviewVideo.removeAttribute('aria-hidden');
+  overviewVideo.tabIndex = 0;
+  overviewPlay.hidden = true;
+  byId('overview-video-error').hidden = true;
+  overviewVideo.focus({ preventScroll: true });
+  try { await overviewVideo.play(); }
+  catch (error) { if (error.name !== 'AbortError') byId('overview-video-error').hidden = false; }
+});
+overviewVideo.addEventListener('ended', () => {
+  const restoreFocus = document.activeElement === overviewVideo;
+  overviewVideo.controls = false;
+  overviewVideo.setAttribute('aria-hidden', 'true');
+  overviewVideo.tabIndex = -1;
+  overviewVideo.removeAttribute('src');
+  overviewVideo.load();
+  overviewPlay.hidden = false;
+  if (restoreFocus) overviewPlay.focus({ preventScroll: true });
+});
+overviewVideo.addEventListener('error', () => { if (overviewVideo.hasAttribute('src')) byId('overview-video-error').hidden = false; });
+document.addEventListener('visibilitychange', () => { if (document.hidden) overviewVideo.pause(); });
+new IntersectionObserver(([entry]) => {
+  if (!entry.isIntersecting && !document.fullscreenElement && !overviewVideo.webkitDisplayingFullscreen) overviewVideo.pause();
+}).observe(overviewVideo);
 
 for (const button of document.querySelectorAll('[data-open-architecture]')) {
   button.addEventListener('click', event => openArtifact({

@@ -1,0 +1,21 @@
+@font-face{font-family:SlidePoiseDisplay;src:url('./geist.woff2') format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:SlidePoiseMono;src:url('./geist-mono.woff2') format('woff2');font-weight:100 900;font-display:swap}
+.slidepoise-cover{position:absolute;inset:0;display:block;overflow:hidden;background:#fffefb;color:#252b29;pointer-events:none;text-align:center}
+.slidepoise-cover-kicker{position:absolute;top:25%;left:0;right:0;display:block;font:400 .8333cqw/1.75 SlidePoiseMono,monospace;letter-spacing:.15625cqw;color:#a2937c;white-space:nowrap}
+.slidepoise-cover-brand{position:absolute;top:38%;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:1.4583cqw;transform:translateY(-50%);transform-origin:50% 50%;transition:transform 260ms cubic-bezier(.2,.65,.3,1)}
+.slidepoise-cover-brand img{display:block;flex:0 0 auto;width:5.8333cqw;height:5.8333cqw;max-width:none;margin:0;border:0}
+.slidepoise-cover-name{font:600 6.25cqw/1.1667 SlidePoiseDisplay,Arial,sans-serif;letter-spacing:-.3125cqw}
+.slidepoise-cover-slogan{position:absolute;top:48.8%;left:0;right:0;display:block;font:500 2.65625cqw/1.45 SlidePoiseDisplay,Arial,sans-serif;letter-spacing:-.08854cqw;color:#a3967f;white-space:nowrap}
+.slidepoise-play-icon{position:absolute;left:50%;top:68%;display:grid;place-items:center;width:clamp(32px,7.5cqw,56px);aspect-ratio:1;box-sizing:border-box;border:1px solid rgb(37 43 41 / 38%);border-radius:50%;background:rgb(255 254 251 / 85%);color:#252b29;transform:translate(-50%,-50%);transition:transform 200ms ease,background-color 200ms ease,border-color 200ms ease;pointer-events:none}
+.slidepoise-cover-trigger .slidepoise-play-icon svg{display:block;width:42%;height:42%;margin-left:4%;fill:currentColor;stroke:none}
+.slidepoise-play-label{position:absolute;top:calc(68% + clamp(16px,3.75cqw,28px) + 1.2cqw);left:0;right:0;display:block;color:#252b29;text-align:center;font:400 clamp(9px,2.5cqw,15px)/1.3 'Quattrocento Sans',SlidePoiseDisplay,Arial,sans-serif;pointer-events:none}
+.slidepoise-play-label small{display:block;margin-top:.55cqw;color:#77766b;font-size:clamp(8px,1.9cqw,11px);line-height:1.2;letter-spacing:.03em}
+@media(hover:hover) and (pointer:fine){
+  .slidepoise-cover-trigger:hover .slidepoise-cover-brand{transform:translateY(-50%) scale(1.035)}
+  .slidepoise-cover-trigger:hover .slidepoise-play-icon{transform:translate(-50%,-50%) scale(1.06);background:#fff;border-color:#252b29}
+}
+.slidepoise-cover-trigger:active .slidepoise-play-icon{transform:translate(-50%,-50%) scale(.96)}
+@media(prefers-reduced-motion:reduce){
+  .slidepoise-cover-brand,.slidepoise-play-icon{transition:none}
+  .slidepoise-cover-trigger:hover .slidepoise-cover-brand{transform:translateY(-50%)}
+}
