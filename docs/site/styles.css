@@ -1116,6 +1116,20 @@ body[data-input="keyboard"] .content-card, body[data-input="keyboard"] .content-
 .workflow-responsibilities dd { margin:0; font-size:12px; line-height:1.65; color:#646e7e; }
 @media (max-width:600px) { .workflow-responsibilities { gap:12px; } }
 
+/* Each visible row shares the heading, description, You, Agent and preview tracks.
+   The nested definition list keeps its semantics while participating in alignment. */
+@media (min-width:561px) {
+  .workflow-grid { row-gap:0; align-items:stretch; }
+  .workflow-stage { display:grid; grid-template-rows:subgrid; grid-row:span 5; }
+  .workflow-stage h4 { grid-row:1; }
+  .workflow-stage > p { grid-row:2; min-height:0; }
+  .workflow-responsibilities { grid-row:3 / span 2; grid-template-rows:subgrid; }
+  .workflow-evidence { grid-row:5; align-self:start; }
+}
+@media (min-width:561px) and (max-width:800px) {
+  .workflow-stage:nth-child(-n+2) { margin-bottom:32px; }
+}
+
 .contact-sheet-example { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: center; gap: 48px; margin-top: 38px; }
 .contact-sheet-preview { margin: 0; min-width: 0; }
 .contact-sheet-preview > button { display: block; width: 100%; padding: 0; border: 1px solid var(--line); background: #fff; cursor: zoom-in; }
