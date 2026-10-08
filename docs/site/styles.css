@@ -965,7 +965,7 @@ body[data-input="keyboard"] .content-card, body[data-input="keyboard"] .content-
 }
 
 /* The architecture introduces the walkthrough without joining the examples. */
-.system-architecture { width: min(100%, calc((100svh - 160px) * 1600 / 900)); margin: 36px auto 44px; }
+.system-architecture { width: min(100%, calc((100svh - 160px) * 1600 / 1060)); margin: 36px auto 44px; }
 .system-architecture-art { display: block; width: 100%; padding: 0; border: 0; background: #eeebe4; cursor: zoom-in; }
 .system-architecture-art img { display: block; width: 100%; height: auto; }
 .system-architecture figcaption { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 6px; color: var(--muted); font-size: 12px; }
@@ -1115,3 +1115,25 @@ body[data-input="keyboard"] .content-card, body[data-input="keyboard"] .content-
 .workflow-responsibilities dt { font-size:11px; font-weight:650; color:#344258; margin-bottom:4px; }
 .workflow-responsibilities dd { margin:0; font-size:12px; line-height:1.65; color:#646e7e; }
 @media (max-width:600px) { .workflow-responsibilities { gap:12px; } }
+
+.contact-sheet-example { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: center; gap: 48px; margin-top: 38px; }
+.contact-sheet-preview { margin: 0; min-width: 0; }
+.contact-sheet-preview > button { display: block; width: 100%; padding: 0; border: 1px solid var(--line); background: #fff; cursor: zoom-in; }
+.contact-sheet-preview img { display: block; width: 100%; height: auto; }
+.contact-sheet-preview figcaption { display: flex; justify-content: space-between; gap: 16px; margin-top: 12px; font-size: 11px; line-height: 1.5; color: var(--muted); }
+.contact-sheet-preview figcaption button { padding: 0; background: transparent; border: 0; color: inherit; font: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.contact-sheet-copy h4 { font-size: 21px; line-height: 1.4; font-weight: 550; letter-spacing: -.025em; margin: 0 0 14px; }
+.contact-sheet-copy p { font-size: 14px; line-height: 1.75; color: var(--muted); margin: 0 0 14px; }
+.contact-sheet-copy .contact-sheet-sources { font-size: 11px; margin-bottom: 0; }
+.contact-sheet-sources a { color: inherit; text-underline-offset: 3px; }
+@media (max-width: 700px) {
+  .contact-sheet-example { grid-template-columns: minmax(0, 1fr); gap: 24px; margin-top: 30px; }
+  .contact-sheet-copy { grid-row: 1; }
+  .contact-sheet-preview { width: 100%; max-width: 460px; justify-self: center; }
+}
+@media (min-width: 1100px) {
+  .asset-library-system > .contact-sheet-example { grid-column: 1 / -1; grid-row: 2; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); width: 100%; max-width: 1000px; justify-self: center; margin-top: 0; }
+}
+@media (max-width: 1099px) {
+  .contact-sheet-example { margin-bottom: 40px; }
+}

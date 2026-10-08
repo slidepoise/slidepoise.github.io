@@ -305,9 +305,9 @@ function selectSlide(index, speak = true) {
 
 const WORKFLOW = [
   { id: 'plan', title: 'Content planning', description: 'Establish the argument and evidence.', user: 'Share the audience, purpose and source material. Add any required messages.', agent: 'Develop the narrative and each slide’s communication job. Identify evidence gaps and preserve your constraints.', entry: 'Slide outline' },
-  { id: 'design', title: 'Visual design', description: 'Retrieve useful resources, then generate.', user: 'Share brand assets or a preferred direction. Review designs when you want to guide the work.', agent: 'Search and inspect references, icons, logos and component previews. Compile the selected resources and content into one generation request.', entry: 'Generated design', detail: 'Retrieval follows the current slide intent. Selected source files stay attached to the request so their identity can be preserved during reconstruction.' },
+  { id: 'design', title: 'Visual design', description: 'Retrieve resources, generate and review the image.', user: 'Share brand assets or a preferred direction. Inspect the contact sheet or generated designs when you want to guide the work.', agent: 'Retrieve references and assets, assemble the contact sheet and generate the slide image. Review its content, readability and layout against the brief, then revise where needed.', entry: 'Generated design', detail: 'The contact sheet is a visible intermediate output. Original assets remain available for reconstruction after generation uses their previews.' },
   { id: 'reconstruct', title: 'Reconstruction', description: 'Interpret, measure and build native objects.', user: 'This stage runs automatically. You can continue giving feedback in the conversation.', agent: 'Identify objects and relationships, refine their measured geometry, and build editable PowerPoint objects using original assets and component definitions.', entry: 'Reconstruction' },
-  { id: 'review', title: 'Review', description: 'Check the rendered deck and refine it.', user: 'Review the finished presentation and request any changes to its message or design.', agent: 'Inspect every rendered slide for content, fidelity and deck-wide consistency. Correct issues and deliver the editable file.', entry: 'Review comparisons' },
+  { id: 'review', title: 'Review', description: 'Check the rendered PowerPoint and refine it.', user: 'Review the finished presentation and request any changes to its message or design.', agent: 'Check the PowerPoint render against the brief and generated slide image. Inspect content, reconstruction fidelity and deck-wide consistency, then correct issues and deliver the editable file.', entry: 'Review comparisons' },
 ];
 
 function workflowFor(deck, configuration) {
@@ -438,6 +438,10 @@ function cropEvidence(container, image, url, box, size, alt) {
 function bindArtifact(id, title, description, url, options = {}) {
   const trigger = byId(id);
   trigger.addEventListener('click', () => openArtifact({ title, description, url, trigger, ...options }));
+}
+
+for (const id of ['contact-sheet-open', 'contact-sheet-expand']) {
+  bindArtifact(id, 'Generation contact sheet', 'A prepared example containing style guidance, two public consulting references, a native chart preview and three Remix icons.', new URL('./assets/contact-sheet/generation-contact-sheet.png', import.meta.url).href);
 }
 
 async function loadWalkthrough(configuration) {
@@ -993,7 +997,7 @@ for (const button of document.querySelectorAll('[data-open-architecture]')) {
   button.addEventListener('click', event => openArtifact({
     title: 'SlidePoise architecture',
     architecture: true,
-    url: new URL('/assets/img/projects/slidepoise-architecture-v1.svg?v=20261008-architecture-colours', location.href).href,
+    url: new URL('/assets/img/projects/slidepoise-architecture-v1.svg?v=20261008-workflow-review', location.href).href,
     trigger: event.currentTarget,
   }));
 }

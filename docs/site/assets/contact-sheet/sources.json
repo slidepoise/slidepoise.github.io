@@ -1,0 +1,96 @@
+{
+  "purpose": "Public example of a generation contact sheet",
+  "renderer": "slidepoise/scripts/make_asset_contact_sheet.py",
+  "image": "generation-contact-sheet.png",
+  "sha256": "d1df4c246150d6cd641684aa198b455da15a6467328581d5756e731ea4272e02",
+  "labels": {
+    "a0139f775f12": "R01",
+    "b73540cac768": "R02",
+    "consulting-chart-bar-stacked": "C01",
+    "file-search-line": "A01",
+    "user-star-line": "A02",
+    "shield-check-line": "A03"
+  },
+  "style_context": {
+    "profile": {
+      "name": "Consulting",
+      "purpose": "Explain the roles and resource mix in an AI operating model."
+    },
+    "style_agency": {
+      "palette": "specified",
+      "typography": "specified",
+      "density": "specified",
+      "icon_treatment": "specified"
+    },
+    "design": {
+      "style": {
+        "display_font": "Georgia",
+        "body_font": "Arial",
+        "density": "information_rich",
+        "icon_treatment": "line",
+        "background": "#FFFFFF",
+        "accent_colors": [
+          "#FD5108",
+          "#FFAA72",
+          "#DFE3E6"
+        ]
+      }
+    }
+  },
+  "sources": [
+    {
+      "id": "a0139f775f12",
+      "name": "Three operating model options",
+      "sha256": "761e086b9d951f998c6c9627dfac86571d8ec77c4add7751038cdf052c139a8f",
+      "provider": "PwC / Strategy&",
+      "source_url": "https://www.pwc.de/de/strategie-organisation-prozesse-systeme/pwc-enterprise-architecture-in-an-agile-world.pdf",
+      "license": "Third-party PwC / Strategy& copyright. Publicly published source reproduced here as a design-study reference. This material is outside the SlidePoise MIT licence.",
+      "generated_reference": false,
+      "source_type": "published_document",
+      "source": "https://www.pwc.de/de/strategie-organisation-prozesse-systeme/pwc-enterprise-architecture-in-an-agile-world.pdf",
+      "source_page": 9,
+      "authentic_official": true,
+      "redistribution": "Preserve publisher attribution and the source document. No endorsement or open-content licence is asserted."
+    },
+    {
+      "id": "b73540cac768",
+      "name": "Staffing mix by maturity",
+      "sha256": "f53c1f5bae8ce2c72ba1c9ba30772360e3ea86d212408f7ca9122a36643e6e1e",
+      "provider": "PwC / Strategy&",
+      "source_url": "https://www.pwc.no/no/publikasjoner/strategyand-desember-b2b-saas-2024.pdf",
+      "license": "Third-party PwC / Strategy& copyright. Publicly published source reproduced here as a design-study reference. This material is outside the SlidePoise MIT licence.",
+      "generated_reference": false,
+      "source_type": "published_document",
+      "source": "https://www.pwc.no/no/publikasjoner/strategyand-desember-b2b-saas-2024.pdf",
+      "source_page": 23,
+      "authentic_official": true,
+      "redistribution": "Preserve publisher attribution and the source document. No endorsement or open-content licence is asserted."
+    },
+    {
+      "id": "consulting-chart-bar-stacked",
+      "name": "Consulting stacked horizontal bar chart",
+      "source_url": "https://github.com/henryhyw/slidepoise/tree/main/library-sets/components/consulting-core",
+      "preview_sha256": "325f413cf1af389f6bb330360ed33bccb6decb454ac579c804d0ddfd3357410f",
+      "native_source_sha256": "4aa8ff161e530f23ee2afe52c26af722aed63b87a939d05f5b3d2a51fb40547a",
+      "native_source_slide_number": 5
+    },
+    {
+      "id": "file-search-line",
+      "source_url": "https://github.com/Remix-Design/RemixIcon/blob/v4.9.0/icons/Document/file-search-line.svg",
+      "license": "Remix Icon License v1.0",
+      "sha256": "1f68c121fff9efc279a49115e3a7a17bd484872abf99681c930aac86e2c4900b"
+    },
+    {
+      "id": "user-star-line",
+      "source_url": "https://github.com/Remix-Design/RemixIcon/blob/v4.9.0/icons/User/user-star-line.svg",
+      "license": "Remix Icon License v1.0",
+      "sha256": "2f034934ef9b717c90a3f7253ba62c4aeab82d26962599f5956d2ac9c9ff661a"
+    },
+    {
+      "id": "shield-check-line",
+      "source_url": "https://github.com/Remix-Design/RemixIcon/blob/v4.9.0/icons/System/shield-check-line.svg",
+      "license": "Remix Icon License v1.0",
+      "sha256": "d357acefbd5eb7e7b3f0af35e2b468caee6d6d6dbaaeb03d0a9cb59035ee9e8f"
+    }
+  ]
+}

@@ -8,11 +8,11 @@
   <link rel="canonical" href="https://slidepoise.github.io/">
   <title>SlidePoise · Agentic Slide Generation</title>
   <link rel="icon" href="docs/site/mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="docs/site/styles.css?v=20261008-retrieval">
+  <link rel="stylesheet" href="docs/site/styles.css?v=20261008-workflow-review">
   <link rel="stylesheet" href="docs/site/video-controls.css?v=20261005-fade">
   <link rel="stylesheet" href="/assets/video/slidepoise/cover.css?v=20261004">
   <link rel="stylesheet" href="docs/site/object-inspector.css?v=8ab3ff0c5c351406">
-  <script type="module" src="docs/site/app.mjs?v=20261008-architecture-colours"></script>
+  <script type="module" src="docs/site/app.mjs?v=20261008-workflow-review"></script>
   <script type="module" src="docs/site/asset-explorer.mjs?v=20260921-icon-path"></script>
 </head>
 <body id="top">
@@ -87,15 +87,15 @@
 
     <section id="philosophy" class="philosophy page-width" aria-labelledby="philosophy-title">
       <div class="section-heading architecture-heading"><h2 id="philosophy-title">How SlidePoise works</h2></div>
-      <p class="section-intro">Four stages connect the message to the finished deck. Content planning establishes the argument and evidence. Visual design retrieves useful references and assets, then explores compositions through image generation. Reconstruction combines the Agent’s interpretation with OpenCV measurements to build editable objects. Review checks the actual PowerPoint against the brief, chosen design and shared visual direction.</p>
+      <p class="section-intro">Content planning establishes the argument and evidence. Visual design assembles references and assets on a contact sheet, generates a slide image and checks it against the brief. Reconstruction combines the Agent’s interpretation with OpenCV measurements to build editable PowerPoint objects. The final review checks the rendered PowerPoint for content, consistency and fidelity to the generated image.</p>
       <figure id="architecture" class="system-architecture">
-        <button type="button" class="system-architecture-art" data-open-architecture aria-label="Enlarge SlidePoise architecture" aria-haspopup="dialog"><img src="/assets/img/projects/slidepoise-architecture-v1.svg?v=20261008-architecture-colours" width="1600" height="900" alt="Four stages of SlidePoise. Content planning, visual design with retrieval and generation, reconstruction with interpretation and measurement feeding the native build, and review of actual renders" loading="lazy" decoding="async"></button>
+        <button type="button" class="system-architecture-art" data-open-architecture aria-label="Enlarge SlidePoise architecture" aria-haspopup="dialog"><img src="/assets/img/projects/slidepoise-architecture-v1.svg?v=20261008-workflow-review" width="1600" height="1060" alt="Four stages of SlidePoise. Content planning, visual design with retrieval and generation, reconstruction with interpretation and measurement feeding the native build, and review of actual renders" loading="lazy" decoding="async"></button>
         <figcaption><span>System architecture</span><button type="button" data-open-architecture aria-label="Enlarge SlidePoise architecture" aria-haspopup="dialog"><span>Expand diagram</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 3h5v5M17 3l-5.5 5.5M8 17H3v-5m0 5 5.5-5.5"/></svg></button></figcaption>
       </figure>
       <div id="walkthrough-loading" class="load-state" role="status">Loading the design example…</div>
       <div id="walkthrough" class="walkthrough" hidden>
         <article class="walkthrough-step">
-          <div class="walkthrough-heading"><h3>Plan the message, retrieve references and explore the design</h3><p class="subsection-intro">The Agent defines each slide’s message and evidence, then searches the reference library for useful ways to explain them. It inspects candidate pages and retrieves relevant icons, logos or native component previews. The selected resources and content become one image-generation request. Open the sample plan to see the content and instructions behind its design.</p></div>
+          <div class="walkthrough-heading"><h3>Plan the message, retrieve references and explore the design</h3><p class="subsection-intro">The Agent defines each slide’s message and evidence, then retrieves useful references, icons, logos or native component previews. A contact sheet brings those visual inputs together for image generation. The Agent reviews the resulting image for content, readability and layout before reconstruction. Open the sample plan to see the content and instructions behind its design.</p></div>
           <div class="design-demonstration">
             <button id="walkthrough-brief" class="content-card argument-panel" type="button" aria-label="Open the slide brief" aria-haspopup="dialog"><span class="actor-label">Agent · Slide plan</span><strong id="walkthrough-message" class="argument-message"></strong><span id="walkthrough-decision" class="argument-decision"></span><span id="walkthrough-support" class="argument-support"></span><span class="evidence-note">Illustrative planning assumptions from the sample brief.</span></button>
             <span class="flow-connector" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h17m-5-5 5 5-5 5"/></svg></span>
@@ -128,6 +128,18 @@
           <details><summary><strong>Your Library Sets</strong><span>Your artwork and components</span></summary><p>Store your own artwork and native components for reuse. Components keep their editable source, selected page, recorded preview and adaptation guidance. The Agent adapts supported chart and table definitions to your content and reconstructs other structures as native objects.</p></details>
         </div>
         </div>
+        <section id="contact-sheet" class="contact-sheet-example" aria-labelledby="contact-sheet-title">
+          <figure class="contact-sheet-preview">
+            <button id="contact-sheet-open" type="button" aria-label="Enlarge the generation contact sheet" aria-haspopup="dialog"><img src="docs/site/assets/contact-sheet/generation-contact-sheet.png" width="1038" height="978" alt="Example contact sheet with consulting style guidance, two public reference slides, a native chart preview and three Remix icons" loading="lazy" decoding="async"></button>
+            <figcaption><span>Example generation input</span><button id="contact-sheet-expand" type="button" aria-haspopup="dialog">Expand contact sheet</button></figcaption>
+          </figure>
+          <div class="contact-sheet-copy">
+            <h4 id="contact-sheet-title">See the visual inputs before generation</h4>
+            <p>A contact sheet places the chosen style beside the selected references and assets. You can inspect the same visual material supplied to the image model.</p>
+            <p>This example combines two public consulting references, a native chart component and three Remix icons. Their labels connect each preview to its role and original source.</p>
+            <p class="contact-sheet-sources">References from <a href="https://www.pwc.de/de/strategie-organisation-prozesse-systeme/pwc-enterprise-architecture-in-an-agile-world.pdf" target="_blank" rel="noopener">PwC</a> and <a href="https://www.pwc.no/no/publikasjoner/strategyand-desember-b2b-saas-2024.pdf" target="_blank" rel="noopener">Strategy&amp;</a>. Icons from <a href="https://remixicon.com/" target="_blank" rel="noopener">Remix Icon</a>.</p>
+          </div>
+        </section>
         <div class="asset-decisions" id="asset-decisions">
           <div class="asset-case-header"><span>Slides from the consulting sample</span><div class="asset-cases" role="tablist" aria-label="Slides from the consulting sample">
             <button id="asset-case-0" role="tab" aria-selected="true" aria-controls="asset-case-panel" data-asset-case="0" aria-label="Slide 2 of the consulting sample"><img src="examples/consulting-ai-transformation/assets/s02-opportunities-render.png" alt="" width="160" height="90" loading="lazy"><span>Slide 2</span></button>
