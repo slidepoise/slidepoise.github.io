@@ -56,7 +56,13 @@
       } else if (url.pathname === '/api/profile/reference/add' || url.pathname === '/api/library-set/add') {
         if (!/\.(png|jpe?g|webp)$/i.test(body.filename)) throw new Error('This demo accepts PNG, JPEG and WebP images.');
         const mime = /\.png$/i.test(body.filename) ? 'image/png' : /\.webp$/i.test(body.filename) ? 'image/webp' : 'image/jpeg';
-        const item = {id: 'upload-' + revision, name: body.name || body.filename, description: body.description || '', asset_url: `data:${mime};base64,${body.content_base64}`};
+        const origin = body.source_type || 'unknown';
+        const item = {id: 'upload-' + revision, name: body.name || body.filename, description: body.description || '',
+          tags: body.tags || [], provenance: {source_type: origin,
+            source_url: body.source_url || (origin === 'user_private_document' ? body.filename : ''),
+            source_page: body.source_page || (origin === 'user_private_document' ? 'Uploaded image' : ''),
+            generated_reference: origin === 'generated_image' ? true : ['published_document', 'user_private_document'].includes(origin) ? false : null,
+            license: body.license || ''}, asset_url: `data:${mime};base64,${body.content_base64}`};
         const library = body.set_id ? data.sets[body.set_id] : data.references[id];
         library.items.push(item); library.count = library.items.length;
       } else if (url.pathname === '/api/library-set/create') {
@@ -72,6 +78,25 @@
     if (url.pathname === '/api/design') return design(id);
     if (url.pathname === '/api/profile') return {...clone(data.profiles[id]), revision: String(revision)};
     if (url.pathname === '/api/library') return {...clone(data.references[id]), revision: String(revision)};
+    if (url.pathname === '/api/reference-search') {
+      const query = (url.searchParams.get('query') || '').toLowerCase();
+      if (!query.trim() || query.length > 1200) throw new Error('Describe what your slide needs to explain.');
+      const mode = url.searchParams.get('authenticity') || 'authentic';
+      if (!['authentic', 'exclude-generated', 'any'].includes(mode)) throw new Error('Choose an available source filter.');
+      const terms = [...new Set(query.match(/[\p{L}\p{N}]+/gu) || [])];
+      const items = data.references[id].items.flatMap(item => {
+        const source = item.provenance || {};
+        const type = item.source_type || source.source_type || '';
+        const generated = [item.generated_reference, item.generated_source, source.generated_reference, source.generated_source].some(value => value === true || value === 'true') || ['generated', 'ai_generated', 'generated_image', 'synthetic'].includes(type);
+        const original = [item.generated_reference, source.generated_reference].some(value => value === false || value === 'false') && (item.source || item.source_url || source.source_url) && (item.source_page || source.source_page);
+        const authenticity = generated ? 'generated' : original ? 'recorded_authentic' : 'unknown';
+        if (item.retrieval_eligible === false || (mode === 'authentic' && authenticity !== 'recorded_authentic') || (mode === 'exclude-generated' && generated)) return [];
+        const metadata = [item.name, item.description, item.tags, item.roles, item.layout, item.relationships, item.communication_job].flat(Infinity).filter(Boolean).join(' ').toLowerCase();
+        const matched_terms = terms.filter(term => metadata.includes(term));
+        return matched_terms.length ? [{...clone(item), matched_terms, authenticity}] : [];
+      }).sort((a, b) => b.matched_terms.length - a.matched_terms.length || a.id.localeCompare(b.id));
+      return {items: items.slice(0, 24), matching_candidate_count: items.length, selection_owner: 'host_agent', profile_id: id};
+    }
     if (url.pathname === '/api/library-sets') return clone(data.libraries);
     if (url.pathname === '/api/library-set') return {...clone(data.sets[url.searchParams.get('set_id')]), revision: String(revision)};
     if (url.pathname === '/api/health') return clone(data.health);

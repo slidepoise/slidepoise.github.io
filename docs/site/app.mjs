@@ -304,10 +304,10 @@ function selectSlide(index, speak = true) {
 }
 
 const WORKFLOW = [
-  { id: 'plan', title: 'Plan', description: 'Decide what each slide needs to communicate.', entry: 'Slide outline' },
-  { id: 'design', title: 'Design', description: 'Explore layouts using the content and references.', entry: 'Generated design', detail: 'The image-generation prompt includes the slide content, visual references, style guidance and the space available on the page.' },
-  { id: 'reconstruct', title: 'Reconstruct', description: 'Build the text, charts and shapes in PowerPoint.', entry: 'Reconstruction' },
-  { id: 'review', title: 'Review', description: 'Review content, layout and consistency across slides.', entry: 'Review comparisons' },
+  { id: 'plan', title: 'Content planning', description: 'Establish the argument and evidence.', user: 'Share the audience, purpose and source material. Add any required messages.', agent: 'Develop the narrative and each slide’s communication job. Identify evidence gaps and preserve your constraints.', entry: 'Slide outline' },
+  { id: 'design', title: 'Visual design', description: 'Retrieve useful resources, then generate.', user: 'Share brand assets or a preferred direction. Review designs when you want to guide the work.', agent: 'Search and inspect references, icons, logos and component previews. Compile the selected resources and content into one generation request.', entry: 'Generated design', detail: 'Retrieval follows the current slide intent. Selected source files stay attached to the request so their identity can be preserved during reconstruction.' },
+  { id: 'reconstruct', title: 'Reconstruction', description: 'Interpret, measure and build native objects.', user: 'This stage runs automatically. You can continue giving feedback in the conversation.', agent: 'Identify objects and relationships, refine their measured geometry, and build editable PowerPoint objects using original assets and component definitions.', entry: 'Reconstruction' },
+  { id: 'review', title: 'Review', description: 'Check the rendered deck and refine it.', user: 'Review the finished presentation and request any changes to its message or design.', agent: 'Inspect every rendered slide for content, fidelity and deck-wide consistency. Correct issues and deliver the editable file.', entry: 'Review comparisons' },
 ];
 
 function workflowFor(deck, configuration) {
@@ -368,6 +368,13 @@ function renderProcess() {
     const heading = element('h4');
     heading.append(element('span', 'workflow-number', String(index + 1).padStart(2, '0')), element('span', '', stage.title));
     article.append(heading, element('p', '', stage.description));
+    const responsibilities = element('dl', 'workflow-responsibilities');
+    for (const [label, copy] of [['You', stage.user], ['Agent', stage.agent]]) {
+      const row = element('div');
+      row.append(element('dt', '', label), element('dd', '', copy));
+      responsibilities.append(row);
+    }
+    article.append(responsibilities);
     const details = element('details', 'workflow-evidence');
     details.dataset.stage = stage.id;
     details.open = openStages.has(stage.id);

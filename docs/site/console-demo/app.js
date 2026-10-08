@@ -5,12 +5,12 @@ const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;
 const at = (value, key, fallback = null) => key.split(".").reduce((v, k) => v?.[k], value) ?? fallback;
 const viewNames = { overview: "Overview", design: "Style", resources: "Resources", system: "System" };
 const capabilityInfo = {
-  Python: { card: "Local tools", purpose: "Runs SlidePoise’s file preparation and measurement tools." },
-  OpenCV: { card: "Visual measurement", purpose: "Measures object positions, colours and boundaries in the generated design." },
-  Node: { card: "JavaScript runtime", purpose: "Runs the PowerPoint renderer." },
-  PptxGenJS: { card: "PowerPoint construction", purpose: "Creates PowerPoint text, charts, tables and shapes." },
-  LibreOffice: { card: "Slide previews", purpose: "Renders PowerPoint slides as PDF pages for review." },
-  Poppler: { card: "Preview images", purpose: "Converts PDF pages into images the Agent can inspect." },
+  Python: { key: "python", card: "Local tools", mark: "Py", purpose: "Prepares files and runs the tools used to build your presentation.", example: "Prepare a slide for measurement and reconstruction." },
+  OpenCV: { key: "opencv", card: "Visual measurement", mark: "CV", purpose: "Measures positions, colors, edges, and connectors in the approved design.", example: "Match editable objects to the design you approved." },
+  Node: { key: "node", card: "PowerPoint builder", mark: "JS", purpose: "Builds the editable PowerPoint file on this computer.", example: "Reconstruct an approved design as a PowerPoint slide." },
+  PptxGenJS: { key: "pptx", card: "Editable objects", mark: "P", purpose: "Creates editable text, shapes, images, tables, and connectors.", example: "Keep supported slide elements editable in PowerPoint." },
+  LibreOffice: { key: "libreoffice", card: "Slide previews", mark: "Pg", purpose: "Renders PowerPoint previews on this computer.", example: "Review the reconstructed slide before downloading it." },
+  Poppler: { key: "poppler", card: "Preview images", mark: "PDF", purpose: "Converts LibreOffice PDF pages into images for visual review.", example: "Inspect each rendered slide with its text, charts and images." },
 };
 
 async function api(path, body) { return window.consoleDemoAPI(path, body); }
@@ -38,13 +38,13 @@ async function navigate(view, focusHeading = false) {
   const description = {
     overview: "Your reusable styles, resources, and local capabilities.",
     design: "Create and customize your presentation styles.",
-    resources: "Icons and editable components for your slides.",
+    resources: "Visual references, icons, logos and editable components.",
     system: "Image generation and local tools."
   }[view];
   $("#view-description").textContent = description;
   $("#view-description").hidden = !description;
   if (focusHeading) $("#view-title").focus({ preventScroll: true });
-  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   if (view === "design") await loadDesign();
   if (view === "resources") await loadResources();
   if (view === "system") await loadSystem();
@@ -58,7 +58,7 @@ function styleCards(payload) {
   return `<button class="design-control" data-edit="guidance"><div class="design-copy"><span class="eyebrow">Information density</span><strong>${esc(payload.densities[v.density] || v.density)}</strong><p>Choose how much information your slides usually carry.</p><div class="density-summary"><span>${esc(agencyLabel(agency.density))}</span><span class="density-bars">${"<i></i>".repeat(v.density === "spacious" ? 2 : v.density === "information_rich" ? 6 : 4)}</span></div></div><div class="design-visual"><span class="communication-mini"><i></i><b></b><b></b><em></em></span><small>Choose</small></div></button>
   <button class="design-control" data-edit="typography"><div class="design-copy"><span class="eyebrow">Typography</span><strong>${esc(v.display_font)} <span class="type-divider">/</span> ${esc(v.body_font)}</strong><p>Choose typefaces for headings and body text.</p></div><div class="type-preview" data-display-font="${esc(v.display_font)}" data-body-font="${esc(v.body_font)}"><b>Aa</b><small>${esc(agencyLabel(agency.typography))}</small></div></button>
   <button class="design-control" data-edit="visual"><div class="design-copy"><span class="eyebrow">Color and treatment</span><strong>${esc(agencyLabel(agency.palette))} palette</strong><p>Set a palette or draw colors from your visual references.</p><div class="palette-preview">${[v.primary, v.secondary, v.highlight, v.surface].map(color => `<i data-color="${esc(color)}"></i>`).join("")}<small>Choose</small></div></button>
-  <button class="design-control" data-edit="libraries"><div class="design-copy"><span class="eyebrow">Reusable elements</span><strong>${selectedSets.icons.length} icon · ${selectedSets.components.length} component set${selectedSets.components.length === 1 ? "" : "s"}</strong><p>Choose the icon and component sets available to this profile.</p></div><div class="set-stack" aria-hidden="true"><span>◇</span><span>▦</span><small>Choose sets</small></div></button>`;
+  <button class="design-control" data-edit="libraries"><div class="design-copy"><span class="eyebrow">Reusable elements</span><strong>${selectedSets.icons.length} icon sets and ${selectedSets.components.length} component set${selectedSets.components.length === 1 ? "" : "s"}</strong><p>Choose the icon and component sets available to this profile.</p></div><div class="set-stack" aria-hidden="true"><span>◇</span><span>▦</span><small>Choose sets</small></div></button>`;
 }
 function applyPreviews() {
   $$('[data-edit="guidance"] .design-visual').forEach(element => {
@@ -149,7 +149,7 @@ async function openStyleEditor(mode) {
 async function loadResources() {
   state.librarySets = await api("/api/library-sets");
   const groups = { icons: state.librarySets.sets.filter(item => item.kind === "icons"), components: state.librarySets.sets.filter(item => item.kind === "components") };
-  $("#library-grid").innerHTML = Object.entries(groups).map(([kind, items]) => `<section class="library-group"><div class="library-group-heading"><span class="collection-symbol">${kind === "icons" ? iconGlyph() : "▦"}</span><div><p class="eyebrow">${kind === "icons" ? "ICONS" : "COMPONENTS"}</p><h3>${kind === "icons" ? "Icon Sets" : "Component Sets"}</h3><p>${items.length} sets</p></div><button class="icon-button add-set-button" data-new-set="${kind}" aria-label="Add ${kind === "icons" ? "Icon" : "Component"} Set">＋</button></div><div class="set-list">${items.map(item => `<button class="set-row" data-library-set="${esc(item.id)}"><span class="set-source">${item.source === "remote" ? "Online" : "Local"}</span><span><strong>${esc(item.name)}</strong><small>${esc(item.description)}</small></span><b>›</b></button>`).join("")}</div></section>`).join("");
+  $("#library-grid").innerHTML = `<section class="library-group"><div class="library-group-heading"><div><p class="eyebrow">VISUAL REFERENCES</p><h3>Reference library</h3><p>Search the references in each Profile by the message or relationship a slide needs to explain.</p></div><button class="quiet-button" data-view="design">Choose a Profile</button></div></section>` + Object.entries(groups).map(([kind, items]) => `<section class="library-group"><div class="library-group-heading"><span class="collection-symbol">${kind === "icons" ? iconGlyph() : "▦"}</span><div><p class="eyebrow">${kind === "icons" ? "ICONS" : "COMPONENTS"}</p><h3>${kind === "icons" ? "Icon Sets" : "Component Sets"}</h3><p>${items.length} sets</p></div><button class="icon-button add-set-button" data-new-set="${kind}" aria-label="Add ${kind === "icons" ? "Icon" : "Component"} Set">＋</button></div><div class="set-list">${items.map(item => `<button class="set-row" data-library-set="${esc(item.id)}"><span class="set-source">${item.source === "remote" ? "Online" : "Local"}</span><span><strong>${esc(item.name)}</strong><small>${esc(item.description)}</small></span><b>›</b></button>`).join("")}</div></section>`).join("");
 }
 async function openLibrarySet(setId) {
   state.openSet = await api(`/api/library-set?set_id=${encodeURIComponent(setId)}`); const item = state.openSet;
@@ -182,7 +182,7 @@ function renderHealth() {
 function openCapability(name) {
   const item = state.health.find(entry => entry.name === name); const info = capabilityInfo[name]; if (!item || !info) return;
   $("#preview-title").textContent = item.name;
-  $("#preview-body").innerHTML = `<div class="capability-detail"><div class="capability-copy"><p class="capability-lead">${esc(info.purpose)}</p><dl><div><dt>Status</dt><dd>${item.available ? "Ready" : "Not installed"}</dd></div><div><dt>Installation details</dt><dd>${esc(item.detail)}</dd></div></dl></div></div>`;
+  $("#preview-body").innerHTML = `<div class="capability-detail"><div class="capability-sample ${esc(info.key)}" aria-hidden="true"><strong>${esc(info.mark)}</strong><span><i></i><i></i><i></i></span></div><div class="capability-copy"><p class="capability-lead">${esc(info.purpose)}</p><dl><div><dt>Example</dt><dd>${esc(info.example)}</dd></div><div><dt>Status</dt><dd>${item.available ? "Ready on this computer" : "Not installed"}</dd></div><div><dt>Installation details</dt><dd>${esc(item.detail)}</dd></div></dl></div></div>`;
   if (!$("#preview-dialog").open) $("#preview-dialog").showModal();
 }
 async function fileData(file) { const bytes = new Uint8Array(await file.arrayBuffer()); let binary = ""; for (let offset = 0; offset < bytes.length; offset += 8192) binary += String.fromCharCode(...bytes.subarray(offset, offset + 8192)); return btoa(binary); }

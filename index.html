@@ -8,11 +8,11 @@
   <link rel="canonical" href="https://slidepoise.github.io/">
   <title>SlidePoise · Agentic Slide Generation</title>
   <link rel="icon" href="docs/site/mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="docs/site/styles.css?v=20261004-video">
+  <link rel="stylesheet" href="docs/site/styles.css?v=20261008-retrieval">
   <link rel="stylesheet" href="docs/site/video-controls.css?v=20261005-fade">
   <link rel="stylesheet" href="/assets/video/slidepoise/cover.css?v=20261004">
   <link rel="stylesheet" href="docs/site/object-inspector.css?v=8ab3ff0c5c351406">
-  <script type="module" src="docs/site/app.mjs?v=20261005-fade"></script>
+  <script type="module" src="docs/site/app.mjs?v=20261008-retrieval"></script>
   <script type="module" src="docs/site/asset-explorer.mjs?v=20260921-icon-path"></script>
 </head>
 <body id="top">
@@ -87,15 +87,15 @@
 
     <section id="philosophy" class="philosophy page-width" aria-labelledby="philosophy-title">
       <div class="section-heading architecture-heading"><h2 id="philosophy-title">How SlidePoise works</h2></div>
-      <p class="section-intro">The Agent plans what the presentation should communicate and how the slides fit together. An image model explores layouts using that content, your style references and selected assets. To turn a chosen design into PowerPoint, the Agent identifies its objects and their relationships while local tools measure their geometry. The Agent reviews the rendered slides against the plan and corrects problems in content and appearance.</p>
+      <p class="section-intro">Four stages connect the message to the finished deck. Content planning establishes the argument and evidence. Visual design retrieves useful references and assets, then explores compositions through image generation. Reconstruction combines the Agent’s interpretation with OpenCV measurements to build editable objects. Review checks the actual PowerPoint against the brief, chosen design and shared visual direction.</p>
       <figure id="architecture" class="system-architecture">
-        <button type="button" class="system-architecture-art" data-open-architecture aria-label="Enlarge SlidePoise architecture" aria-haspopup="dialog"><img src="/assets/img/projects/slidepoise-architecture-v1.svg?v=20261004d" width="1600" height="1180" alt="SlidePoise architecture showing shared plans and visual assets, image generation, Agent interpretation, OpenCV measurement, editable PowerPoint and a review loop" loading="lazy" decoding="async"></button>
+        <button type="button" class="system-architecture-art" data-open-architecture aria-label="Enlarge SlidePoise architecture" aria-haspopup="dialog"><img src="/assets/img/projects/slidepoise-architecture-v1.svg?v=20261008-retrieval" width="1600" height="900" alt="Four stages of SlidePoise. Content planning, visual design with retrieval and generation, reconstruction with interpretation and measurement feeding the native build, and review of actual renders" loading="lazy" decoding="async"></button>
         <figcaption><span>System architecture</span><button type="button" data-open-architecture aria-label="Enlarge SlidePoise architecture" aria-haspopup="dialog"><span>Expand diagram</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 3h5v5M17 3l-5.5 5.5M8 17H3v-5m0 5 5.5-5.5"/></svg></button></figcaption>
       </figure>
       <div id="walkthrough-loading" class="load-state" role="status">Loading the design example…</div>
       <div id="walkthrough" class="walkthrough" hidden>
         <article class="walkthrough-step">
-          <div class="walkthrough-heading"><h3>Plan the content and explore the design</h3><p class="subsection-intro">The Agent plans each slide’s message and supporting content, then sends that plan to the image model with style guidance and reference images. The model can explore how to arrange the content without following a fixed layout. Open the sample plan to see the content and instructions used to generate the design.</p></div>
+          <div class="walkthrough-heading"><h3>Plan the message, retrieve references and explore the design</h3><p class="subsection-intro">The Agent defines each slide’s message and evidence, then searches the reference library for useful ways to explain them. It inspects candidate pages and retrieves relevant icons, logos or native component previews. The selected resources and content become one image-generation request. Open the sample plan to see the content and instructions behind its design.</p></div>
           <div class="design-demonstration">
             <button id="walkthrough-brief" class="content-card argument-panel" type="button" aria-label="Open the slide brief" aria-haspopup="dialog"><span class="actor-label">Agent · Slide plan</span><strong id="walkthrough-message" class="argument-message"></strong><span id="walkthrough-decision" class="argument-decision"></span><span id="walkthrough-support" class="argument-support"></span><span class="evidence-note">Illustrative planning assumptions from the sample brief.</span></button>
             <span class="flow-connector" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h17m-5-5 5 5-5 5"/></svg></span>
@@ -103,8 +103,8 @@
           </div>
         </article>
         <article class="walkthrough-step reconstruction-step">
-          <div class="walkthrough-heading"><h3>Interpret the objects and measure their geometry</h3><p class="subsection-intro">Once a design is chosen, its contents need to become PowerPoint objects. The Agent identifies what each element represents and which elements belong together. In this example, the bars, labels and values form one chart. OpenCV, a computer-vision library, measures its geometry so the renderer can rebuild it as an editable chart linked to its data.</p>
-      <p class="architecture-review subsection-intro">During reconstruction, the Agent also corrects problems in the generated image, such as arrows that connect the wrong objects or overlapping text. It checks the rebuilt slides against the brief and reviews alignment, typography and colour across the deck.</p>
+          <div class="walkthrough-heading"><h3>Reconstruct the design as editable objects</h3><p class="subsection-intro">Once a design is chosen, its contents need to become PowerPoint objects. The Agent identifies what each element represents and which elements belong together. In this example, the bars, labels and values form one chart. OpenCV, a computer-vision library, measures its geometry so the renderer can rebuild it as an editable chart linked to its data.</p>
+      <p class="architecture-review subsection-intro">Interpretation and measurement work together. The Agent reviews the measured regions and refines object boundaries when needed. The native build combines both inputs, then the Agent inspects the rendered slide and corrects any loss of meaning or visual fidelity.</p>
           </div>
           <div class="reconstruction-demonstration">
             <span class="sr-only">Agent interpretation and OpenCV measurements are combined to build the editable PowerPoint chart.</span>
@@ -118,13 +118,14 @@
       <article class="asset-system asset-library-system" aria-labelledby="asset-system-title">
         <div class="asset-context">
         <div class="walkthrough-heading asset-system-copy">
-          <h3 id="asset-system-title">Define the visual language</h3>
-          <p>Asset libraries give the Agent a consistent set of icons, logos and PowerPoint components to draw on. It selects relevant files for each slide and includes them as references for image generation. During reconstruction, it places the original files in PowerPoint. Choose an example to see the selected icons, then inspect an icon to find it on the slide.</p>
+          <h3 id="asset-system-title">Retrieve resources that help the slide communicate</h3>
+          <p>The Agent searches by what a slide needs to explain. Visual references inform composition, icons clarify roles, and exact logos identify organisations or products. Native components pair recorded previews with reusable construction guidance. Selected previews guide generation. Original artwork and native definitions carry through to reconstruction. Choose a sample below to explore its icons.</p>
         </div>
         <div class="asset-source-options">
-          <details><summary><strong>Remix Icon</strong><span>Open-source icons</span></summary><p>The Agent searches for relevant icons and chooses outline or filled versions to suit the slide.</p><a href="https://remixicon.com/" target="_blank" rel="noopener">Browse the library</a></details>
+          <details><summary><strong>Visual reference library</strong><span>Composition and communication precedents</span></summary><p>The Agent retrieves indexed pages by message, structure and relationships, then inspects them before selection. Source details distinguish published or private originals from generated examples. Manage and search the same library in the Console.</p></details>
+          <details><summary><strong>Remix Icon</strong><span>Open-source icons</span></summary><p>The Agent compares Remix outline and filled versions at the intended slide size. Useful symbols introduced by generation prompt a further search for matching library assets.</p><a href="https://remixicon.com/" target="_blank" rel="noopener">Browse the library</a></details>
           <details><summary><strong>Wikimedia Commons</strong><span>Logos and public images</span></summary><p>The Agent finds images and logos, checks that they match the requested subject and reviews their usage terms.</p><a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Visit Wikimedia Commons</a></details>
-          <details><summary><strong>Your Library Sets</strong><span>Your artwork and components</span></summary><p>Create a Library Set with your Agent to make your own logos, images and PowerPoint components available for future presentations.</p></details>
+          <details><summary><strong>Your Library Sets</strong><span>Your artwork and components</span></summary><p>Store your own artwork and native components for reuse. Components keep their editable source, selected page, recorded preview and adaptation guidance. The Agent adapts supported chart and table definitions to your content and reconstructs other structures as native objects.</p></details>
         </div>
         </div>
         <div class="asset-decisions" id="asset-decisions">
@@ -179,7 +180,7 @@
 
     <div id="process" class="process" aria-labelledby="process-title">
       <div class="section-heading"><h3 id="process-title">Working with SlidePoise</h3></div>
-      <p class="section-intro">Tell your Agent who the presentation is for, what it should communicate and which material to use. You can review the plan and designs together or ask it to work independently. Expand a stage below to inspect the plans, designs and review records from the selected sample.</p>
+      <p class="section-intro">Start with the audience, purpose and source material. Choose how closely you want to collaborate. The Agent handles retrieval, reconstruction and technical checks, and brings you into decisions when your direction matters. Each stage below separates your contribution from the work the Agent performs.</p>
       <div id="process-grid" class="workflow-grid"></div>
     </div>
     </section>
@@ -236,7 +237,7 @@
         <div class="console-copy">
       <p class="section-intro">Develop a style with your Agent and save it as a Profile for future presentations. Use the local Console to adjust fonts, colours and visual references, and manage your asset libraries. Try it here with sample settings. Your own Profiles and libraries are saved on your computer.</p>
 
-          <dl><div><dt>Style</dt><dd>Set fonts, colours and references, and decide how closely the Agent should follow them.</dd></div><div><dt>Resources</dt><dd>Manage the icon libraries, logos and components available to the Agent.</dd></div><div><dt>System</dt><dd>Choose how images are generated and check local tools.</dd></div></dl>
+          <dl><div><dt>Style</dt><dd>Set fonts, colours and references, and decide how closely the Agent should follow them.</dd></div><div><dt>Resources</dt><dd>Search profile references and manage the icons, logos and native components available to the Agent.</dd></div><div><dt>System</dt><dd>Choose how images are generated and check local tools.</dd></div></dl>
           <details class="setup-details"><summary>Open the local Console</summary><p>After installation, ask your Agent to open the SlidePoise Console, or run this command in a terminal.</p><code class="console-command">npx github:henryhyw/slidepoise console</code><p>Saved changes apply to future presentations. To change a presentation already in progress, ask your Agent.</p></details>
         </div>
         <div id="console-demo" class="console-demo">
