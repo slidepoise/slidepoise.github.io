@@ -965,7 +965,7 @@ body[data-input="keyboard"] .content-card, body[data-input="keyboard"] .content-
 }
 
 /* The architecture introduces the walkthrough without joining the examples. */
-.system-architecture { width: min(100%, calc((100svh - 160px) * 1600 / 1060)); margin: 36px auto 44px; }
+.system-architecture { width: min(100%, calc((100svh - 160px) * 1600 / 820)); margin: 36px auto 44px; }
 .system-architecture-art { display: block; width: 100%; padding: 0; border: 0; background: #eeebe4; cursor: zoom-in; }
 .system-architecture-art img { display: block; width: 100%; height: auto; }
 .system-architecture figcaption { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 6px; color: var(--muted); font-size: 12px; }
