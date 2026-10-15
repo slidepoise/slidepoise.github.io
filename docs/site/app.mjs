@@ -976,7 +976,7 @@ for (const id of ['overview-enlarge']) {
 const overviewVideo = byId('overview-video');
 const overviewPlay = byId('overview-play');
 overviewPlay.addEventListener('click', async () => {
-  overviewVideo.src ||= '/assets/video/slidepoise/slidepoise.mp4?v=24179611';
+  overviewVideo.src ||= '/assets/video/slidepoise/slidepoise.mp4?v=20261015-drama3';
   overviewVideo.controls = true;
   overviewVideo.removeAttribute('aria-hidden');
   overviewVideo.tabIndex = 0;
