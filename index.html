@@ -8,12 +8,12 @@
   <link rel="canonical" href="https://slidepoise.github.io/">
   <title>SlidePoise · Agentic Slide Generation</title>
   <link rel="icon" href="docs/site/mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="docs/site/styles.css?v=20261016-header-fix">
-  <link rel="stylesheet" href="docs/site/reader-story.css?v=20261016-header-fix">
+  <link rel="stylesheet" href="docs/site/styles.css?v=20261016-section-spacing">
+  <link rel="stylesheet" href="docs/site/reader-story.css?v=20261016-section-spacing">
   <link rel="stylesheet" href="docs/site/video-controls.css?v=20261005-fade">
   <link rel="stylesheet" href="/assets/video/slidepoise/cover.css?v=20261004">
   <link rel="stylesheet" href="docs/site/object-inspector.css?v=8ab3ff0c5c351406">
-  <script type="module" src="docs/site/app.mjs?v=20261016-header-fix"></script>
+  <script type="module" src="docs/site/app.mjs?v=20261016-section-spacing"></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#why-slidepoise">Skip to content</a>
@@ -134,8 +134,8 @@
       <div class="section-heading"><h2 id="console-title">Save your preferences in the Local Console</h2></div>
       <div class="console-layout">
         <div class="console-copy">
-          <p class="section-intro">A Profile saves the fonts, colours and visual references you want to reuse. The Agent uses these preferences when generating designs and building PowerPoint slides.</p>
-          <p>Use the Console to edit Profiles, manage shared icon and asset libraries, and choose your image generator. Try the sample settings here.</p>
+          <p class="section-intro">Your Agent can manage styles, resource libraries and image-generation settings through conversation. The optional Local Console lets you browse and adjust the same preferences.</p>
+          <p>A Profile keeps the fonts, colours and resource selections you want to reuse across presentations. Explore the Console below with sample settings.</p>
           <div class="console-launch"><h3>On your computer</h3><p>After installation, ask your Agent to open the SlidePoise Console, or run</p><code class="console-command">npx github:henryhyw/slidepoise console</code><p>Your saved settings apply to future presentations. Give feedback on the current deck in conversation.</p></div>
         </div>
         <div id="console-demo" class="console-demo">
@@ -248,7 +248,7 @@
     </section>
   </main>
 
-  <footer class="site-footer page-width"><a class="wordmark" href="#top"><img src="docs/site/mark.svg" width="23" height="23" alt="">SlidePoise</a><p>Agentic Slide Generation</p><a href="https://github.com/henryhyw/slidepoise/blob/main/LICENSE" target="_blank" rel="noopener">MIT license</a></footer>
+  <footer class="site-footer page-width"><a class="wordmark" href="#top"><img src="docs/site/mark.svg" width="23" height="23" alt="">SlidePoise</a><a class="footer-credit" href="https://www.henryw.me/">Designed by Henry W.</a><a href="https://github.com/henryhyw/slidepoise/blob/main/LICENSE" target="_blank" rel="noopener">MIT license</a></footer>
 
   <dialog id="viewer-dialog" class="viewer-dialog" aria-label="Expanded presentation viewer"></dialog>
   <dialog id="artifact-dialog" class="artifact-dialog" aria-labelledby="artifact-title" aria-describedby="artifact-description"><div class="dialog-header"><div><p id="artifact-type" class="eyebrow"></p><h2 id="artifact-title"></h2></div><div class="dialog-actions"><button id="artifact-close" class="icon-button" type="button" aria-label="Close preview"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="m5 5 10 10M5 15 15 5"/></svg></button></div></div><div id="artifact-body" class="artifact-body"></div><p id="artifact-description" class="dialog-description"></p></dialog>

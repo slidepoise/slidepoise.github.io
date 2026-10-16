@@ -85,7 +85,7 @@
 .artwork-comparison { height: min(340px, 42svh); }
 .review-chapter { padding-bottom: 36px; }
 .review-comparison { width: min(100%, calc((100svh - 420px) * 16 / 9)); margin: auto; }
-.architecture-section { padding-block: 64px; scroll-margin-top: 82px; }
+.architecture-section { padding-block: 28px 32px; border-top: 1px solid var(--line); }
 .architecture-section h2 { font-size: 30px; line-height: 1.2; }
 .architecture-section .walkthrough-heading p { max-width: 850px; margin-top: 15px; color: var(--muted); font-size: 14px; line-height: 1.75; }
 .architecture-section .system-architecture { width: min(100%, calc((100svh - 395px) * 1600 / 870)); margin: 24px auto 0; }
