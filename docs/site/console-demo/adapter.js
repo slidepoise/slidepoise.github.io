@@ -6,11 +6,30 @@
   let generation = {mode: 'auto', tool: '', model: '', instructions: ''};
   const originals = structuredClone(data.designs);
   const clone = value => structuredClone(value);
+  // Reuse the public sample images as shared collections for the current picker.
+  for (const [id, library] of Object.entries(data.references)) {
+    const setId = `${id}-references`;
+    const set = { id: setId, kind: 'visual_references', name: `${data.profiles[id].profile.name} references`,
+      description: 'Sample reference slides for presentation design.', source: 'local', items: library.items };
+    data.sets[setId] = set;
+    data.libraries.sets.push({ ...set, items: undefined });
+    data.profiles[id].profile.library_sets.visual_references = [setId];
+  }
+  function referenceLibrary(id) {
+    const profile = data.profiles[id].profile;
+    const items = (profile.library_sets.visual_references || []).flatMap(setId => {
+      const selected = profile.library_items?.visual_references?.[setId];
+      return (data.sets[setId]?.items || []).filter(item => selected === undefined || selected.includes(item.id))
+        .map(item => ({ ...clone(item), set_id: setId, resource_id: item.id, catalog_revision: String(revision) }));
+    });
+    return { ...clone(data.references[id]), items, count: items.length, revision: String(revision) };
+  }
   function design(id) {
     const result = data.designs[id];
     if (!result) throw new Error('Choose a sample profile.');
     return { ...clone(result), active_profile: data.overview.active_profile, profiles: clone(data.overview.profiles),
-      revision: String(revision), profile_revision: String(revision), style_agency: clone(data.profiles[id].profile.style_agency), library_sets: clone(data.libraries.sets) };
+      revision: String(revision), profile_revision: String(revision), style_agency: clone(data.profiles[id].profile.style_agency),
+      selected_sets: clone(data.profiles[id].profile.library_sets), selected_items: clone(data.profiles[id].profile.library_items || {}), library_sets: clone(data.libraries.sets) };
   }
   window.consoleDemoAPI = async (path, body) => {
     const url = new URL(path, 'https://demo.invalid');
@@ -32,7 +51,12 @@
         if (fields.style_agency) Object.assign(data.profiles[id].profile.style_agency, fields.style_agency);
         if (fields.library_sets) { data.profiles[id].profile.library_sets = clone(fields.library_sets); data.designs[id].selected_sets = clone(fields.library_sets); }
       } else if (url.pathname === '/api/design' && body.reset) data.designs[id] = clone(originals[id]);
-      else if (url.pathname === '/api/profile/update') Object.assign(data.profiles[id].profile, body.values);
+      else if (url.pathname === '/api/profile/update') {
+        if (body.revision !== String(revision)) throw new Error('This demo changed. Reopen the setting and try again.');
+        Object.assign(data.profiles[id].profile, body.values);
+        data.designs[id].selected_sets = clone(data.profiles[id].profile.library_sets);
+        data.designs[id].selected_items = clone(data.profiles[id].profile.library_items || {});
+      }
       else if (url.pathname === '/api/profile/create') {
         const key = 'demo-' + revision;
         const source = body.based_on || data.overview.active_profile;
@@ -48,7 +72,12 @@
         revision++;
         return {profile: {...clone(data.profiles[key]), name: body.name}};
       } else if (url.pathname === '/api/profile/reference/update') {
-        const item = data.references[id].items.find(item => item.id === body.id);
+        const item = Object.values(data.sets).flatMap(set => set.items || []).find(item => item.id === body.id);
+        Object.assign(item, body.values);
+      } else if (url.pathname === '/api/library-set/item/update') {
+        if (body.revision !== String(revision)) throw new Error('This demo changed. Reopen the resource and try again.');
+        const item = data.sets[body.set_id]?.items.find(item => item.id === body.id);
+        if (!item) throw new Error('This resource is unavailable.');
         Object.assign(item, body.values);
       } else if (url.pathname === '/api/library-set/update') {
         Object.assign(data.sets[body.set_id], body.values);
@@ -63,11 +92,14 @@
             source_page: body.source_page || (origin === 'user_private_document' ? 'Uploaded image' : ''),
             generated_reference: origin === 'generated_image' ? true : ['published_document', 'user_private_document'].includes(origin) ? false : null,
             license: body.license || ''}, asset_url: `data:${mime};base64,${body.content_base64}`};
-        const library = body.set_id ? data.sets[body.set_id] : data.references[id];
+        const setId = body.set_id || data.profiles[id].profile.library_sets.visual_references[0];
+        const library = data.sets[setId];
         library.items.push(item); library.count = library.items.length;
       } else if (url.pathname === '/api/library-set/create') {
         const item = {id: 'demo-set-' + revision, name: body.name, kind: body.kind || 'icons', description: body.description || '', source: 'local', items: [], count: 0};
         data.libraries.sets.push(item);data.sets[item.id] = item;
+        revision++;
+        return {...clone(item), revision: String(revision)};
       } else throw new Error('This action is available in the installed Console.');
       revision++;
       return url.pathname === '/api/profile/style' ? design(id) : {profile: clone(data.profiles[id]), overview: clone(data.overview)};
@@ -77,14 +109,14 @@
     if (url.pathname === '/api/console/revision') return {revision: String(revision)};
     if (url.pathname === '/api/design') return design(id);
     if (url.pathname === '/api/profile') return {...clone(data.profiles[id]), revision: String(revision)};
-    if (url.pathname === '/api/library') return {...clone(data.references[id]), revision: String(revision)};
+    if (url.pathname === '/api/library') return referenceLibrary(id);
     if (url.pathname === '/api/reference-search') {
       const query = (url.searchParams.get('query') || '').toLowerCase();
       if (!query.trim() || query.length > 1200) throw new Error('Describe what your slide needs to explain.');
       const mode = url.searchParams.get('authenticity') || 'authentic';
       if (!['authentic', 'exclude-generated', 'any'].includes(mode)) throw new Error('Choose an available source filter.');
       const terms = [...new Set(query.match(/[\p{L}\p{N}]+/gu) || [])];
-      const items = data.references[id].items.flatMap(item => {
+      const items = referenceLibrary(id).items.flatMap(item => {
         const source = item.provenance || {};
         const type = item.source_type || source.source_type || '';
         const generated = [item.generated_reference, item.generated_source, source.generated_reference, source.generated_source].some(value => value === true || value === 'true') || ['generated', 'ai_generated', 'generated_image', 'synthetic'].includes(type);
@@ -98,7 +130,12 @@
       return {items: items.slice(0, 24), matching_candidate_count: items.length, selection_owner: 'host_agent', profile_id: id};
     }
     if (url.pathname === '/api/library-sets') return clone(data.libraries);
-    if (url.pathname === '/api/library-set') return {...clone(data.sets[url.searchParams.get('set_id')]), revision: String(revision)};
+    if (url.pathname === '/api/library-set') {
+      const setId = url.searchParams.get('set_id');
+      const set = clone(data.sets[setId]);
+      if (!set) throw new Error('This collection is unavailable.');
+      return {...set, items: (set.items || []).map(item => ({...item, set_id: setId, resource_id: item.id, catalog_revision: String(revision)})), revision: String(revision)};
+    }
     if (url.pathname === '/api/health') return clone(data.health);
     if (url.pathname === '/api/settings') return clone(data.settings);
     if (url.pathname === '/api/component') {

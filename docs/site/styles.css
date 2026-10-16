@@ -79,9 +79,9 @@ body[data-input="pointer"] .designer-credit:active { transform: scale(.98); }
 .slide-strip { display: flex; flex-direction: column; gap: 14px; padding: 19px 13px 17px; background: #f9fafb; border-right: 1px solid var(--line); overflow-y: auto; max-height: none; }
 .slide-thumb { background: none; border: 0; text-align: left; padding: 0; width: 100%; flex-shrink: 0; border-radius: 3px; }
 .slide-thumb img { width: 100%; aspect-ratio: 16/9; object-fit: contain; background: white; border: 0; border-radius: 2px; opacity: .78; }
-.slide-thumb[aria-current="true"] img { opacity: 1; }
+.slide-thumb[aria-current="true"] img { opacity: 1; outline: 2px solid #5d6874; outline-offset: 3px; box-shadow: 0 3px 9px #26333f18; }
 .slide-thumb span { display: block; text-align: center; color: #6e6e6e; font-size: 9px; line-height: 1; margin-top: 8px; font-variant-numeric: tabular-nums; }
-.slide-thumb[aria-current="true"] span { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.slide-thumb[aria-current="true"] span { color: #303a45; font-weight: 650; }
 .canvas-column { min-width: 0; display: flex; flex-direction: column; background: #f0f2f5; }
 .canvas-wrap { display: flex; align-items: center; justify-content: center; padding: 30px; flex: 1; }
 .slide-surface { width: 100%; aspect-ratio: 16/9; position: relative; background: white; box-shadow: 0 1px 3px #28282810, 0 8px 25px #28282810; }

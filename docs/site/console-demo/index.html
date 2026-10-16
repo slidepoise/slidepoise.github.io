@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SlidePoise Console demo</title>
   <link rel="icon" href="mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=af4ae235065250c0">
-<link rel="stylesheet" href="demo.css"></head>
+  <link rel="stylesheet" href="styles.css?v=4a307f981456">
+<link rel="stylesheet" href="demo.css?v=ea07b0532300"></head>
 <body>
   <div class="app-shell">
     <aside class="sidebar">
@@ -27,7 +27,7 @@
         <div class="overview-metrics" id="metrics"></div>
         <div class="overview-guidance">
         <div class="section-heading"><div><p class="eyebrow">GLOBAL DEFAULTS</p><h3>Reusable presentation guidance</h3></div></div>
-        <button class="nav-item" data-view="system"><span class="nav-icon"><svg viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M2.25 4.5h2.25m3 0h8.25M2.25 9h8.25m3 0h2.25M2.25 13.5h5m3 0h5.5"/><circle cx="6" cy="4.5" r="1.5"/><circle cx="12" cy="9" r="1.5"/><circle cx="8.75" cy="13.5" r="1.5"/></svg></span><span>System</span></button>
+        <div class="overview-links"><button class="overview-link" data-view="design"><h4>Guidance profiles</h4><p>Typography, palette, density, and visual direction.</p><span class="open-label">Manage styles <b>›</b></span></button><button class="overview-link" data-view="resources"><h4>Shared resources</h4><p>Visual references, icons, and editable components.</p><span class="open-label">Manage resources <b>›</b></span></button><button class="overview-link" data-view="system"><h4>Local capabilities</h4><p>Rendering, measurement, and PowerPoint construction tools.</p><span class="open-label">Check system <b>›</b></span></button></div>
         </div>
       </section>
       <section class="view" id="view-design"><div id="profile-chooser"></div><div class="design-settings" id="design-settings"></div></section>
@@ -40,10 +40,12 @@
   <dialog id="library-dialog" class="collection-dialog"><div class="dialog-heading"><div><p class="eyebrow">LIBRARY SET</p><h2 id="library-title"></h2></div><button class="icon-button" data-close aria-label="Close set">×</button></div><div id="library-detail"></div></dialog>
   <dialog id="profile-dialog" class="collection-dialog"><div class="dialog-heading"><div><p class="eyebrow" id="profile-dialog-scope">GUIDANCE PROFILE</p><h2 id="profile-title"></h2></div><button class="icon-button" data-close aria-label="Close profile">×</button></div><div id="profile-content"></div></dialog>
   <dialog id="component-dialog" class="component-dialog"><div class="dialog-heading"><div><p class="eyebrow">NATIVE COMPONENT</p><h2 id="component-title"></h2></div><button class="icon-button" data-close aria-label="Close component">×</button></div><div id="component-content"></div></dialog>
+  <dialog id="resources-dialog" class="collection-dialog resource-picker-dialog"><form id="resource-picker-form"><div class="dialog-heading"><div><p class="eyebrow" id="resource-picker-scope">PROFILE RESOURCES</p><h2 id="resource-picker-title">Choose resources</h2></div><button type="button" class="icon-button" data-close aria-label="Close resource selection">×</button></div><p class="resource-picker-intro">Choose entire sets or individual items. Shared edits are available to every profile that uses them.</p><div class="resource-tabs" id="resource-picker-tabs" role="tablist" aria-label="Resource types"></div><div id="resource-picker-content" role="tabpanel"></div><p id="resource-picker-error" class="error-message" role="alert" hidden></p><div class="resource-picker-footer"><span id="resource-picker-summary" role="status"></span><div class="dialog-actions"><button type="button" class="quiet-button" data-close>Cancel</button><button type="submit" class="primary-button" id="resource-picker-save">Save selection</button></div></div></form></dialog>
   <div id="toast" class="toast" role="status" hidden></div>
-  <script src="dialog-dismiss.js"></script>
-  <script src="fixtures.js"></script><script src="adapter.js?v=95c6bebb378f7e5f"></script><script src="app.js?v=a6e9fded26f8b0d4"></script>
-  <script src="authoring.js"></script>
-  <script src="components.js"></script>
+  <script src="dialog-dismiss.js?v=223bb634b0a7"></script>
+  <script src="fixtures.js?v=734ad1fa48ba"></script><script src="adapter.js?v=9f2168ec5a44"></script><script src="app.js?v=66eabb99be25"></script>
+  <script src="authoring.js?v=4d3926cae1ba"></script>
+  <script src="components.js?v=c52e44830af6"></script>
+  <script src="resources.js?v=2ff5988be864"></script>
 </body>
 </html>
