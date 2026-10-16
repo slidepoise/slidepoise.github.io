@@ -916,9 +916,9 @@ new IntersectionObserver(([entry]) => {
 
 for (const button of document.querySelectorAll('[data-open-architecture]')) {
   button.addEventListener('click', event => openArtifact({
-    title: 'SlidePoise architecture',
+    title: 'SlidePoise workflow',
     architecture: true,
-    url: new URL('/assets/img/projects/slidepoise-architecture-v1.svg?v=20261016-content-research', location.href).href,
+    url: new URL('/assets/img/projects/slidepoise-architecture-v1.svg?v=20261016-workflow', location.href).href,
     trigger: event.currentTarget,
   }));
 }
