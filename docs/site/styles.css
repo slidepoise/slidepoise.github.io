@@ -29,7 +29,7 @@ h1, h2 { font-weight: 550; letter-spacing: -.045em; }
 button, .button { transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease, transform 120ms var(--ease-out); }
 body[data-input="pointer"] button:not(.content-card):not(.design-image-open):active, body[data-input="pointer"] .button:active { transform: scale(.98); }
 .page-width { width: min(1240px, calc(100% - 80px)); margin-inline: auto; }
-.site-header { background: #fafafae8; backdrop-filter: blur(16px); position: sticky; top: 0; z-index: 30; }
+.site-header { background: #fafafa; position: sticky; top: 0; z-index: 30; }
 .header-inner { height: 76px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); }
 .wordmark { display: inline-flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 650; letter-spacing: -.65px; }
 .site-header nav { display: flex; align-items: center; gap: 30px; font-size: 13px; font-weight: 500; color: #575b63; }

@@ -1,20 +1,20 @@
 {
-  "purpose": "Public example of a generation contact sheet",
+  "purpose": "Example generation contact sheet for a consulting presentation",
   "renderer": "slidepoise/scripts/make_asset_contact_sheet.py",
   "image": "generation-contact-sheet.png",
-  "sha256": "d1df4c246150d6cd641684aa198b455da15a6467328581d5756e731ea4272e02",
+  "sha256": "669d2c629f00c52ad919b04884beed04274969e089a16e7fd1192bf5e4899b37",
   "labels": {
     "a0139f775f12": "R01",
     "b73540cac768": "R02",
-    "consulting-chart-bar-stacked": "C01",
-    "file-search-line": "A01",
-    "user-star-line": "A02",
+    "consulting-chart-column-compact": "C01",
+    "focus-2-line": "A01",
+    "team-line": "A02",
     "shield-check-line": "A03"
   },
   "style_context": {
     "profile": {
       "name": "Consulting",
-      "purpose": "Explain the roles and resource mix in an AI operating model."
+      "purpose": "Explain an AI pilot proposal and the evidence needed to scale."
     },
     "style_agency": {
       "palette": "specified",
@@ -67,24 +67,24 @@
       "redistribution": "Preserve publisher attribution and the source document. No endorsement or open-content licence is asserted."
     },
     {
-      "id": "consulting-chart-bar-stacked",
-      "name": "Consulting stacked horizontal bar chart",
+      "id": "consulting-chart-column-compact",
+      "name": "Consulting compact column chart",
       "source_url": "https://github.com/henryhyw/slidepoise/tree/main/library-sets/components/consulting-core",
-      "preview_sha256": "325f413cf1af389f6bb330360ed33bccb6decb454ac579c804d0ddfd3357410f",
+      "preview_sha256": "cd14a8b14a3cf0a39b0bd77ca2a3d26e5da6f6877ec8746f107b84f11dc23167",
       "native_source_sha256": "4aa8ff161e530f23ee2afe52c26af722aed63b87a939d05f5b3d2a51fb40547a",
-      "native_source_slide_number": 5
+      "native_source_slide_number": 3
     },
     {
-      "id": "file-search-line",
-      "source_url": "https://github.com/Remix-Design/RemixIcon/blob/v4.9.0/icons/Document/file-search-line.svg",
+      "id": "focus-2-line",
+      "source_url": "https://github.com/Remix-Design/RemixIcon/blob/v4.9.0/icons/Design/focus-2-line.svg",
       "license": "Remix Icon License v1.0",
-      "sha256": "1f68c121fff9efc279a49115e3a7a17bd484872abf99681c930aac86e2c4900b"
+      "sha256": "b115e8d0ccbe0522bfbf56bacc689d69844bb1fb4589452c37c856eed83d5389"
     },
     {
-      "id": "user-star-line",
-      "source_url": "https://github.com/Remix-Design/RemixIcon/blob/v4.9.0/icons/User/user-star-line.svg",
+      "id": "team-line",
+      "source_url": "https://github.com/Remix-Design/RemixIcon/blob/v4.9.0/icons/User/team-line.svg",
       "license": "Remix Icon License v1.0",
-      "sha256": "2f034934ef9b717c90a3f7253ba62c4aeab82d26962599f5956d2ac9c9ff661a"
+      "sha256": "50c7d05dca9be031bc5fdc1ff0281465782b77d799216d342a2d05e92a6baaa0"
     },
     {
       "id": "shield-check-line",

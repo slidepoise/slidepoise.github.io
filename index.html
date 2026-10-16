@@ -8,12 +8,12 @@
   <link rel="canonical" href="https://slidepoise.github.io/">
   <title>SlidePoise · Agentic Slide Generation</title>
   <link rel="icon" href="docs/site/mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="docs/site/styles.css?v=b943390577f1">
+  <link rel="stylesheet" href="docs/site/styles.css?v=20261016-header-fix">
+  <link rel="stylesheet" href="docs/site/reader-story.css?v=20261016-header-fix">
   <link rel="stylesheet" href="docs/site/video-controls.css?v=20261005-fade">
   <link rel="stylesheet" href="/assets/video/slidepoise/cover.css?v=20261004">
   <link rel="stylesheet" href="docs/site/object-inspector.css?v=8ab3ff0c5c351406">
-  <script type="module" src="docs/site/app.mjs?v=20261015-drama3"></script>
-  <script type="module" src="docs/site/asset-explorer.mjs?v=20260921-icon-path"></script>
+  <script type="module" src="docs/site/app.mjs?v=20261016-header-fix"></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#why-slidepoise">Skip to content</a>
@@ -21,9 +21,11 @@
     <div class="page-width header-inner">
       <a class="wordmark" href="#top" aria-label="SlidePoise home"><img src="docs/site/mark.svg" width="26" height="26" alt="">SlidePoise</a>
       <nav aria-label="Main navigation">
-        <a href="#philosophy">How it works</a>
+        <a href="#using-slidepoise">How to use</a>
         <a href="#examples">Samples</a>
-        <a href="#console">Styles</a>
+        <a href="#console">Local Console</a>
+        <a href="#philosophy">How it works</a>
+        <a href="#architecture">Architecture</a>
         <a href="#setup">Setup</a>
         <a class="github-link" href="https://github.com/henryhyw/slidepoise" target="_blank" rel="noopener" aria-label="SlidePoise on GitHub" title="GitHub"><svg class="github-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 .75a11.25 11.25 0 0 0-3.56 21.92c.56.1.77-.24.77-.54v-2.09c-3.14.68-3.8-1.33-3.8-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.73.39-1.23.71-1.51-2.51-.29-5.15-1.26-5.15-5.57 0-1.23.44-2.24 1.16-3.03-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.1 1.16a10.75 10.75 0 0 1 5.65 0c2.15-1.46 3.1-1.16 3.1-1.16.61 1.55.23 2.7.11 2.98.72.79 1.16 1.8 1.16 3.03 0 4.32-2.64 5.28-5.16 5.56.41.35.77 1.03.77 2.09v3.1c0 .3.2.65.78.54A11.25 11.25 0 0 0 12 .75Z"/></svg></a>
       </nav>
@@ -80,104 +82,129 @@
     <section id="why-slidepoise" class="motivation page-width" aria-label="Why SlidePoise">
       <div class="motivation-copy">
         <p class="motivation-lead">
-            Each slide needs a layout that serves its message and objects the author can edit.
+            Each slide needs a layout that serves its message and objects you can edit.
           </p>
         <p>
-            Image generation makes it possible to explore layouts around the content of a slide. Turning a chosen design into a useful deck also requires accurate text, editable charts and a consistent visual style.
+            Template-based workflows can limit how freely a slide’s layout responds to its content. Image generation makes it possible to explore layouts around the content of a slide. Turning a chosen design into a useful deck also requires accurate text, editable charts and a consistent visual style.
           </p>
         <p>SlidePoise gives that creative process a structured workflow, supported by tools for visual measurement and PowerPoint construction. A shared content plan, style and asset library guide the Agent as it develops designs, builds editable slides and reviews the resulting deck.</p>
       </div>
     </section>
 
-    <section id="philosophy" class="philosophy page-width" aria-labelledby="philosophy-title">
-      <div class="section-heading architecture-heading"><h2 id="philosophy-title">How SlidePoise works</h2></div>
-      <p class="section-intro">Content planning establishes the argument and evidence. Visual design assembles references and assets on a contact sheet, generates a slide image and checks it against the brief. Reconstruction combines the Agent’s interpretation with OpenCV measurements to build editable PowerPoint objects. The final review checks the rendered PowerPoint for content, consistency and fidelity to the generated image.</p>
-      <figure id="architecture" class="system-architecture">
-        <button type="button" class="system-architecture-art" data-open-architecture aria-label="Enlarge SlidePoise architecture" aria-haspopup="dialog"><img src="/assets/img/projects/slidepoise-architecture-v1.svg?v=20261008-balanced-flow" width="1600" height="820" alt="Four stages of SlidePoise. Content planning, visual design with retrieval and generation, reconstruction with interpretation and measurement feeding the native build, and review of actual renders" loading="lazy" decoding="async"></button>
-        <figcaption><span>System architecture</span><button type="button" data-open-architecture aria-label="Enlarge SlidePoise architecture" aria-haspopup="dialog"><span>Expand diagram</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 3h5v5M17 3l-5.5 5.5M8 17H3v-5m0 5 5.5-5.5"/></svg></button></figcaption>
-      </figure>
-      <div id="walkthrough-loading" class="load-state" role="status">Loading the design example…</div>
-      <div id="walkthrough" class="walkthrough" hidden>
-        <article class="walkthrough-step">
-          <div class="walkthrough-heading"><h3>Plan the message, retrieve references and explore the design</h3><p class="subsection-intro">The Agent defines each slide’s message and evidence, then retrieves useful references, icons, logos or native component previews. A contact sheet brings those visual inputs together for image generation. The Agent reviews the resulting image for content, readability and layout before reconstruction. Open the sample plan to see the content and instructions behind its design.</p></div>
-          <div class="design-demonstration">
-            <button id="walkthrough-brief" class="content-card argument-panel" type="button" aria-label="Open the slide brief" aria-haspopup="dialog"><span class="actor-label">Agent · Slide plan</span><strong id="walkthrough-message" class="argument-message"></strong><span id="walkthrough-decision" class="argument-decision"></span><span id="walkthrough-support" class="argument-support"></span><span class="evidence-note">Illustrative planning assumptions from the sample brief.</span></button>
-            <span class="flow-connector" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h17m-5-5 5 5-5 5"/></svg></span>
-            <button id="walkthrough-target-open" class="content-card composition-panel" type="button" aria-label="Enlarge the AI-generated design" aria-haspopup="dialog"><span class="actor-label">Image generation · Composition</span><span class="composition-image"><img id="walkthrough-target" alt="" loading="lazy" decoding="async"><span id="walkthrough-chart-region" class="walkthrough-chart-region" aria-hidden="true"></span></span><span class="evidence-note">Shared headers and footers are added in PowerPoint after reconstruction.</span></button>
-          </div>
-        </article>
-        <article class="walkthrough-step reconstruction-step">
-          <div class="walkthrough-heading"><h3>Reconstruct the design as editable objects</h3><p class="subsection-intro">Once a design is chosen, its contents need to become PowerPoint objects. The Agent identifies what each element represents and which elements belong together. In this example, the bars, labels and values form one chart. OpenCV, a computer-vision library, measures its geometry so the renderer can rebuild it as an editable chart linked to its data.</p>
-      <p class="architecture-review subsection-intro">Interpretation and measurement work together. The Agent reviews the measured regions and refines object boundaries when needed. The native build combines both inputs, then the Agent inspects the rendered slide and corrects any loss of meaning or visual fidelity.</p>
-          </div>
-          <div class="reconstruction-demonstration">
-            <span class="sr-only">Agent interpretation and OpenCV measurements are combined to build the editable PowerPoint chart.</span>
-            <span class="reconstruction-join" aria-hidden="true"><i></i></span>
-            <button id="walkthrough-semantic-open" class="content-card reconstruction-evidence" type="button" aria-label="Enlarge the chart interpretation" aria-haspopup="dialog"><span class="actor-label">Agent · Chart interpretation</span><span id="walkthrough-semantic-crop" class="explanation-graphic"></span><span id="walkthrough-semantic-caption" class="evidence-caption"></span></button>
-            <button id="walkthrough-measurement-open" class="content-card reconstruction-evidence" type="button" aria-label="Enlarge the chart measurements" aria-haspopup="dialog"><span class="actor-label">OpenCV · Pixel measurement</span><span id="walkthrough-measurement-crop" class="explanation-graphic"></span><span id="walkthrough-measurement-caption" class="evidence-caption"></span></button>
-            <button id="walkthrough-native-open" class="content-card reconstruction-evidence native-outcome" type="button" aria-label="Inspect this chart in the editable PowerPoint"><span class="actor-label">PowerPoint · Editable chart</span><span id="walkthrough-native-crop" class="evidence-crop"><img id="walkthrough-native-image" alt="" loading="lazy" decoding="async"></span><span class="evidence-caption">Inspect the chart’s editable series and values.</span></button>
-          </div>
-        </article>
-      </div>
-      <article class="asset-system asset-library-system" aria-labelledby="asset-system-title">
-        <div class="asset-context">
-        <div class="walkthrough-heading asset-system-copy">
-          <h3 id="asset-system-title">Retrieve resources that help the slide communicate</h3>
-          <p>The Agent searches by what a slide needs to explain. Visual references inform composition, icons clarify roles, and exact logos identify organisations or products. Native components pair recorded previews with reusable construction guidance. Selected previews guide generation, and the chosen artwork and native definitions carry through to reconstruction. Choose a sample below to explore its icons.</p>
-        </div>
-        <div class="asset-source-options">
-          <details><summary><strong>Visual reference library</strong><span>Composition and communication precedents</span></summary><p>The Agent retrieves indexed pages by message, structure and relationships, then inspects them before selection. Source details distinguish published or private originals from generated examples. Manage and search the same library in the Console.</p></details>
-          <details><summary><strong>Remix Icon</strong><span>Open-source icons</span></summary><p>The Agent selects line and filled icons for each slide. Fine is the default line weight.</p><a href="https://remixicon.com/" target="_blank" rel="noopener">Browse Remix Icon</a></details>
-          <details><summary><strong>Material Design Icons</strong><span>Open-source icons through Iconify</span></summary><p>Outline and filled icons available through Iconify. Fine is the default outline weight.</p><a href="https://icon-sets.iconify.design/mdi/" target="_blank" rel="noopener">Browse Material Design Icons</a></details>
-          <details><summary><strong>Wikimedia Commons</strong><span>Logos and public images</span></summary><p>The Agent finds images and logos, checks that they match the requested subject and reviews their usage terms.</p><a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Visit Wikimedia Commons</a></details>
-          <details><summary><strong>Your Library Sets</strong><span>Your artwork and components</span></summary><p>Store your own artwork and native components for reuse. Components keep their editable source, selected page, recorded preview and adaptation guidance. The Agent adapts supported chart and table definitions to your content and reconstructs other structures as native objects.</p></details>
-        </div>
-        </div>
-        <section id="contact-sheet" class="contact-sheet-example" aria-labelledby="contact-sheet-title">
-          <figure class="contact-sheet-preview">
-            <button id="contact-sheet-open" type="button" aria-label="Enlarge the generation contact sheet" aria-haspopup="dialog"><img src="docs/site/assets/contact-sheet/generation-contact-sheet.png" width="1038" height="978" alt="Example contact sheet with consulting style guidance, two public reference slides, a native chart preview and three Remix icons" loading="lazy" decoding="async"></button>
-            <figcaption><span>Example generation input</span><button id="contact-sheet-expand" type="button" aria-haspopup="dialog">Expand contact sheet</button></figcaption>
-          </figure>
-          <div class="contact-sheet-copy">
-            <h4 id="contact-sheet-title">See the visual inputs before generation</h4>
-            <p>A contact sheet places the chosen style beside the selected references and assets. You can inspect the same visual material supplied to the image model.</p>
-            <p>This example combines two public consulting references, a native chart component and three Remix icons. Their labels connect each preview to its role and original source.</p>
-            <p class="contact-sheet-sources">References from <a href="https://www.pwc.de/de/strategie-organisation-prozesse-systeme/pwc-enterprise-architecture-in-an-agile-world.pdf" target="_blank" rel="noopener">PwC</a> and <a href="https://www.pwc.no/no/publikasjoner/strategyand-desember-b2b-saas-2024.pdf" target="_blank" rel="noopener">Strategy&amp;</a>. Icons from <a href="https://remixicon.com/" target="_blank" rel="noopener">Remix Icon</a>.</p>
-          </div>
-        </section>
-        <div class="asset-decisions" id="asset-decisions">
-          <div class="asset-case-header"><span>Slides from the consulting sample</span><div class="asset-cases" role="tablist" aria-label="Slides from the consulting sample">
-            <button id="asset-case-0" role="tab" aria-selected="true" aria-controls="asset-case-panel" data-asset-case="0" aria-label="Slide 2 of the consulting sample"><img src="examples/consulting-ai-transformation/assets/s02-opportunities-render.png" alt="" width="160" height="90" loading="lazy"><span>Slide 2</span></button>
-            <button id="asset-case-1" role="tab" aria-selected="false" aria-controls="asset-case-panel" data-asset-case="1" tabindex="-1" aria-label="Slide 3 of the consulting sample"><img src="examples/consulting-ai-transformation/assets/s03-operating-model-render.png" alt="" width="160" height="90" loading="lazy"><span>Slide 3</span></button>
-            <button id="asset-case-2" role="tab" aria-selected="false" aria-controls="asset-case-panel" data-asset-case="2" tabindex="-1" aria-label="Slide 4 of the consulting sample"><img src="examples/consulting-ai-transformation/assets/s04-delivery-roadmap-render.png" alt="" width="160" height="90" loading="lazy"><span>Slide 4</span></button>
-          </div></div>
-          <div class="asset-intent"><span class="asset-intent-label">What this slide needs to communicate</span><h4 id="asset-brief">Explain why research synthesis is the strongest first AI pilot.</h4></div>
-          <div id="asset-case-panel" class="asset-case-panel" role="tabpanel" aria-labelledby="asset-case-0" aria-busy="true">
-            <figure class="asset-result">
-              <div class="asset-result-surface">
-                <img id="asset-result-image" src="examples/consulting-ai-transformation/assets/s02-opportunities-render.png" alt="The reconstructed pilot selection slide" loading="lazy" width="1600" height="900">
-                <a id="asset-result-link" class="asset-result-link" href="?deck=consulting-ai-transformation&amp;slide=s02-opportunities&amp;view=rebuilt#studio-frame" data-sample-slide="s02-opportunities" aria-label="Inspect the pilot selection slide"><span>Open slide <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg></span></a>
-                <div id="asset-result-highlights" class="asset-result-highlights" aria-label="Assets selected by the Agent"></div>
+    <section id="using-slidepoise" class="usage-section page-width" aria-labelledby="usage-title">
+      <div class="usage-introduction"><p class="section-kicker">Working with SlidePoise</p><h2 id="usage-title">Create an editable presentation with your Agent</h2><p>Share your brief and source material with your AI Agent. It plans the content, prepares references, generates slide images and builds an editable deck. Give feedback at any stage.</p></div>
+      <nav class="workflow-stage-links" aria-label="The four stages"><button type="button" data-workflow-stage="plan">01 Content planning</button><button type="button" data-workflow-stage="design">02 Visual design</button><button type="button" data-workflow-stage="reconstruct">03 Reconstruction</button><button type="button" data-workflow-stage="review">04 Review</button></nav>
+      <div id="process-grid" class="workflow-grid"></div>
+      <p class="usage-followup">The Agent can revisit any stage when your feedback changes the content or design.</p>
+    </section>
+
+    <section id="examples" class="samples page-width" aria-labelledby="examples-title">
+      <div class="section-heading"><h2 id="examples-title">Browse the finished presentations</h2></div>
+      <p class="section-intro">Browse two presentations made through this workflow. Download a PowerPoint to try its editable text, charts and artwork.</p>
+      <div id="load-state" class="load-state" role="status">Loading the presentations…</div>
+      <div class="samples-container">
+<div class="sample-header">        <div id="project-grid" class="sample-chooser" role="group" aria-label="Choose a sample presentation"></div>          <div class="sample-actions"><div class="deck-description" hidden><p id="deck-summary"></p><p id="deck-note" class="fine-print" hidden></p></div><div id="deck-downloads" class="download-links" aria-label="Download sample PowerPoint"></div>          <button id="presentation-goal" class="presentation-goal" type="button" aria-label="View presentation plan" aria-haspopup="dialog"><span class="goal-label">View presentation plan</span><span id="presentation-goal-text"></span></button></div>
+</div>
+        <div id="studio" class="studio" aria-labelledby="viewer-title" tabindex="-1" hidden>
+          <div class="sr-only"><h3 id="viewer-title"></h3><span id="viewer-sample-meta"></span></div>
+
+          <div id="studio-frame" class="studio-frame" data-mode="rebuilt">
+
+        <div id="studio-workspace" class="studio-workspace">
+
+          <div class="canvas-column">
+            <div class="canvas-wrap">
+              <div id="slide-surface" class="slide-surface">
+                <img id="slide-preview" alt="" decoding="async">
+                <div id="slide-image-error" class="image-error" role="status" hidden>This slide image could not be loaded. Try another slide or reload the page.</div>
               </div>
-              <figcaption id="asset-case-decision" aria-live="polite"></figcaption>
-            </figure>
-            <div class="asset-library-stage">
-              <div class="asset-library-heading"><a href="https://remixicon.com/" target="_blank" rel="noopener">Remix Icon</a><span>Built-in library</span></div>
-              <div id="asset-library-grid" class="asset-library-grid" role="list" aria-label="Inspect icons in the library"></div>
-              <span id="asset-library-count" class="asset-library-count" aria-live="polite"></span>
             </div>
           </div>
+
         </div>
-        <div id="asset-icon-inspector" class="asset-icon-inspector" popover="auto" role="dialog" aria-labelledby="asset-inspector-name">
-          <button id="asset-inspector-close" class="icon-button" type="button" aria-label="Close icon preview"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button>
-          <div class="asset-inspector-art"><img id="asset-inspector-image" alt=""></div>
-          <strong id="asset-inspector-name"></strong><span>Remix Icon · SVG</span><p id="asset-inspector-use"></p>
+        <div class="slide-caption"><div><span id="viewer-counter" class="slide-counter"></span><h3 id="slide-title"></h3></div><div class="slide-arrows"><button id="expand-viewer" class="tool-button icon-button" type="button" aria-label="Expand presentation viewer" aria-haspopup="dialog" aria-controls="viewer-dialog" aria-expanded="false" title="Expand viewer"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="M7 3H3v4m10-4h4v4M3 13v4h4m10-4v4h-4"/></svg></button><button id="previous-slide" class="icon-button" type="button" aria-label="Previous slide"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="m12 5-5 5 5 5"/></svg></button><button id="next-slide" class="icon-button" type="button" aria-label="Next slide"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="m8 5 5 5-5 5"/></svg></button></div></div>
+          <div id="slide-strip" class="slide-strip" aria-label="Choose a slide"></div>
+      </div>
+
         </div>
-      </article>
-      <article class="asset-system illustration-system" aria-labelledby="illustration-system-title">
+      </div>
+    </section>
+
+    <section id="console" class="console-section page-width" aria-labelledby="console-title">
+      <div class="section-heading"><h2 id="console-title">Save your preferences in the Local Console</h2></div>
+      <div class="console-layout">
+        <div class="console-copy">
+          <p class="section-intro">A Profile saves the fonts, colours and visual references you want to reuse. The Agent uses these preferences when generating designs and building PowerPoint slides.</p>
+          <p>Use the Console to edit Profiles, manage shared icon and asset libraries, and choose your image generator. Try the sample settings here.</p>
+          <div class="console-launch"><h3>On your computer</h3><p>After installation, ask your Agent to open the SlidePoise Console, or run</p><code class="console-command">npx github:henryhyw/slidepoise console</code><p>Your saved settings apply to future presentations. Give feedback on the current deck in conversation.</p></div>
+        </div>
+        <div id="console-demo" class="console-demo">
+          <iframe id="console-frame" src="docs/site/console-demo/index.html#design" title="Interactive Console demo" sandbox="allow-scripts allow-forms" loading="lazy" tabindex="-1" inert></iframe>
+          <div class="demo-interaction-layer">
+            <button id="console-enter" class="demo-interaction-enter" type="button" aria-label="Open the Console interactive demo"><span class="demo-interaction-cue"><span class="demo-interaction-symbol" aria-hidden="true"><span></span></span><span class="demo-interaction-copy"><strong>Explore the Console</strong><span>Tap to interact</span></span><span class="demo-interaction-chevron" aria-hidden="true">›</span></span></button>
+            <div id="console-controls" class="demo-interaction-controls" hidden><button id="console-done" class="demo-interaction-done" type="button"><span class="demo-interaction-done-mark" aria-hidden="true"><i></i><i></i></span><span>Done</span></button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="philosophy" class="philosophy page-width" aria-labelledby="philosophy-title">
+      <div class="section-heading architecture-heading"><h2 id="philosophy-title">How SlidePoise makes a presentation</h2></div>
+      <p class="section-intro">Explore the four stages through the consulting presentation. The brief guides reference selection and image generation. The selected design guides reconstruction, and the rendered PowerPoint is checked against both the brief and the design.</p>
+      <nav class="chapter-navigation" aria-label="Presentation workflow">
+        <a href="#plan-content"><span>01</span> Content planning</a><a href="#design-slides"><span>02</span> Visual design</a><a href="#build-slides"><span>03</span> Reconstruction</a><a href="#review-slide"><span>04</span> Review</a>
+      </nav>
+      <div id="walkthrough-loading" class="load-state" role="status">Loading the design example…</div>
+      <div id="walkthrough" class="walkthrough" hidden>
+        <article id="plan-content" class="workflow-chapter plan-chapter">
+          <div class="walkthrough-heading"><p class="chapter-number">01 · Content planning</p><h3>Develop the slide’s message and evidence</h3><p class="subsection-intro">The Agent works with your source material to establish the presentation’s argument and the purpose of each slide. Each brief records its main message, supporting content and visual requirements.</p><p class="subsection-intro">This consulting example compares possible AI pilots. Open its brief to see the chart data and reasoning that guide the design.</p></div>
+            <button id="walkthrough-brief" class="content-card argument-panel" type="button" aria-label="Open the slide brief" aria-haspopup="dialog"><span class="actor-label">Example slide brief</span><strong id="walkthrough-message" class="argument-message"></strong><span id="walkthrough-decision" class="argument-decision"></span><span id="walkthrough-support" class="argument-support"></span><span class="evidence-note">Illustrative planning assumptions from the sample brief.</span><span class="card-action">Open the full brief <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M5 15 15 5M5 5h10v10"/></svg></span></button>
+        </article>
+        <article id="design-slides" class="workflow-chapter design-chapter">
+          <div class="walkthrough-heading"><p class="chapter-number">02 · Visual design</p><h3>Generate slide images guided by content and references</h3><p class="subsection-intro">The Agent retrieves slide references, icons and reusable components for the brief. It brings the selected material together in a contact sheet, then gives this visual guidance and the slide content to the image model.</p></div>
+          <div class="design-flow">
+            <div class="design-inputs">
+              <h4>Select useful visual material</h4><p class="design-flow-copy">Select slide references, components and icons suited to the brief.</p>
+              <div class="design-reference-grid">
+                <button type="button" data-design-resource="a0139f775f12.png" data-resource-title="Compare operating models" data-resource-description="PwC · Enterprise architecture in an agile world, page 9. The aligned option panels offer a reference for comparing alternatives." aria-label="Inspect the operating model reference" aria-haspopup="dialog"><img src="docs/site/assets/contact-sheet/a0139f775f12.png" alt="Published PwC slide comparing three operating models" loading="lazy"></button>
+                <button type="button" data-design-resource="b73540cac768.png" data-resource-title="Explain staffing changes" data-resource-description="Strategy&amp; · B2B SaaS Publication 2024, page 23. Stacked columns connect the staffing mix with explanatory notes." aria-label="Inspect the staffing reference" aria-haspopup="dialog"><img src="docs/site/assets/contact-sheet/b73540cac768.png" alt="Published Strategy&amp; slide showing staffing mix across company stages" loading="lazy"></button>
+              </div>
+              <p class="design-small-label">Study layout and visual hierarchy</p>
+              <div class="design-component-row">
+                <button class="design-component" type="button" data-design-resource="column-chart.png" data-resource-title="Adapt a native chart component" data-resource-description="This compact column chart provides an editable PowerPoint component. The Agent adapts its data, labels and proportions for the slide." aria-label="Inspect the column chart component" aria-haspopup="dialog"><img src="docs/site/assets/contact-sheet/column-chart.png" alt="Compact orange column chart component" loading="lazy"></button>
+                <div class="design-icons">
+                  <button type="button" data-design-icon="focus-2-line.svg" data-icon-label="Focus" aria-label="Inspect the focus icon" aria-haspopup="dialog"><img src="docs/site/assets/remix/focus-2-line.svg" alt="" width="26" height="26"></button>
+                  <button type="button" data-design-icon="team-line.svg" data-icon-label="Team" aria-label="Inspect the team icon" aria-haspopup="dialog"><img src="docs/site/assets/remix/team-line.svg" alt="" width="26" height="26"></button>
+                  <button type="button" data-design-icon="shield-check-line.svg" data-icon-label="Review" aria-label="Inspect the review icon" aria-haspopup="dialog"><img src="docs/site/assets/remix/shield-check-line.svg" alt="" width="26" height="26"></button>
+                </div>
+              </div>
+              <p class="design-small-label">Use reusable chart components and SVG icons</p>
+            </div>
+            <span class="design-flow-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h17m-5-5 5 5-5 5"/></svg></span>
+            <figure id="contact-sheet" class="design-context">
+              <h4>Assemble the contact sheet</h4><p class="design-flow-copy">Combine the selections with colours and typography.</p>
+              <button id="contact-sheet-open" type="button" aria-label="Enlarge the generation contact sheet" aria-haspopup="dialog"><img src="docs/site/assets/contact-sheet/generation-contact-sheet.png?v=20261016-video" width="1038" height="978" alt="Example contact sheet combining the selected references, chart component, icons and style" loading="lazy"></button>
+              <figcaption><button id="contact-sheet-expand" type="button" aria-haspopup="dialog">Inspect the example contact sheet <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15 15 5M5 5h10v10"/></svg></button></figcaption>
+            </figure>
+            <span class="design-flow-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h17m-5-5 5 5-5 5"/></svg></span>
+            <div class="design-output">
+              <h4>Generate and review the image</h4><p class="design-flow-copy">The brief and contact sheet guide image generation.</p>
+              <button id="walkthrough-target-open" type="button" aria-label="Enlarge the AI-generated design" aria-haspopup="dialog"><span class="composition-image"><img id="walkthrough-target" alt="" loading="lazy" decoding="async"></span></button>
+              <p class="design-review-note">The Agent checks the message, data and layout, then refines the image where needed. This design guides reconstruction.</p>
+            </div>
+          </div>
+          <p class="design-library-note">Reference pages by <a href="https://www.pwc.de/de/strategie-organisation-prozesse-systeme/pwc-enterprise-architecture-in-an-agile-world.pdf" target="_blank" rel="noopener">PwC</a> and <a href="https://www.pwc.no/no/publikasjoner/strategyand-desember-b2b-saas-2024.pdf" target="_blank" rel="noopener">Strategy&amp;</a>. Icon libraries include <a href="https://remixicon.com/" target="_blank" rel="noopener">Remix Icon</a>, <a href="https://icon-sets.iconify.design/mdi/" target="_blank" rel="noopener">Material Design Icons</a>. You can also supply logos, artwork and presentation components.</p>
+        </article>
+        <article id="build-slides" class="workflow-chapter build-chapter">
+          <div class="walkthrough-heading"><p class="chapter-number">03 · Reconstruction</p><h3>Reconstruct the design as editable PowerPoint objects</h3><p class="subsection-intro">The Agent identifies what each object means and which elements belong together. OpenCV measures the visible content inside those regions. The Agent uses both records, the source data and original assets to build editable PowerPoint objects.</p></div>
+          <div id="reconstruction-lab" class="reconstruction-lab">
+            <div class="lab-heading"><p>Select a slide, then click an outlined object.</p><div class="lab-slide-choices" role="group" aria-label="Choose a slide to reconstruct"></div></div><p class="lab-selection-status sr-only" role="status"></p>
+            <div class="lab-layout"><div class="lab-source"><div class="lab-object-choices" role="group" aria-label="Choose an object to explore"></div><p class="lab-source-label">Design image</p><div class="lab-source-canvas"><img class="lab-source-image" alt="" loading="lazy"><div class="lab-hotspots"></div></div><div class="lab-legend" aria-label="Slide outline legend"><span><i class="lab-key-agent" aria-hidden="true"></i>Agent’s object region</span><span><i class="lab-key-cv" aria-hidden="true"></i>OpenCV visible bounds</span></div></div><div class="lab-result" aria-live="polite"></div></div>
+          </div>
+      <article class="illustration-system" aria-labelledby="illustration-system-title">
         <div class="walkthrough-heading asset-system-copy">
-          <div class="illustration-heading"><h3 id="illustration-system-title">Refine illustrations as separate artwork</h3><div class="mode-controls" role="group" aria-label="Artwork view"><button type="button" data-artwork-view="compare" aria-pressed="true">Compare</button><button type="button" data-artwork-view="side-by-side" aria-pressed="false">Side by side</button></div></div>
-          <p>Small illustrations can lose detail when generated as part of a full slide. The Agent can regenerate an illustration at higher resolution with a transparent background, then check it against the original design before placing it in PowerPoint. Drag the divider to compare the initial illustration with the regenerated version.</p>
+          <div class="illustration-heading"><h4 id="illustration-system-title">Refine illustrations as separate artwork</h4><div class="mode-controls" role="group" aria-label="Artwork view"><button type="button" data-artwork-view="compare" aria-pressed="true">Compare</button><button type="button" data-artwork-view="side-by-side" aria-pressed="false">Side by side</button></div></div>
+          <p>For illustrations, the Agent can generate a separate, higher-resolution image with a transparent background. It checks the artwork against the slide design, then places it as an independent PowerPoint layer. Compare this detail from the editorial sample.</p>
         </div>
         <div id="illustration-pair" class="illustration-comparison" hidden>
           <figure><div class="illustration-surface"><img src="docs/site/assets/illustration-source.png" alt="A hand holding a handwritten paper fragment, cropped from the generated slide" width="412" height="383" loading="lazy"></div><figcaption><strong>Initial generation</strong><span>412 × 383 pixels</span></figcaption></figure>
@@ -194,77 +221,19 @@
           <figcaption><span>Initial generation</span><span>Transparent artwork</span></figcaption>
         </figure>
       </article>
-
-    <div id="process" class="process" aria-labelledby="process-title">
-      <div class="section-heading"><h3 id="process-title">Working with SlidePoise</h3></div>
-      <p class="section-intro">Start with the audience, purpose and source material. Choose how closely you want to collaborate. The Agent handles retrieval, reconstruction and technical checks, and brings you into decisions when your direction matters. Each stage below separates your contribution from the work the Agent performs.</p>
-      <div id="process-grid" class="workflow-grid"></div>
-    </div>
-    </section>
-
-    <section id="examples" class="samples page-width" aria-labelledby="examples-title">
-      <div class="section-heading"><h2 id="examples-title">Sample presentations</h2></div>
-      <p class="section-intro">Browse the sample decks and open their plans to see what each presentation was intended to communicate. Compare the AI-generated designs with the rendered PowerPoint slides, or select an object in the PowerPoint view to inspect its text, chart data or shape.</p>
-      <div id="load-state" class="load-state" role="status">Loading the presentations…</div>
-      <div class="samples-container">
-        <div id="project-grid" class="sample-chooser" role="group" aria-label="Choose a sample presentation"></div>
-        <div id="studio" class="studio" aria-labelledby="viewer-title" tabindex="-1" hidden>
-          <div class="sr-only"><h3 id="viewer-title"></h3><span id="viewer-sample-meta"></span></div>
-          <button id="presentation-goal" class="presentation-goal" type="button" aria-label="View presentation plan" aria-haspopup="dialog"><span class="goal-label">Plan</span><span id="presentation-goal-text"></span></button>
-          <div id="studio-frame" class="studio-frame" data-mode="rebuilt">
-        <div class="viewer-toolbar">
-          <div class="mode-controls" role="group" aria-label="Slide view"><button type="button" data-mode="rebuilt" aria-pressed="true">Editable PowerPoint</button><button type="button" data-mode="compare" aria-pressed="false">Compare</button><button type="button" data-mode="target" aria-pressed="false">AI-generated design</button><button type="button" data-mode="semantic" aria-pressed="false">Element groups</button><button type="button" data-mode="measurements" aria-pressed="false">OpenCV measurements</button></div>
-          <p id="viewer-mode-help" class="toolbar-hint">Read-only · Select an object</p>
-          <div class="viewer-tools"><button id="object-toggle" class="tool-button" type="button" aria-expanded="false" aria-controls="inspector-panel"><svg aria-hidden="true" viewBox="0 0 20 20"><rect x="3" y="3" width="14" height="14" rx="1.5"/><path d="M3 8h14M8 8v9"/></svg><span id="inspector-label">Editable objects</span><span id="object-count" class="object-count" hidden></span></button><button id="expand-viewer" class="tool-button icon-button" type="button" aria-label="Expand presentation viewer" aria-haspopup="dialog" aria-controls="viewer-dialog" aria-expanded="false" title="Expand viewer"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="M7 3H3v4m10-4h4v4M3 13v4h4m10-4v4h-4"/></svg></button></div>
-        </div>
-        <div id="studio-workspace" class="studio-workspace">
-          <div id="slide-strip" class="slide-strip" aria-label="Choose a slide"></div>
-          <div class="canvas-column">
-            <div class="canvas-wrap">
-              <div id="slide-surface" class="slide-surface">
-                <img id="slide-preview" alt="" decoding="async">
-                <div id="comparison" class="comparison" hidden>
-                  <img id="comparison-target" alt="" decoding="async">
-                  <img id="comparison-render" class="comparison-render" alt="" decoding="async">
-                  <div id="comparison-divider" class="comparison-divider" aria-hidden="true"><span><svg viewBox="0 0 20 20"><path d="m7 6-4 4 4 4m6-8 4 4-4 4"/></svg></span></div>
-                  <label class="sr-only" for="reveal">Amount of the editable PowerPoint to reveal</label>
-                  <input id="reveal" class="reveal" type="range" min="0" max="100" value="50" aria-describedby="comparison-help">
-                </div>
-                <button id="design-image-open" class="design-image-open" type="button" aria-label="Enlarge AI-generated design" aria-haspopup="dialog" hidden></button>
-                <div id="reconstruction-layer" class="reconstruction-layer" hidden></div>
-                <div id="slide-image-error" class="image-error" role="status" hidden>This slide image could not be loaded. Try another slide or reload the page.</div>
-              </div>
-            </div>
-            <div id="comparison-help" class="comparison-help" hidden><span>Editable PowerPoint</span><span>Drag the divider or use arrow keys</span><span>AI-generated design</span></div>
-            <p id="generated-content-note" class="generated-content-note" hidden>AI-generated content. Headers and footers are added in PowerPoint.</p>
-
-          </div>
-          <aside id="inspector-panel" class="inspector-panel" aria-label="Editable objects" hidden><div id="object-panel"></div><div id="reconstruction-panel" class="reconstruction-panel" hidden></div></aside>
-        </div>
-        <div class="slide-caption"><div><span id="viewer-counter" class="slide-counter"></span><h3 id="slide-title"></h3></div><div class="slide-arrows"><button id="previous-slide" class="icon-button" type="button" aria-label="Previous slide"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="m12 5-5 5 5 5"/></svg></button><button id="next-slide" class="icon-button" type="button" aria-label="Next slide"><svg aria-hidden="true" viewBox="0 0 20 20"><path d="m8 5 5 5-5 5"/></svg></button></div></div>
-      </div>
-          <div class="deck-context"><div class="deck-description"><p id="deck-summary"></p><p id="deck-note" class="fine-print" hidden></p></div><div id="deck-downloads" class="download-links" aria-label="Download sample PowerPoint"></div></div>
-        </div>
+        </article>
+        <article id="review-slide" class="workflow-chapter review-chapter">
+          <div class="walkthrough-heading"><p class="chapter-number">04 · Review</p><h3>Check the PowerPoint against the design and brief</h3><p class="subsection-intro">The Agent renders the PowerPoint and checks it against the chosen design and content brief. It corrects visual differences and checks consistency across the deck. Drag the divider to compare the design image with the finished PowerPoint.</p></div>
+          <figure class="review-comparison"><div class="review-surface"><img id="review-target" alt="AI-generated design of the pilot-selection slide"><img id="review-render" class="comparison-render" alt="Pilot-selection slide rendered from PowerPoint"><div id="review-divider" class="comparison-divider" aria-hidden="true"><span><svg viewBox="0 0 20 20"><path d="m7 6-4 4 4 4m6-8 4 4-4 4"/></svg></span></div><label class="sr-only" for="review-reveal">Amount of the finished PowerPoint to reveal</label><input id="review-reveal" class="reveal" type="range" min="0" max="100" value="50"></div><figcaption><span>PowerPoint</span><span>Design image</span></figcaption></figure>
+        </article>
       </div>
     </section>
 
-    <section id="console" class="console-section page-width" aria-labelledby="console-title">
-      <div class="section-heading"><h2 id="console-title">Make your style reusable</h2></div>
-      <div class="console-layout">
-        <div class="console-copy">
-      <p class="section-intro">Develop a style with your Agent and save it as a Profile for future presentations. Use the local Console to adjust fonts, colours and visual references, and manage your asset libraries. Try it here with sample settings. Your own Profiles and libraries are saved on your computer.</p>
-
-          <dl><div><dt>Style</dt><dd>Set fonts, colours and references, and decide how closely the Agent should follow them.</dd></div><div><dt>Resources</dt><dd>Search profile references and manage the icons, logos and native components available to the Agent.</dd></div><div><dt>System</dt><dd>Choose how images are generated and check local tools.</dd></div></dl>
-          <details class="setup-details"><summary>Open the local Console</summary><p>After installation, ask your Agent to open the SlidePoise Console, or run this command in a terminal.</p><code class="console-command">npx github:henryhyw/slidepoise console</code><p>Saved changes apply to future presentations. To change a presentation already in progress, ask your Agent.</p></details>
-        </div>
-        <div id="console-demo" class="console-demo">
-          <iframe id="console-frame" src="docs/site/console-demo/index.html#design" title="Interactive Console demo" sandbox="allow-scripts allow-forms" loading="lazy" tabindex="-1" inert></iframe>
-          <div class="demo-interaction-layer">
-            <button id="console-enter" class="demo-interaction-enter" type="button" aria-label="Open the Console interactive demo"><span class="demo-interaction-cue"><span class="demo-interaction-symbol" aria-hidden="true"><span></span></span><span class="demo-interaction-copy"><strong>Explore the Console</strong><span>Tap to interact</span></span><span class="demo-interaction-chevron" aria-hidden="true">›</span></span></button>
-            <div id="console-controls" class="demo-interaction-controls" hidden><button id="console-done" class="demo-interaction-done" type="button"><span class="demo-interaction-done-mark" aria-hidden="true"><i></i><i></i></span><span>Done</span></button></div>
-          </div>
-        </div>
-      </div>
+    <section id="architecture" class="architecture-section page-width" aria-labelledby="architecture-title"><div class="walkthrough-heading"><h2 id="architecture-title">See how the Agent coordinates SlidePoise</h2><p>The Agent directs the work and judges the results. Image generation develops the visual design. Measurement and construction tools turn that design into editable slides.</p></div>
+      <figure class="system-architecture">
+        <button type="button" class="system-architecture-art" data-open-architecture aria-label="Enlarge SlidePoise architecture" aria-haspopup="dialog"><img src="/assets/img/projects/slidepoise-architecture-v1.svg?v=20261016-colour-legend" width="1600" height="870" alt="Four stages of SlidePoise. Content planning, visual design with retrieval and generation, reconstruction with interpretation and measurement feeding the native build, and review of actual renders" loading="lazy" decoding="async"></button>
+        <figcaption><span>System architecture</span><button type="button" data-open-architecture aria-label="Enlarge SlidePoise architecture" aria-haspopup="dialog"><span>Expand diagram</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 3h5v5M17 3l-5.5 5.5M8 17H3v-5m0 5 5.5-5.5"/></svg></button></figcaption>
+      </figure>
     </section>
 
     <section id="setup" class="setup page-width" aria-labelledby="setup-title">

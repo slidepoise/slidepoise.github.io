@@ -1,6 +1,5 @@
-import { createChartInterpretation, createChartMeasurement } from './chart-explainer.mjs?v=5ec04a4d7be11082';
-import { createObjectInspector, validateObjectDocument } from './object-inspector.mjs';
-import { createReconstructionViewer } from './reconstruction-viewer.mjs?v=eab167d38cbda0d7';
+import { validateObjectDocument } from './object-inspector.mjs';
+import { createReconstructionSelector } from './reconstruction-lab.mjs?v=20261016-reconstruction';
 import { createPlanView, createSlideBrief } from './planning-viewer.mjs';
 import { watchVideoControls } from './video-controls.mjs?v=20261005-fade';
 
@@ -8,9 +7,9 @@ const showcaseCatalogURL = new URL('./showcases.json', import.meta.url);
 
 const byId = (id) => document.getElementById(id);
 const state = {
-  decks: [], deck: null, slideIndex: 0, mode: 'rebuilt', inspectorOpen: false,
-  objectStatus: 'empty', objectCount: 0, reconstructionCount: 0, artifactRequest: 0, artifactFetch: null,
-  artifactTrigger: null, artifactMotion: null, viewerScroll: null, walkthrough: null, objectLoad: null,
+  decks: [], deck: null, slideIndex: 0, mode: 'rebuilt',
+  artifactRequest: 0, artifactFetch: null,
+  artifactTrigger: null, artifactMotion: null, viewerScroll: null, walkthrough: null, lab: null,
 };
 
 function announce(message) { byId('announcement').textContent = message; }
@@ -20,49 +19,6 @@ function element(tag, className, text) {
   if (text !== undefined) node.textContent = text;
   return node;
 }
-
-const INSPECTOR_LABELS = { rebuilt: 'Editable objects', semantic: 'Element groups', measurements: 'Pixel measurements' };
-
-function setInspectorOpen(open) {
-  state.inspectorOpen = Boolean(open);
-  const visible = state.inspectorOpen && Boolean(INSPECTOR_LABELS[state.mode]);
-  byId('inspector-panel').hidden = !visible;
-  byId('object-panel').hidden = state.mode !== 'rebuilt';
-  byId('reconstruction-panel').hidden = !['semantic', 'measurements'].includes(state.mode);
-  byId('studio-workspace').dataset.inspector = visible ? 'open' : 'closed';
-  byId('object-toggle').setAttribute('aria-expanded', String(visible));
-}
-
-function updateObjectStatus() {
-  const label = INSPECTOR_LABELS[state.mode];
-  const count = state.mode === 'rebuilt' ? state.objectCount : state.reconstructionCount;
-  byId('inspector-label').textContent = label || 'Slide details';
-  byId('inspector-panel').setAttribute('aria-label', label || 'Slide details');
-  byId('object-count').textContent = String(count);
-  byId('object-count').hidden = !count;
-  byId('object-toggle').hidden = !label;
-  byId('object-toggle').disabled = state.mode === 'rebuilt' && (state.objectStatus !== 'ready' || !state.objectCount);
-  const help = state.mode === 'semantic' ? 'Agent interpretation' : state.mode === 'measurements' ? 'Measured from the generated image' : state.mode === 'compare'
-    ? 'Drag to compare both versions'
-    : state.mode === 'target'
-      ? 'AI-generated image'
-      : state.objectStatus === 'loading'
-        ? 'Loading PowerPoint objects…'
-        : state.objectStatus === 'ready' && state.objectCount
-          ? 'Read-only · Select an object'
-          : 'Read-only PowerPoint preview';
-  byId('viewer-mode-help').textContent = help;
-}
-
-const inspector = createObjectInspector({
-  surface: byId('slide-surface'), panel: byId('object-panel'), announce,
-  onSelectionChange: (item) => { if (item) setInspectorOpen(true); },
-  onStateChange: ({ status, objectCount }) => {
-    state.objectStatus = status;
-    state.objectCount = objectCount;
-    updateObjectStatus();
-  },
-});
 
 function artifactURL(value, manifestURL) {
   if (value == null) return null;
@@ -130,15 +86,6 @@ function placeTarget(image, canvas) {
   image.style.width = (100 * width / fullWidth) + '%';
   image.style.height = (100 * height / fullHeight) + '%';
 }
-
-const reconstructionViewer = createReconstructionViewer({
-  layer: byId('reconstruction-layer'), panel: byId('reconstruction-panel'), positionLayer: placeTarget,
-  onSelectionChange: () => setInspectorOpen(true),
-  onStateChange: ({ elementCount = 0, groupCount = 0 }) => {
-    state.reconstructionCount = state.mode === 'semantic' ? groupCount : elementCount;
-    updateObjectStatus();
-  },
-});
 
 function deckLabel(deck) { return deck.label || deck.style || deck.title; }
 function filename(url) { return decodeURIComponent(new URL(url).pathname.split('/').pop()); }
@@ -226,7 +173,6 @@ function selectDeck(index, requestedSlideId = null, requestedMode = 'rebuilt') {
   byId('presentation-goal-text').textContent = deck.outline.throughline;
   byId('deck-note').textContent = deck.note || '';
   byId('deck-note').hidden = !deck.note;
-  byId('generated-content-note').hidden = !deck.canvas;
   byId('slide-surface').style.aspectRatio = (deck.canvas?.full_slide_px || [16, 9]).join(' / ');
   const downloads = byId('deck-downloads');
   downloads.replaceChildren();
@@ -246,7 +192,6 @@ function selectDeck(index, requestedSlideId = null, requestedMode = 'rebuilt') {
     button.addEventListener('click', () => selectSlide(i));
     strip.append(button);
   });
-  setInspectorOpen(false);
   state.mode = ['rebuilt', 'compare', 'target', 'semantic', 'measurements'].includes(requestedMode) ? requestedMode : 'rebuilt';
   const requestedSlide = deck.slides.findIndex((slide) => slide.id === requestedSlideId);
   selectSlide(Math.max(0, requestedSlide), false);
@@ -255,33 +200,15 @@ function selectDeck(index, requestedSlideId = null, requestedMode = 'rebuilt') {
   announce(deck.title + '. ' + deck.slides.length + ' slides.');
 }
 
-function setMode(mode, speak = false) {
-  if (!['rebuilt', 'compare', 'target', 'semantic', 'measurements'].includes(mode) || !state.deck) return;
-  state.mode = mode;
-  reconstructionViewer.clear();
-  byId('studio-frame').dataset.mode = mode;
-  document.querySelectorAll('button[data-mode]').forEach((button) => {
-    button.setAttribute('aria-pressed', String(button.dataset.mode === mode));
-  });
-  byId('comparison').hidden = mode !== 'compare';
-  byId('design-image-open').hidden = mode !== 'target';
-  byId('comparison-help').hidden = mode !== 'compare';
+function setMode() {
+  state.mode = 'rebuilt';
   const slide = state.deck.slides[state.slideIndex];
   const preview = byId('slide-preview');
-  const source = mode === 'measurements' ? slide.measurement_overlay : ['target', 'semantic'].includes(mode) ? slide.target : slide.render;
-  if (preview.src !== source) {
-    byId('slide-image-error').hidden = true;
-    preview.src = source;
-  }
-  preview.alt = slide.title + (mode === 'measurements' ? ' OpenCV measurement overlay.' : ['target', 'semantic'].includes(mode) ? ' AI-generated design.' : ' Editable PowerPoint slide.');
-  placeTarget(preview, ['target', 'semantic', 'measurements'].includes(mode) ? state.deck.canvas : null);
-  if (['semantic', 'measurements'].includes(mode)) reconstructionViewer.show(slide, mode, state.deck.canvas);
-  byId('generated-content-note').hidden = !state.deck.canvas || mode === 'rebuilt';
-  inspector.setEnabled(mode === 'rebuilt');
-  setInspectorOpen(state.inspectorOpen);
-  updateObjectStatus();
+  byId('slide-image-error').hidden = true;
+  preview.src = slide.render;
+  preview.alt = slide.title + '. Rendered PowerPoint slide.';
+  placeTarget(preview, null);
   updateAddress();
-  if (speak) announce(mode === 'rebuilt' ? 'Editable PowerPoint. Select objects to inspect them.' : mode === 'semantic' ? 'Element groups. Select an element or browse groups in the side panel.' : mode === 'measurements' ? 'OpenCV measurements. Select an element to inspect its dimensions.' : mode === 'compare' ? 'Compare the design and PowerPoint. Drag the divider or use the range control.' : 'AI-generated design. Select the image to enlarge it.');
 }
 
 function selectSlide(index, speak = true) {
@@ -293,21 +220,15 @@ function selectSlide(index, speak = true) {
   byId('previous-slide').disabled = index === 0;
   byId('next-slide').disabled = index === state.deck.slides.length - 1;
   [...byId('slide-strip').children].forEach((button, i) => button.setAttribute('aria-current', String(i === index)));
-  byId('comparison-target').src = slide.target;
-  byId('comparison-target').alt = 'AI-generated design for ' + slide.title;
-  placeTarget(byId('comparison-target'), state.deck.canvas);
-  byId('comparison-render').src = slide.render;
-  byId('comparison-render').alt = 'Editable PowerPoint for ' + slide.title;
-  setMode(state.mode);
-  state.objectLoad = inspector.load(slide.objects);
+  setMode();
   if (speak) announce('Slide ' + (index + 1) + ' of ' + state.deck.slides.length + '. ' + slide.title);
 }
 
 const WORKFLOW = [
-  { id: 'plan', title: 'Content planning', description: 'Establish the argument and evidence.', user: 'Share the audience, purpose and source material. Add any required messages.', agent: 'Develop the narrative and each slide’s communication job. Identify evidence gaps and preserve your constraints.', entry: 'Slide outline' },
-  { id: 'design', title: 'Visual design', description: 'Retrieve resources, generate and review the image.', user: 'Share brand assets or a preferred direction. Inspect the contact sheet or generated designs when you want to guide the work.', agent: 'Retrieve references and assets, assemble the contact sheet and generate the slide image. Review its content, readability and layout against the brief, then revise where needed.', entry: 'Generated design', detail: 'The contact sheet is a visible intermediate output. Original assets remain available for reconstruction after generation uses their previews.' },
-  { id: 'reconstruct', title: 'Reconstruction', description: 'Interpret, measure and build native objects.', user: 'This stage runs automatically. You can continue giving feedback in the conversation.', agent: 'Identify objects and relationships, refine their measured geometry, and build editable PowerPoint objects using original assets and component definitions.', entry: 'Reconstruction' },
-  { id: 'review', title: 'Review', description: 'Check the rendered PowerPoint and refine it.', user: 'Review the finished presentation and request any changes to its message or design.', agent: 'Check the PowerPoint render against the brief and generated slide image. Inspect content, reconstruction fidelity and deck-wide consistency, then correct issues and deliver the editable file.', entry: 'Review comparisons' },
+  { id: 'plan', title: 'Content planning', description: 'Establish the message and evidence.', user: 'Share the audience, purpose, source material and required messages.', agent: 'Develop the narrative and a brief for each slide, checking the evidence and your constraints.', entry: 'Presentation plan' },
+  { id: 'design', title: 'Visual design', description: 'Prepare visual context, then generate the design.', user: 'Share a preferred style or brand assets. Give feedback on the references and designs.', agent: 'Select references and assets, assemble a contact sheet, then generate and review the slide image.', entry: 'Generated slide image' },
+  { id: 'reconstruct', title: 'Reconstruction', description: 'Build editable PowerPoint objects.', user: 'The Agent handles this stage. You can continue giving feedback in conversation.', agent: 'Interpret and measure the image, then rebuild text, charts and tables using source data and original artwork.', entry: 'Object reconstruction' },
+  { id: 'review', title: 'Review', description: 'Check and refine the finished deck.', user: 'Review the presentation and request changes to its message or design.', agent: 'Render the PowerPoint, check it against the brief and design, correct issues and deliver the editable file.', entry: 'Design and PowerPoint' },
 ];
 
 function workflowFor(deck, configuration) {
@@ -360,12 +281,12 @@ function evidencePreview(step, compact = false) {
 
 function renderProcess() {
   const container = byId('process-grid');
-  const openStages = new Set([...container.querySelectorAll('details[open]')].map((item) => item.dataset.stage));
   container.replaceChildren();
   WORKFLOW.forEach((stage, index) => {
     const steps = state.deck.workflow[stage.id];
     const article = element('article', 'workflow-stage');
-    const heading = element('h4');
+    article.dataset.stage = stage.id;
+    const heading = element('h3');
     heading.append(element('span', 'workflow-number', String(index + 1).padStart(2, '0')), element('span', '', stage.title));
     article.append(heading, element('p', '', stage.description));
     const responsibilities = element('dl', 'workflow-responsibilities');
@@ -375,11 +296,10 @@ function renderProcess() {
       responsibilities.append(row);
     }
     article.append(responsibilities);
-    const details = element('details', 'workflow-evidence');
-    details.dataset.stage = stage.id;
-    details.open = openStages.has(stage.id);
-    const summary = element('summary');
     const primary = steps.find((step) => isImage(step.artifact)) || steps[0];
+    const button = artifactButton('', { title: stage.id === 'plan' ? 'Presentation plan' : primary.title, description: primary.description, url: stage.id === 'plan' ? state.deck.outlineURL : primary.artifact });
+    button.className = 'workflow-example';
+    button.setAttribute('aria-label', 'Open ' + stage.entry.toLowerCase());
     if (stage.id === 'plan') {
       const preview = element('span', 'workflow-preview plan-miniature');
       preview.setAttribute('aria-hidden', 'true');
@@ -389,28 +309,21 @@ function renderProcess() {
         row.append(element('b', '', String(index + 1).padStart(2, '0')), element('span', '', item.dominant_message));
         preview.append(row);
       });
-      summary.append(preview);
-    } else if (primary) summary.append(evidencePreview(primary));
-    const disclosure = element('span', 'workflow-disclosure', stage.entry);
-    disclosure.append(lineIcon('m7 10 5 5 5-5', 'disclosure-chevron'));
-    summary.append(disclosure);
-    details.append(summary);
-    if (stage.detail) details.append(element('p', 'workflow-detail', stage.detail));
-    const list = element('ul');
-    steps.forEach((step) => {
-      const item = element('li');
-      const button = artifactButton('', { title: step.title, description: step.description, url: step.artifact });
-      const caption = element('span', 'evidence-item-caption');
-      caption.append(element('span', 'evidence-item-title', step.title), element('span', 'evidence-item-type', isImage(step.artifact) ? 'Image' : 'Document'));
-      button.append(evidencePreview(step, true), caption);
-      item.append(button);
-      list.append(item);
-    });
-    details.append(list);
-    article.append(details);
+      button.append(preview);
+    } else if (primary) button.append(evidencePreview(primary));
+    const caption = element('span', 'workflow-example-caption', stage.entry);
+    caption.append(lineIcon('M7 17 17 7M7 7h10v10', 'disclosure-chevron'));
+    button.append(caption);
+    article.append(button);
     container.append(article);
   });
 }
+
+document.querySelectorAll('[data-workflow-stage]').forEach(button => button.addEventListener('click', () => {
+  const card = byId('process-grid').querySelector(`[data-stage="${button.dataset.workflowStage}"]`);
+  if (!card) return;
+  byId('process-grid').scrollTo({ left: card.offsetLeft, behavior: canAnimate() ? 'smooth' : 'instant' });
+}));
 
 async function fetchJSON(url, signal) {
   const response = await fetch(url, { signal, cache: 'no-cache' });
@@ -441,8 +354,26 @@ function bindArtifact(id, title, description, url, options = {}) {
 }
 
 for (const id of ['contact-sheet-open', 'contact-sheet-expand']) {
-  bindArtifact(id, 'Generation contact sheet', 'A prepared example containing style guidance, two public consulting references, a native chart preview and three Remix icons.', new URL('./assets/contact-sheet/generation-contact-sheet.png', import.meta.url).href);
+  bindArtifact(id, 'Inspect the contact sheet', 'Two published slide references, a native chart component and three icons, together with the consulting colour palette and typography.', new URL('./assets/contact-sheet/generation-contact-sheet.png?v=20261016-video', import.meta.url).href);
 }
+
+
+document.querySelectorAll('[data-design-resource]').forEach(button => button.addEventListener('click', () => openArtifact({
+  title: button.dataset.resourceTitle, description: button.dataset.resourceDescription,
+  url: new URL('./assets/contact-sheet/' + button.dataset.designResource, import.meta.url).href, trigger: button,
+})));
+
+document.querySelectorAll('[data-design-icon]').forEach(button => button.addEventListener('click', () => openArtifact({
+  title: button.dataset.iconLabel + ' icon', description: 'Original SVG artwork from the Remix Icon library.',
+  url: new URL('./assets/remix/' + button.dataset.designIcon, import.meta.url).href, trigger: button,
+  render: () => {
+    const figure = element('figure', 'design-icon-preview');
+    const image = new Image(); image.src = new URL('./assets/remix/' + button.dataset.designIcon, import.meta.url).href;
+    image.alt = button.dataset.iconLabel;
+    figure.append(image);
+    return figure;
+  },
+})));
 
 async function loadWalkthrough(configuration) {
   try {
@@ -471,32 +402,26 @@ async function loadWalkthrough(configuration) {
       support.append(row);
     });
     byId('walkthrough-support').replaceChildren(support);
+    const designSlide = deck.slides.find(item => item.id === 's01-recommendation') || slide;
     const target = byId('walkthrough-target');
-    target.src = slide.target;
-    target.alt = 'Generated composition for ' + slide.title + '. The chart region is outlined.';
+    target.src = designSlide.target;
+    target.alt = 'AI-generated slide image for ' + designSlide.title;
     const size = [measurement.source.width_px, measurement.source.height_px];
     target.parentElement.style.aspectRatio = size[0] + ' / ' + size[1];
-    const [x, y, width, height] = mapped.bbox_hint;
-    const region = byId('walkthrough-chart-region');
-    Object.assign(region.style, { left: (100 * x / size[0]) + '%', top: (100 * y / size[1]) + '%', width: (100 * width / size[0]) + '%', height: (100 * height / size[1]) + '%' });
-    byId('walkthrough-semantic-crop').replaceChildren(createChartInterpretation(mapped));
-    byId('walkthrough-measurement-crop').replaceChildren(createChartMeasurement(measured, measurement.source, slide.target));
-    byId('walkthrough-semantic-caption').textContent = 'Categories and values belong to one chart object.';
-    const ink = measured.measurement.visible_bbox.px;
-    byId('walkthrough-measurement-caption').textContent = 'Measured bounds in the source image, in pixels.';
-    const fullSize = deck.canvas?.full_slide_px || [size[0], size[1]];
-    const nativeLeft = Math.min(...native.polygon.map((point) => point[0])) * fullSize[0];
-    const nativeTop = Math.min(...native.polygon.map((point) => point[1])) * fullSize[1];
-    const nativeWidth = Math.max(...native.polygon.map((point) => point[0])) * fullSize[0] - nativeLeft;
-    const nativeHeight = Math.max(...native.polygon.map((point) => point[1])) * fullSize[1] - nativeTop;
-    cropEvidence(byId('walkthrough-native-crop'), byId('walkthrough-native-image'), slide.render,
-      [nativeLeft - 18, nativeTop - 30, nativeWidth + 36, nativeHeight + 42], fullSize,
-      'The reconstructed native chart from the actual PowerPoint render.');
     bindArtifact('walkthrough-brief', 'Slide brief', '', paths.intent, { render: () => renderSlideBrief(intent, slide.planning.inputs) });
-    bindArtifact('walkthrough-target-open', 'AI-generated design', 'This image covers the slide’s content area. Shared headers and footers are added in PowerPoint.', slide.target, { canvas: deck.canvas });
-    bindArtifact('walkthrough-semantic-open', 'Chart interpretation', 'The Agent treats these categories, values and columns as a single editable chart.', paths.semantic, { render: () => createChartInterpretation(mapped) });
-    bindArtifact('walkthrough-measurement-open', 'Chart measurements', 'The detected chart region measures ' + ink[2] + ' × ' + ink[3] + ' pixels. The Agent uses these measurements to position and size the PowerPoint chart.', paths.measurement, { render: () => createChartMeasurement(measured, measurement.source, slide.target) });
+    bindArtifact('walkthrough-target-open', 'AI-generated design', 'This image covers the slide’s content area. Shared headers and footers are added in PowerPoint.', designSlide.target, { canvas: deck.canvas });
     state.walkthrough = { deckIndex, slideId: slide.id, objectId: native.id };
+    state.lab = createReconstructionSelector({
+      root: byId('reconstruction-lab'), slides: deck.slides, initialSlide: slide,
+      initialRecords: { semantic, measurement, objects }, fetchJSON, validateObjects: validateObjectDocument,
+      onSlideChange: selected => {
+        byId('review-target').src = selected.target;
+        byId('review-target').alt = 'AI-generated design. ' + selected.title;
+        placeTarget(byId('review-target'), deck.canvas);
+        byId('review-render').src = selected.render;
+        byId('review-render').alt = 'PowerPoint render. ' + selected.title;
+      },
+    });
     byId('walkthrough').hidden = false;
     byId('walkthrough-loading').hidden = true;
   } catch (error) {
@@ -774,34 +699,9 @@ document.querySelectorAll('[data-copy-source]').forEach((button) => button.addEv
 }));
 document.addEventListener('pointerdown', () => { document.body.dataset.input = 'pointer'; }, { passive: true });
 document.addEventListener('keydown', () => { document.body.dataset.input = 'keyboard'; });
-document.querySelectorAll('button[data-mode]').forEach((button) => button.addEventListener('click', () => setMode(button.dataset.mode, true)));
-byId('object-toggle').addEventListener('click', () => setInspectorOpen(!state.inspectorOpen));
 byId('presentation-goal').addEventListener('click', () => {
   const deck = state.deck;
   if (deck) openArtifact({ title: 'Presentation plan', url: deck.outlineURL, trigger: byId('presentation-goal'), render: () => renderOutline(deck.outline, deck) });
-});
-byId('design-image-open').addEventListener('click', () => {
-  const slide = state.deck?.slides[state.slideIndex];
-  if (slide) openArtifact({ title: 'AI-generated design', description: slide.title, url: slide.target, trigger: byId('design-image-open'), canvas: state.deck.canvas });
-});
-byId('walkthrough-native-open').addEventListener('click', async () => {
-  const example = state.walkthrough;
-  if (!example) return;
-  selectDeck(example.deckIndex, example.slideId);
-  focusSection(byId('studio-frame'), { replace: true });
-  await state.objectLoad;
-  if (state.deck?.id !== state.decks[example.deckIndex].id || state.deck.slides[state.slideIndex]?.id !== example.slideId || state.mode !== 'rebuilt') return;
-  inspector.select(example.objectId, { focusCanvas: true });
-});
-byId('asset-result-link').addEventListener('click', event => {
-  if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-  const index = state.decks.findIndex(deck => deck.id === 'consulting-ai-transformation');
-  const slideId = event.currentTarget.dataset.sampleSlide;
-  if (index < 0 || !state.decks[index].slides.some(slide => slide.id === slideId)) return;
-  event.preventDefault();
-  selectDeck(index, slideId);
-  setMode('rebuilt');
-  focusSection(byId('studio-frame'));
 });
 byId('previous-slide').addEventListener('click', () => selectSlide(state.slideIndex - 1));
 byId('next-slide').addEventListener('click', () => selectSlide(state.slideIndex + 1));
@@ -817,7 +717,7 @@ function bindComparison(input, foreground, divider, leftLabel, rightLabel) {
   input.addEventListener('input', update);
   update();
 }
-bindComparison(byId('reveal'), byId('comparison-render'), byId('comparison-divider'), 'editable PowerPoint', 'AI-generated design');
+bindComparison(byId('review-reveal'), byId('review-render'), byId('review-divider'), 'PowerPoint', 'design image');
 bindComparison(byId('artwork-reveal'), byId('artwork-original'), byId('artwork-divider'), 'initial generation', 'transparent artwork');
 const artworkViews = [...document.querySelectorAll('[data-artwork-view]')];
 artworkViews.forEach(button => button.addEventListener('click', () => {
@@ -997,7 +897,7 @@ for (const button of document.querySelectorAll('[data-open-architecture]')) {
   button.addEventListener('click', event => openArtifact({
     title: 'SlidePoise architecture',
     architecture: true,
-    url: new URL('/assets/img/projects/slidepoise-architecture-v1.svg?v=20261008-balanced-flow', location.href).href,
+    url: new URL('/assets/img/projects/slidepoise-architecture-v1.svg?v=20261016-colour-legend', location.href).href,
     trigger: event.currentTarget,
   }));
 }
