@@ -50,7 +50,15 @@ const nativeDescriptions = {
   shape: ['Build a native shape', 'Its position, size, fill and outline remain editable.'],
 };
 
-function nativePreview(object, slide, source) {
+export function nativePreviewBox(object, size) {
+  const xs = object.polygon.map(point => point[0] * size.width);
+  const ys = object.polygon.map(point => point[1] * size.height);
+  const padding = size.height * .006;
+  const x = Math.min(...xs) - padding, y = Math.min(...ys) - padding;
+  return [x, y, Math.max(...xs) - x + padding, Math.max(...ys) - y + padding];
+}
+
+function nativePreview(object, slide, source, size) {
   const icon = originalIconSource(source);
   if (icon) {
     const image = new Image();
@@ -59,18 +67,26 @@ function nativePreview(object, slide, source) {
     image.className = 'lab-native-icon';
     return image;
   }
-  const xs = object.polygon.map(point => point[0]), ys = object.polygon.map(point => point[1]);
-  let x = Math.min(...xs), y = Math.min(...ys), width = Math.max(...xs) - x, height = Math.max(...ys) - y;
-  if (height < .01) { y -= .005; height = .01; }
-  if (width < .005) { x -= .0025; width = .005; }
-  const crop = element('div', 'lab-native-crop');
-  const ratio = width * 16 / (height * 9);
-  crop.style.aspectRatio = String(ratio);
-  crop.style.width = `${Math.min(150, ratio * 65)}px`;
-  const image = new Image();
-  image.src = slide.render;
-  image.alt = `${object.label || object.kind} rendered from PowerPoint`;
-  Object.assign(image.style, { width: `${100 / width}%`, maxWidth: 'none', left: `${-100 * x / width}%`, top: `${-100 * y / height}%` });
+  const ns = 'http://www.w3.org/2000/svg';
+  const crop = document.createElementNS(ns, 'svg');
+  const box = nativePreviewBox(object, size);
+  crop.setAttribute('class', 'lab-native-crop');
+  crop.setAttribute('viewBox', box.join(' '));
+  crop.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+  crop.setAttribute('role', 'img');
+  crop.setAttribute('aria-label', `${object.label || object.kind} rendered from PowerPoint`);
+  const image = document.createElementNS(ns, 'image');
+  image.setAttribute('href', slide.render);
+  image.setAttribute('width', size.width);
+  image.setAttribute('height', size.height);
+  image.setAttribute('preserveAspectRatio', 'none');
+  const clip = document.createElementNS(ns, 'clipPath');
+  clip.id = `native-preview-${slide.id}-${object.id}`;
+  const boundary = document.createElementNS(ns, 'rect');
+  ['x', 'y', 'width', 'height'].forEach((key, index) => boundary.setAttribute(key, box[index]));
+  clip.append(boundary);
+  image.setAttribute('clip-path', `url(#${clip.id})`);
+  crop.append(clip);
   crop.append(image);
   return crop;
 }
@@ -136,14 +152,16 @@ export function createReconstructionLab({ root, slide, semantic, measurement, ob
         field.append(element('dt', '', label), element('dd', '', value + ' px'));
         geometry.append(field);
       }
-      measured.append(geometry, element('p', 'lab-record-copy', `The dashed outline follows the visible content inside the Agent’s object region. Measurements use the ${data.width} × ${data.height} image.`));
+      measured.append(geometry, element('p', 'lab-record-copy', `Visible bounds in the ${data.width} × ${data.height} source image.`));
     } else measured.append(element('p', 'lab-record-copy', 'This object uses the region defined by the Agent.'));
 
     const built = element('section', 'lab-record lab-build');
     const [title, description] = nativeDescriptions[object.kind] || nativeDescriptions.shape;
     const copy = element('div');
     copy.append(element('p', 'lab-record-label', 'PowerPoint construction'), element('h5', '', title), element('p', 'lab-record-copy', description));
-    built.append(copy, nativePreview(object, slide, source));
+    if (originalIconSource(source)) built.classList.add('lab-build-icon');
+    else if (['shape', 'text', 'connector'].includes(object.kind)) built.classList.add('lab-build-wide');
+    built.append(copy, nativePreview(object, slide, source, objects.size));
     detail.replaceChildren(interpretation, measured, built);
   }
   items.forEach(item => {

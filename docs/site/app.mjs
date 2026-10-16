@@ -1,5 +1,5 @@
 import { validateObjectDocument } from './object-inspector.mjs';
-import { createReconstructionSelector } from './reconstruction-lab.mjs?v=20261016-reconstruction';
+import { createReconstructionSelector } from './reconstruction-lab.mjs?v=20261016-comparison';
 import { createPlanView, createSlideBrief } from './planning-viewer.mjs';
 import { watchVideoControls } from './video-controls.mjs?v=20261005-fade';
 
@@ -225,7 +225,7 @@ function selectSlide(index, speak = true) {
 }
 
 const WORKFLOW = [
-  { id: 'plan', title: 'Content planning', description: 'Establish the message and evidence.', user: 'Share the audience, purpose, source material and required messages.', agent: 'Develop the narrative and a brief for each slide, checking the evidence and your constraints.', entry: 'Presentation plan' },
+  { id: 'plan', title: 'Content planning', description: 'Establish the message and evidence.', user: 'Share the audience, purpose, source material and required messages.', agent: 'Review your sources, research useful content where needed, and develop the narrative and each slide’s brief.', entry: 'Presentation plan' },
   { id: 'design', title: 'Visual design', description: 'Prepare visual context, then generate the design.', user: 'Share a preferred style or brand assets. Give feedback on the references and designs.', agent: 'Select references and assets, assemble a contact sheet, then generate and review the slide image.', entry: 'Generated slide image' },
   { id: 'reconstruct', title: 'Reconstruction', description: 'Build editable PowerPoint objects.', user: 'The Agent handles this stage. You can continue giving feedback in conversation.', agent: 'Interpret and measure the image, then rebuild text, charts and tables using source data and original artwork.', entry: 'Object reconstruction' },
   { id: 'review', title: 'Review', description: 'Check and refine the finished deck.', user: 'Review the presentation and request changes to its message or design.', agent: 'Render the PowerPoint, check it against the brief and design, correct issues and deliver the editable file.', entry: 'Design and PowerPoint' },
@@ -411,10 +411,31 @@ async function loadWalkthrough(configuration) {
     bindArtifact('walkthrough-brief', 'Slide brief', '', paths.intent, { render: () => renderSlideBrief(intent, slide.planning.inputs) });
     bindArtifact('walkthrough-target-open', 'AI-generated design', 'This image covers the slide’s content area. Shared headers and footers are added in PowerPoint.', designSlide.target, { canvas: deck.canvas });
     state.walkthrough = { deckIndex, slideId: slide.id, objectId: native.id };
+    const lab = byId('reconstruction-lab');
+    const comparison = lab.querySelector('.lab-comparison-pair');
+    let comparedSlide = slide;
+    lab.querySelectorAll('[data-lab-view]').forEach(button => button.addEventListener('click', () => {
+      lab.querySelectorAll('[data-lab-view]').forEach(choice => choice.setAttribute('aria-pressed', String(choice === button)));
+      lab.querySelectorAll('[data-lab-panel]').forEach(panel => { panel.hidden = panel.dataset.labPanel !== button.dataset.labView; });
+    }));
+    lab.querySelector('.lab-expand-comparison').addEventListener('click', event => openArtifact({
+      title: 'Compare the design and PowerPoint', description: comparedSlide.title, url: comparedSlide.render,
+      trigger: event.currentTarget, render: () => comparison.cloneNode(true),
+    }));
     state.lab = createReconstructionSelector({
-      root: byId('reconstruction-lab'), slides: deck.slides, initialSlide: slide,
+      root: lab, slides: deck.slides, initialSlide: slide,
       initialRecords: { semantic, measurement, objects }, fetchJSON, validateObjects: validateObjectDocument,
       onSlideChange: selected => {
+        comparedSlide = selected;
+        const generated = lab.querySelector('.lab-compare-target');
+        generated.src = selected.target;
+        generated.alt = 'Generated design. ' + selected.title;
+        placeTarget(generated, deck.canvas);
+        const reconstructed = lab.querySelector('.lab-compare-render');
+        reconstructed.src = selected.render;
+        reconstructed.alt = 'Reconstructed PowerPoint. ' + selected.title;
+        lab.querySelectorAll('.lab-comparison-slide').forEach(frame => { frame.style.aspectRatio = deck.canvas.full_slide_px.join(' / '); });
+        lab.querySelector('.lab-comparison-title').textContent = selected.title;
         byId('review-target').src = selected.target;
         byId('review-target').alt = 'AI-generated design. ' + selected.title;
         placeTarget(byId('review-target'), deck.canvas);
@@ -897,7 +918,7 @@ for (const button of document.querySelectorAll('[data-open-architecture]')) {
   button.addEventListener('click', event => openArtifact({
     title: 'SlidePoise architecture',
     architecture: true,
-    url: new URL('/assets/img/projects/slidepoise-architecture-v1.svg?v=20261016-colour-legend', location.href).href,
+    url: new URL('/assets/img/projects/slidepoise-architecture-v1.svg?v=20261016-content-research', location.href).href,
     trigger: event.currentTarget,
   }));
 }

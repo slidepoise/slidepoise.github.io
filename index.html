@@ -8,12 +8,12 @@
   <link rel="canonical" href="https://slidepoise.github.io/">
   <title>SlidePoise · Agentic Slide Generation</title>
   <link rel="icon" href="docs/site/mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="docs/site/styles.css?v=20261016-section-spacing">
-  <link rel="stylesheet" href="docs/site/reader-story.css?v=20261016-section-spacing">
+  <link rel="stylesheet" href="docs/site/styles.css?v=20261016-reconstruction-compare">
+  <link rel="stylesheet" href="docs/site/reader-story.css?v=20261016-reconstruction-compare">
   <link rel="stylesheet" href="docs/site/video-controls.css?v=20261005-fade">
   <link rel="stylesheet" href="/assets/video/slidepoise/cover.css?v=20261004">
   <link rel="stylesheet" href="docs/site/object-inspector.css?v=8ab3ff0c5c351406">
-  <script type="module" src="docs/site/app.mjs?v=20261016-section-spacing"></script>
+  <script type="module" src="docs/site/app.mjs?v=20261016-reconstruction-compare"></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#why-slidepoise">Skip to content</a>
@@ -99,7 +99,7 @@
     </section>
 
     <section id="examples" class="samples page-width" aria-labelledby="examples-title">
-      <div class="section-heading"><h2 id="examples-title">Browse the finished presentations</h2></div>
+      <div class="section-heading"><h2 id="examples-title">Explore sample presentations made with SlidePoise</h2></div>
       <p class="section-intro">Browse two presentations made through this workflow. Download a PowerPoint to try its editable text, charts and artwork.</p>
       <div id="load-state" class="load-state" role="status">Loading the presentations…</div>
       <div class="samples-container">
@@ -131,11 +131,11 @@
     </section>
 
     <section id="console" class="console-section page-width" aria-labelledby="console-title">
-      <div class="section-heading"><h2 id="console-title">Save your preferences in the Local Console</h2></div>
+      <div class="section-heading"><h2 id="console-title">Use your styles and resources across presentations</h2></div>
       <div class="console-layout">
         <div class="console-copy">
-          <p class="section-intro">Your Agent can manage styles, resource libraries and image-generation settings through conversation. The optional Local Console lets you browse and adjust the same preferences.</p>
-          <p>A Profile keeps the fonts, colours and resource selections you want to reuse across presentations. Explore the Console below with sample settings.</p>
+          <p class="section-intro">A Profile keeps your fonts, colours and resource selections together for future presentations. Your Agent can manage these preferences and image-generation settings through conversation.</p>
+          <p>The optional Local Console lets you browse styles, organise resource libraries and adjust the same settings. Explore it below with sample preferences.</p>
           <div class="console-launch"><h3>On your computer</h3><p>After installation, ask your Agent to open the SlidePoise Console, or run</p><code class="console-command">npx github:henryhyw/slidepoise console</code><p>Your saved settings apply to future presentations. Give feedback on the current deck in conversation.</p></div>
         </div>
         <div id="console-demo" class="console-demo">
@@ -157,7 +157,7 @@
       <div id="walkthrough-loading" class="load-state" role="status">Loading the design example…</div>
       <div id="walkthrough" class="walkthrough" hidden>
         <article id="plan-content" class="workflow-chapter plan-chapter">
-          <div class="walkthrough-heading"><p class="chapter-number">01 · Content planning</p><h3>Develop the slide’s message and evidence</h3><p class="subsection-intro">The Agent works with your source material to establish the presentation’s argument and the purpose of each slide. Each brief records its main message, supporting content and visual requirements.</p><p class="subsection-intro">This consulting example compares possible AI pilots. Open its brief to see the chart data and reasoning that guide the design.</p></div>
+          <div class="walkthrough-heading"><p class="chapter-number">01 · Content planning</p><h3>Develop the slide’s message and evidence</h3><p class="subsection-intro">The Agent reviews your brief and source material, researching useful facts, examples and context where needed. It develops the presentation’s argument and each slide’s purpose, then records the message, supporting evidence and visual requirements.</p><p class="subsection-intro">This consulting example compares possible AI pilots. Open its brief to see the chart data and reasoning that guide the design.</p></div>
             <button id="walkthrough-brief" class="content-card argument-panel" type="button" aria-label="Open the slide brief" aria-haspopup="dialog"><span class="actor-label">Example slide brief</span><strong id="walkthrough-message" class="argument-message"></strong><span id="walkthrough-decision" class="argument-decision"></span><span id="walkthrough-support" class="argument-support"></span><span class="evidence-note">Illustrative planning assumptions from the sample brief.</span><span class="card-action">Open the full brief <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M5 15 15 5M5 5h10v10"/></svg></span></button>
         </article>
         <article id="design-slides" class="workflow-chapter design-chapter">
@@ -196,10 +196,11 @@
           <p class="design-library-note">Reference pages by <a href="https://www.pwc.de/de/strategie-organisation-prozesse-systeme/pwc-enterprise-architecture-in-an-agile-world.pdf" target="_blank" rel="noopener">PwC</a> and <a href="https://www.pwc.no/no/publikasjoner/strategyand-desember-b2b-saas-2024.pdf" target="_blank" rel="noopener">Strategy&amp;</a>. Icon libraries include <a href="https://remixicon.com/" target="_blank" rel="noopener">Remix Icon</a>, <a href="https://icon-sets.iconify.design/mdi/" target="_blank" rel="noopener">Material Design Icons</a>. You can also supply logos, artwork and presentation components.</p>
         </article>
         <article id="build-slides" class="workflow-chapter build-chapter">
-          <div class="walkthrough-heading"><p class="chapter-number">03 · Reconstruction</p><h3>Reconstruct the design as editable PowerPoint objects</h3><p class="subsection-intro">The Agent identifies what each object means and which elements belong together. OpenCV measures the visible content inside those regions. The Agent uses both records, the source data and original assets to build editable PowerPoint objects.</p></div>
+          <div class="walkthrough-heading"><p class="chapter-number">03 · Reconstruction</p><h3>Reconstruct the design as editable PowerPoint objects</h3><p class="subsection-intro">The Agent interprets the design, groups related elements and uses OpenCV measurements to rebuild editable objects. The brief, source data and original assets also guide corrections to defects in the generated image, such as incorrect text, distorted icons and uneven alignment.</p></div>
           <div id="reconstruction-lab" class="reconstruction-lab">
-            <div class="lab-heading"><p>Select a slide, then click an outlined object.</p><div class="lab-slide-choices" role="group" aria-label="Choose a slide to reconstruct"></div></div><p class="lab-selection-status sr-only" role="status"></p>
-            <div class="lab-layout"><div class="lab-source"><div class="lab-object-choices" role="group" aria-label="Choose an object to explore"></div><p class="lab-source-label">Design image</p><div class="lab-source-canvas"><img class="lab-source-image" alt="" loading="lazy"><div class="lab-hotspots"></div></div><div class="lab-legend" aria-label="Slide outline legend"><span><i class="lab-key-agent" aria-hidden="true"></i>Agent’s object region</span><span><i class="lab-key-cv" aria-hidden="true"></i>OpenCV visible bounds</span></div></div><div class="lab-result" aria-live="polite"></div></div>
+            <div class="lab-heading"><div class="mode-controls lab-view-choices" role="group" aria-label="Reconstruction view"><button type="button" data-lab-view="inspect" aria-pressed="true">Inspect objects</button><button type="button" data-lab-view="compare" aria-pressed="false">Compare slides</button></div><div class="lab-slide-choices" role="group" aria-label="Choose a slide to reconstruct"></div></div><p class="lab-selection-status sr-only" role="status"></p>
+            <div class="lab-layout" data-lab-panel="inspect"><div class="lab-source"><div class="lab-object-choices" role="group" aria-label="Choose an object to explore"></div><p class="lab-source-label">Select an outlined object in the generated design.</p><div class="lab-source-canvas"><img class="lab-source-image" alt="" loading="lazy"><div class="lab-hotspots"></div></div><div class="lab-legend" aria-label="Slide outline legend"><span><i class="lab-key-agent" aria-hidden="true"></i>Agent’s object region</span><span><i class="lab-key-cv" aria-hidden="true"></i>OpenCV visible bounds</span></div></div><div class="lab-result" aria-live="polite"></div></div>
+            <div class="lab-comparison" data-lab-panel="compare" hidden><div class="lab-comparison-pair"><figure><figcaption>Generated design</figcaption><div class="lab-comparison-slide"><img class="lab-compare-target" alt=""></div></figure><figure><figcaption>Reconstructed PowerPoint</figcaption><div class="lab-comparison-slide"><img class="lab-compare-render" alt=""></div></figure></div><div class="lab-comparison-footer"><p class="lab-comparison-title"></p><button class="lab-expand-comparison" type="button" aria-haspopup="dialog">Expand comparison<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 3h5v5M17 3l-5.5 5.5M8 17H3v-5m0 5 5.5-5.5"/></svg></button></div></div>
           </div>
       <article class="illustration-system" aria-labelledby="illustration-system-title">
         <div class="walkthrough-heading asset-system-copy">
@@ -231,7 +232,7 @@
 
     <section id="architecture" class="architecture-section page-width" aria-labelledby="architecture-title"><div class="walkthrough-heading"><h2 id="architecture-title">See how the Agent coordinates SlidePoise</h2><p>The Agent directs the work and judges the results. Image generation develops the visual design. Measurement and construction tools turn that design into editable slides.</p></div>
       <figure class="system-architecture">
-        <button type="button" class="system-architecture-art" data-open-architecture aria-label="Enlarge SlidePoise architecture" aria-haspopup="dialog"><img src="/assets/img/projects/slidepoise-architecture-v1.svg?v=20261016-colour-legend" width="1600" height="870" alt="Four stages of SlidePoise. Content planning, visual design with retrieval and generation, reconstruction with interpretation and measurement feeding the native build, and review of actual renders" loading="lazy" decoding="async"></button>
+        <button type="button" class="system-architecture-art" data-open-architecture aria-label="Enlarge SlidePoise architecture" aria-haspopup="dialog"><img src="/assets/img/projects/slidepoise-architecture-v1.svg?v=20261016-content-research" width="1600" height="940" alt="Four stages of SlidePoise. Content planning, visual design with retrieval and generation, reconstruction with interpretation and measurement feeding the native build, and review of actual renders" loading="lazy" decoding="async"></button>
         <figcaption><span>System architecture</span><button type="button" data-open-architecture aria-label="Enlarge SlidePoise architecture" aria-haspopup="dialog"><span>Expand diagram</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 3h5v5M17 3l-5.5 5.5M8 17H3v-5m0 5 5.5-5.5"/></svg></button></figcaption>
       </figure>
     </section>
