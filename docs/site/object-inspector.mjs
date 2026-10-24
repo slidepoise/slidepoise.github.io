@@ -111,7 +111,7 @@ export function createObjectInspector({ surface, panel, announce = () => {},
     } else if (item.kind === 'table') {
       appendTable(selectionInfo, item.rows, 'PowerPoint table');
     } else if (item.kind === 'image') {
-      selectionInfo.append(element('p', 'oi-meta', 'This artwork is an image. Any text inside it is part of the image.'));
+      selectionInfo.append(element('p', 'oi-meta', 'Text in this artwork is embedded in the image.'));
     } else if (item.kind === 'connector') {
       const arrow = Object.values(item.arrows || {}).some(end => end.type && end.type !== 'none');
       selectionInfo.append(element('p', 'oi-meta', arrow ? 'Native connector with an arrowhead' : 'Native connector'));
